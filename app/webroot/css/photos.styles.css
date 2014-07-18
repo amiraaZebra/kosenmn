@@ -1,0 +1,36 @@
+
+#MainContent { 
+	/*background: #ffffff; */
+	padding-bottom: 30px; 
+
+}
+
+.gallery { list-style: none; padding: 0; margin: 0; }
+.gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+/*.gallery li { float: left; width: 33.33333333%; }*/
+.gallery li { 
+	float: left; 
+	width: 150px; 
+}
+.gallery li a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
+.gallery li img { display: block; width: 100%; height: auto; }
+
+.album {
+	width: 150px;
+	height: 150px;
+	float: left;
+	display: block;
+	margin: 5px;
+	
+}
+
+.album_name {
+	margin: 5px;
+	
+}
+
+.album_img{
+	border: 1px solid #3c3c3c;
+	width: 150px;
+	height: 150px;
+}

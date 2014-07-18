@@ -1,0 +1,17 @@
+label{
+	display: block;
+}
+
+input{
+	clear: both;
+	width: 70%;
+}
+
+input[type=submit]{
+	width: auto;
+}
+
+.error-message{
+	color:red;
+}
+
