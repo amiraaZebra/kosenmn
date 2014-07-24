@@ -1238,6 +1238,19 @@ ol ol {
   margin-left: -5px;
   list-style: none;
 }
+.list-inline-right {
+  padding-right: 0;
+  margin-right: 0;
+  float:right;
+  list-style: none;
+}
+
+.list-inline-right > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 .list-inline > li {
   display: inline-block;
   padding-right: 5px;
@@ -1252,15 +1265,16 @@ dd {
   line-height: 1.42857143;
 }
 dt {
-  font-weight: bold;
+  
 }
 dd {
   margin-left: 0;
+  font-weight: bold;
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
     float: left;
-    width: 160px;
+    width: 185px;
     overflow: hidden;
     clear: left;
     text-align: right;
@@ -1268,7 +1282,7 @@ dd {
     white-space: nowrap;
   }
   .dl-horizontal dd {
-    margin-left: 180px;
+    margin-left: 200px;
   }
 }
 abbr[title],
@@ -6201,3 +6215,14 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}

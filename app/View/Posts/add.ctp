@@ -19,7 +19,3 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Post')); ?>
 </div>
-
-<?php
-	echo $this->element('actions');
-?>

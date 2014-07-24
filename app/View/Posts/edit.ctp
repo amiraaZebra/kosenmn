@@ -71,4 +71,3 @@
 		</fieldset>
 	<?php echo $this->Form->end('Submit'); ?>
 </div>
-<?php echo $this->element('link_list'); ?>

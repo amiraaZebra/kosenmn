@@ -31,6 +31,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->meta('icon');
 
 //		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('bootstrap');
+		echo $this->Html->script('jquery');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -39,52 +41,30 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
-
-	<div id="header" >
-		
-		<!--<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>-->
-			
-			
-            
-		
-		<!--(create menu)-->
-		<div id="menu" class="body-limit">
-			<?php $this->start('menu'); ?>
-				<?php echo $this->element('myMenu')?>
-				<div style="height:0px;width:120px;margin:0 auto;">
-			    	<?php //echo $this->Html->image('logo.png', array('alt'=>'logo', 'id' => 'logo', 'url'=>'/'))?>
-				</div>
-			<?php $this->end(); ?>
-
-    		<?php echo $this->fetch('menu'); ?>
-		</div>
-							
-		
-                			
-	</div>
-
-	<div id="container" class="body-limit">
-		
-		
-		
-		<div id="content">
-
-
-			<?php echo $this->Session->flash(); ?>
-			<?php echo $this->element('link_list')?>
-			<?php echo $this->fetch('content'); ?>
-
-
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php //echo $this->element('sql_dump'); ?>
+	<div id="container">
+		<div class="row">
+			<div class="col-xs-10">
+				<?php echo $this->Html->image('tempHeaderPic.jpg',array('class'=>'img-responsive')); ?>
+			</div>    		    
+    	</div>
+		<div class="row">
+			<!--(create menu)-->
+			<div class="col-xs-10 bg-warning">
+				<?php echo $this->element('myMenu'); ?>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-xs-2 bg-success">
+				<?php echo $this->Session->flash(); ?>
+				<?php echo $this->element('link_list')?>
+			</div>
+  			<div class="col-xs-6">
+  				<?php echo $this->fetch('content'); ?>
+  			</div>
+  			<div class="col-xs-2 bg-danger">
+  				<?php echo $this->element('link_list')?>
+  			</div>  			  			
+		</div>		
+	</div>	
 </body>
 </html>

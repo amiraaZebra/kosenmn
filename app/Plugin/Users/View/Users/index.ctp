@@ -50,4 +50,3 @@
 	</table>
 	<?php echo $this->element('Users.pagination'); ?>
 </div>
-<?php echo $this->element('link_list'); ?>
