@@ -29,42 +29,41 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
+		
 //		echo $this->Html->css('cake.generic');
-
+		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->script('jquery');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 		
 	?>
 </head>
+
+
+ 
 <body>
-
-	<div id="header" >
-		<?php echo $this->Html->link(
-					$this->Html->image('logo3.png', array('alt' => $cakeDescription, 'border' => '0', 'width'=>'180px', 'height'=>'60px' )),
-					array('controller'=>'users', 'action'=>'contactus'),
-					array('target' => '_blank', 'escape' => false)
-				);
-		?>		        			
-	</div>
-
-	<div id="container" class="body-limit">
-		
-		
-		
-		<div id="content">
-
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-
-
+	<div class="container-fluid">			
+		<div class="row">
+		  <div class="col-xs-6">
+		 	<?php echo $this->Html->link(
+						$this->Html->image('logo3.png', array('alt' => $cakeDescription, 'border' => '0', 'width'=>'180px', 'height'=>'60px' )),
+						array('controller'=>'users', 'action'=>'contactus'),
+						array('target' => '_blank', 'escape' => false)
+					);
+			?>
+		  </div>
 		</div>
-		<div id="footer">
-			<h1>KosenClub</h1>
+		
+		<div class="row row-centered">
+		  <div class="col-sm-6 col-centered">
+		  		<?php echo $this->Session->flash(); ?>
+				<?php echo $this->fetch('content'); ?>
+		  </div>
 		</div>
-	</div>
-	<?php //echo $this->element('sql_dump'); ?>
+	</div>	
 </body>
+
+
+
 </html>

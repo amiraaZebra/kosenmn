@@ -1,4 +1,4 @@
-<div class="users form">
+<div class="row row-centered">
 <h2><?php echo __d('users', 'Reset your password'); ?></h2>
 <?php
 	echo $this->Form->create($model, array(
@@ -15,4 +15,3 @@
 	echo $this->Form->end();
 ?>
 </div>
-<?php echo $this->element('Users.Users/sidebar'); ?>
