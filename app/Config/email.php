@@ -42,8 +42,8 @@ class EmailConfig {
 	public $default = array(	
 		'host' => 'ssl://smtp.gmail.com',
         'port' => 465,
-        'username' => 'amiraa.ax@gmail.com',  
-        'password' => 'Cha#$$#d777nAA',
+        'username' => '',  
+        'password' => '',
         'transport' => 'Smtp',
         'log' => true,          
 	);
