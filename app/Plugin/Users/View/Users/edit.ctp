@@ -69,10 +69,8 @@
 			<tr>
 				<td>					
 					<dt><?php echo __d('users', 'Gender'); ?></dt>
-					<dd>
-						<?php 
-							echo $this->Form->input('gender', array(
-							'label' => false, 'class' => 'form-control'));?>
+					<dd>						
+						<?php echo $this->Form->input('gender', array('type' =>'radio', 'options'=>array(0=>'Female', 1 =>'Male'), 'legend' => false, 'div' => false)); ?>
 						&nbsp;
 					</dd>
 				</td>
