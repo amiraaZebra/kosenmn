@@ -123,5 +123,5 @@ CakeLog::config('error', array(
 
 //bi nemsen
 
-Configure::write('App.defaultEmail', 'amiraa.ax@gmail.com');
+Configure::write('App.defaultEmail', '');
 Configure::write('Users.roles', array('admin' => 'Admin', 'registered' => 'Registered'));
