@@ -208,7 +208,7 @@ class UsersController extends UsersAppController {
 			return;
 		}
 
-		$this->Auth->allow('reset', 'verify', 'logout', 'view', 'reset_password', 'login', 'resend_verification', 'contactus', 'add');
+		$this->Auth->allow('reset', 'verify', 'logout', 'reset_password', 'login', 'resend_verification', 'contactus', 'add');
 
 		if (!is_null(Configure::read('Users.allowRegistration')) && !Configure::read('Users.allowRegistration')) {
 			$this->Auth->deny('add');

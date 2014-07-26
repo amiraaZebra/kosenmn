@@ -18,8 +18,6 @@
 
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<?php echo $scripts_for_layout; ?>
@@ -46,11 +44,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<div class="container-fluid">			
 		<div class="row">
 		  <div class="col-xs-6">
-		 	<?php echo $this->Html->link(
-						$this->Html->image('logo3.png', array('alt' => $cakeDescription, 'border' => '0', 'width'=>'180px', 'height'=>'60px' )),
+		 	<?php 
+				$currentAction = $this->params['action'];
+				if($currentAction == 'contactus'){
+					echo $this->Html->link(
+					$this->Html->image('logo3.png', array('border' => '0', 'width'=>'180px', 'height'=>'60px' )),
+						array('controller'=>'users', 'action'=>'login'),
+						array('escape' => false));
+				}else{
+					echo $this->Html->link(
+					$this->Html->image('logo3.png', array('alt' => $cakeDescription, 'border' => '0', 'width'=>'180px', 'height'=>'60px' )),
 						array('controller'=>'users', 'action'=>'contactus'),
-						array('target' => '_blank', 'escape' => false)
-					);
+						array('escape' => false));	
+				}
 			?>
 		  </div>
 		</div>
