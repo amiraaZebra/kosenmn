@@ -1231,6 +1231,8 @@ ol ol {
 }
 .list-unstyled {
   padding-left: 0;
+  margin-left: 10px;
+  text-decoration: none;
   list-style: none;
 }
 .list-inline {
@@ -1241,14 +1243,15 @@ ol ol {
 .list-inline-right {
   padding-right: 0;
   margin-right: 0;
+  margin-top: 10px;
   float:right;
+  text-decoration: none;
   list-style: none;
 }
 
 .list-inline-right > li {
-  display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
+  display: inline-block;  
+  list-style: none;
 }
 
 .list-inline > li {
@@ -2738,7 +2741,7 @@ select[multiple].input-lg {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -2752,6 +2755,7 @@ select[multiple].input-lg {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  width: 100px;
 }
 .btn:focus,
 .btn:active:focus,
