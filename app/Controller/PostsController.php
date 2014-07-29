@@ -27,8 +27,7 @@ class PostsController extends AppController {
 		$this->Post->recursive = 0;
 		//$user=App::Model('User');
 		$this->loadModel('User', 2);
-		$this->set('userlists', $this->User->find('list',array('fields'=>array('User.username'))));
-		
+		$this->set('userlists', $this->User->find('list',array('fields'=>array('User.username'))));		
 		$this->set('posts', $this->paginate());
 	}
 
@@ -48,8 +47,7 @@ class PostsController extends AppController {
 		$this->Post->recursive = 0;
 		//$user=App::Model('User');
 		$this->loadModel('User', 2);
-		$this->set('userlists', $this->User->find('list',array('fields'=>array('User.username'))));
-		
+		$this->set('userlists', $this->User->find('list',array('fields'=>array('User.username'))));		
 		$this->set('posts', $this->paginate());
 	}
 
@@ -104,18 +102,22 @@ class PostsController extends AppController {
 		if (!$this->Post->exists($id)) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-		if ($this->request->is('post') || $this->request->is('put')) {
-		
-			
-			if ($this->Post->save($this->request->data)) {
-				$this->Session->setFlash(__('The post has been saved'));
-				$this->redirect(array('action' => 'index'));
+		$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
+		$chosenPost = $this->Post->find('first', $options);		
+		if($chosenPost['Post']['user_id'] == $this->Auth->user('id')){
+			if ($this->request->is('post') || $this->request->is('put')) {
+				if ($this->Post->save($this->request->data)) {
+					$this->Session->setFlash(__('The post has been saved'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The post could not be saved. Please, try again.'));
+				}
 			} else {
-				$this->Session->setFlash(__('The post could not be saved. Please, try again.'));
+				$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
+				$this->request->data = $this->Post->find('first', $options);
 			}
-		} else {
-			$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
-			$this->request->data = $this->Post->find('first', $options);
+		}else{
+			$this->redirect(array('action' => 'index'));
 		}
 		$users = $this->Post->User->find('list');
 		$this->set(compact('users'));
@@ -133,13 +135,20 @@ class PostsController extends AppController {
 		if (!$this->Post->exists()) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->Post->delete()) {
-			$this->Session->setFlash(__('Post deleted'));
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->Session->setFlash(__('Post was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		
+		$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
+		$chosenPost = $this->Post->find('first', $options);		
+		if($chosenPost['Post']['user_id'] == $this->Auth->user('id')){
+			$this->request->onlyAllow('post', 'delete');
+			if ($this->Post->delete()) {
+				$this->Session->setFlash(__('Post deleted'));
+				$this->redirect(array('action' => 'index'));
+			}
+			$this->Session->setFlash(__('Post was not deleted'));
+			$this->redirect(array('action' => 'index'));	
+		}else{
+			$this->redirect(array('action' => 'index'));	
+		}		
 	}
 	
 		public function beforeFilter() {
@@ -147,6 +156,7 @@ class PostsController extends AppController {
 
 		$this->set('model', $this->modelClass);
 		//$this->Auth->allow('index');		
+		//$this->Security->validatePost = false;
 	}	
 	
 	public function isAuthorized($user = null) {
