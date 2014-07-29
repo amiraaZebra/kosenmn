@@ -126,7 +126,7 @@
 					<dt><?php echo __d('users', 'Kosen year'); ?></dt>
 					<dd>
 						<?php echo $this->Form->input('kosen_year',
-						 array('label' => false, 'class' => 'form-control')); ?>
+						 array('type' => 'number','label' => false, 'class' => 'form-control')); ?>
 						&nbsp;
 					</dd>
 				</td>

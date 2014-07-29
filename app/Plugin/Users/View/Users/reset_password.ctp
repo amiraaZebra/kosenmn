@@ -14,7 +14,7 @@
 		<label for="inputPassword3" class="col-sm-3 control-label">new password</label>
 		<div class="col-sm-9">
 		  <?php
-			  echo $this->Form->input('new_password', array(
+			  echo $this->Form->input('New_password', array(
 				'label' => false,
 				'type' => 'password',
 				'class' => 'form-control',
@@ -24,7 +24,7 @@
 		<br>
 	</div>
 	<div class="form-group">
-		<label for="inputPassword3" class="col-sm-3 control-label">comfirm</label>
+		<label for="inputPassword3" class="col-sm-3 control-label">Comfirm</label>
 		<div class="col-sm-9">
 		  <?php
 			  echo $this->Form->input('confirm_password', array(
@@ -37,7 +37,6 @@
 	</div>
 	<br>
 	<div class="form-group">
-		<label for="inputPassword3" class="col-sm-3 control-label"> </label>
 	    <div class="col-sm-offset-2 col-sm-9">		      
 	      <?php
 				echo $this->Form->submit('Submit',array('class' => 'btn btn-default'));

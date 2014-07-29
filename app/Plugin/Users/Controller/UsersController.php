@@ -283,13 +283,9 @@ class UsersController extends UsersAppController {
 		if($userId===$this->Session->read('Auth.User.id')){
 			try {
 				$result = $this->{$this->modelClass}->edit($userId, $this->request->data);
-				if ($result === true) {
-					
-					
+				if ($result === true) {	
 					$tempUser=$this->User->find('first',array('conditions' => array('User.email'=>$this->Session->read('Auth.User.email'))));
-					$this->Session->write('Auth.User.role',$tempUser['User']['role']);
-					
-					
+					$this->Session->write('Auth.User.role',$tempUser['User']['role']);					
 					$this->Session->setFlash(__d('users', 'User saved'));
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -315,20 +311,37 @@ class UsersController extends UsersAppController {
  * @return void
  */
 	public function admin_index() {
-		$this->Prg->commonProcess();
-		unset($this->{$this->modelClass}->validate['username']);
-		unset($this->{$this->modelClass}->validate['email']);
-		$this->{$this->modelClass}->data[$this->modelClass] = $this->passedArgs;
+		$this->_pluginLoaded('Search');
+		$searchTerm = '';
+		$this->Prg->commonProcess($this->modelClass);
 
-		if ($this->{$this->modelClass}->Behaviors->loaded('Searchable')) {
-			$parsedConditions = $this->{$this->modelClass}->parseCriteria($this->passedArgs);
-		} else {
-			$parsedConditions = array();
+		$by = null;
+		if (!empty($this->request->params['named']['search'])) {
+			$searchTerm = $this->request->params['named']['search'];
+			$by = 'any';
 		}
+		if (!empty($this->request->params['named']['username'])) {
+			$searchTerm = $this->request->params['named']['username'];
+			$by = 'username';
+		}
+		if (!empty($this->request->params['named']['email'])) {
+			$searchTerm = $this->request->params['named']['email'];
+			$by = 'email';
+		}
+		$this->request->data[$this->modelClass]['search'] = $searchTerm;
 
-		$this->_setupAdminPagination();
-		$this->Paginator->settings[$this->modelClass]['conditions'] = $parsedConditions;
-		$this->set('users', $this->Paginator->paginate());
+		$this->Paginator->settings = array(
+			'search',
+			'limit' => 12,
+			'by' => $by,
+			'search' => $searchTerm,
+			'conditions' => array(
+					'AND' => array(
+						$this->modelClass . '.active' => 1,
+						$this->modelClass . '.email_verified' => 1)));
+
+		$this->set('users', $this->Paginator->paginate($this->modelClass));
+		$this->set('searchTerm', $searchTerm);
 	}
 
 /**

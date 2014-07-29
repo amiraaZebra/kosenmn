@@ -22,7 +22,7 @@ class PostsController extends AppController {
 	public $components = array('Search.Prg','Paginator');
     public $presetVars = true;
 
-
+/*
 	public function search() {
 		$this->Post->recursive = 0;
 		//$user=App::Model('User');
@@ -30,7 +30,7 @@ class PostsController extends AppController {
 		$this->set('userlists', $this->User->find('list',array('fields'=>array('User.username'))));		
 		$this->set('posts', $this->paginate());
 	}
-
+*/
 
 	public function find() {
         $this->Prg->commonProcess();

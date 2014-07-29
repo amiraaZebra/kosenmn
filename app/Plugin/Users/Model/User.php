@@ -46,7 +46,7 @@ class User extends UsersAppModel {
  */
 	public $filterArgs = array(
 		'username' => array('type' => 'like'),
-		'email' => array('type' => 'value')
+		//'email' => array('type' => 'value')
 	);
 
 /**
