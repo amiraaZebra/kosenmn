@@ -44,11 +44,10 @@ class PostsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Post->recursive = 0;
-		//$user=App::Model('User');
-		$this->loadModel('User', 2);
-		$this->set('userlists', $this->User->find('list',array('fields'=>array('User.username'))));		
-		$this->set('posts', $this->paginate());
+		$this->Prg->commonProcess();
+        $this->Paginator->settings['conditions'] = $this->Post->parseCriteria($this->Prg->parsedParams());
+        $this->set('posts', $this->Paginator->paginate());
+		$this->set('userlists', $this->Post->User->find('list',array('fields' => 'User.username')));
 	}
 
 /**

@@ -233,13 +233,40 @@ class UsersController extends UsersAppController {
 		$this->Auth->loginAction = array('admin' => false, 'plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');
 	}
 
-/**
- * Simple listing of all users
- *
- * @return void
- */
+
 	public function index() {
+		$this->_pluginLoaded('Search');
+
+		$searchTerm = '';
+		$this->Prg->commonProcess($this->modelClass);
+
+		$by = null;
+		if (!empty($this->request->params['named']['search'])) {
+			$searchTerm = $this->request->params['named']['search'];
+			$by = 'any';
+		}
+		if (!empty($this->request->params['named']['username'])) {
+			$searchTerm = $this->request->params['named']['username'];
+			$by = 'username';
+		}
+		if (!empty($this->request->params['named']['email'])) {
+			$searchTerm = $this->request->params['named']['email'];
+			$by = 'email';
+		}
+		$this->request->data[$this->modelClass]['search'] = $searchTerm;
+
+		$this->Paginator->settings = array(
+			'search',
+			'limit' => 12,
+			'by' => $by,
+			'search' => $searchTerm,
+			'conditions' => array(
+					'AND' => array(
+						$this->modelClass . '.active' => 1,
+						$this->modelClass . '.email_verified' => 1)));
+
 		$this->set('users', $this->Paginator->paginate($this->modelClass));
+		$this->set('searchTerm', $searchTerm);
 	}
 
 /**
@@ -548,47 +575,7 @@ class UsersController extends UsersAppController {
 		$this->set('allowRegistration', (is_null($allowRegistration) ? true : $allowRegistration));
 	}
 
-/**
- * Search - Requires the CakeDC Search plugin to work
- *
- * @throws MissingPluginException
- * @return void
- * @link https://github.com/CakeDC/search
- */
-	public function search() {
-		$this->_pluginLoaded('Search');
 
-		$searchTerm = '';
-		$this->Prg->commonProcess($this->modelClass);
-
-		$by = null;
-		if (!empty($this->request->params['named']['search'])) {
-			$searchTerm = $this->request->params['named']['search'];
-			$by = 'any';
-		}
-		if (!empty($this->request->params['named']['username'])) {
-			$searchTerm = $this->request->params['named']['username'];
-			$by = 'username';
-		}
-		if (!empty($this->request->params['named']['email'])) {
-			$searchTerm = $this->request->params['named']['email'];
-			$by = 'email';
-		}
-		$this->request->data[$this->modelClass]['search'] = $searchTerm;
-
-		$this->Paginator->settings = array(
-			'search',
-			'limit' => 12,
-			'by' => $by,
-			'search' => $searchTerm,
-			'conditions' => array(
-					'AND' => array(
-						$this->modelClass . '.active' => 1,
-						$this->modelClass . '.email_verified' => 1)));
-
-		$this->set('users', $this->Paginator->paginate($this->modelClass));
-		$this->set('searchTerm', $searchTerm);
-	}
 
 /**
  * Common logout action
