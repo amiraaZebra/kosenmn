@@ -1240,13 +1240,11 @@ ol ol {
   margin-left: -5px;
   list-style: none;
 }
-.list-inline-right {
-  padding-right: 0;
-  margin-right: 0;
-  margin-top: 10px;
+.btn-right {
+  margin-right:20px;
+  margin-bottom:20px;
   float:right;
-  text-decoration: none;
-  list-style: none;
+  display: block:
 }
 
 .list-inline-right > li {
@@ -2739,7 +2737,7 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 0px 0px;
   margin-bottom: 0;
   font-size: 12px;
   font-weight: normal;
@@ -2755,7 +2753,6 @@ select[multiple].input-lg {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  width: 100px;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3272,6 +3269,7 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  margin-left: 20px;
 }
 .btn-group > .btn,
 .btn-group-vertical > .btn {
@@ -5046,6 +5044,14 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+.my-panel-footer {
+  padding: 10px 15px;
+  margin-top: 30px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
 .panel > .list-group {
   margin-bottom: 0;
 }
@@ -6229,4 +6235,9 @@ button.close {
     text-align:left;
     /* inline-block space fix */
     margin-right:-4px;
+}
+
+#menubutton button>a{
+	text-decoration: none;
+	display: block;	
 }

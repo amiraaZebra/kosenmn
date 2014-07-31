@@ -25,28 +25,36 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div class="row">
-			<div class="col-xs-10">
-				<?php echo $this->Html->image('tempHeaderPic.jpg',array('class'=>'img-responsive')); ?>
+			<div class="col-xs-12 page-header">
+				<?php
+					echo $this->Html->link($this->Html->image('tempHeaderPic.jpg',array('class'=>'img-responsive')),
+					array('controller' => 'users', 'action' => 'index'),array('escape'=>false)); 
+				?>
 			</div>    		    
     	</div>
 		<div class="row">
 			<!--(create menu)-->
-			<div class="col-xs-10 bg-warning">
+			<div class="col-xs-12">
 				<?php echo $this->element('myMenu'); ?>
 			</div>
 		</div>	
 		<div class="row">
-			<div class="col-xs-2 bg-success">
+			<div class="col-xs-2">
 				<?php echo $this->Session->flash(); ?>
 				<?php echo $this->element('link_list')?>
 			</div>
-  			<div class="col-xs-6">
-  				<?php echo $this->fetch('content'); ?>
+  			<div class="col-xs-6 panel panel-default">
+  				<div class="panel-body">
+  					<?php echo $this->fetch('content'); ?>
+  				</div>
   			</div>
-  			<div class="col-xs-2 bg-danger">
+  			<div class="col-xs-4">
   				<?php echo $this->element('link_list')?>
   			</div>  			  			
-		</div>		
+		</div>
+		<div class="row my-panel-footer">
+			<h6 class="text-center">KosenClub 2014.</h6>
+		</div>				
 	</div>	
 </body>
 </html>

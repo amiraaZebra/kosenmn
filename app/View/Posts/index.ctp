@@ -28,25 +28,23 @@
 		</div>
 	</div>
 	
-	    <div class="col-sm-offset-2 col-sm-10">		      
-	      <?php
-			echo $this->Form->submit('Search Post',array('class' => 'btn btn-default'));
-	      	echo $this->Form->end();
-	      ?>		      
-	    </div>
+    <div class="col-xs-offset-6 col-xs-10">		      
+      <?php
+		echo $this->Form->submit('Search Post',array('class' => 'btn btn-default'));
+      	echo $this->Form->end();
+      ?>		      
+    </div>
+
+
 	
-	
-		
-		<table class="table table-bordered table-striped">
-		<tr>
-			
-				<th><?php echo $this->Paginator->sort('title'); ?></th>
-				<th><?php echo $this->Paginator->sort('text'); ?></th>
-				<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-				<th><?php echo $this->Paginator->sort('created'); ?></th>		
-				
+	<table class="table table-bordered table-striped">
+		<tr>		
+			<th><?php echo $this->Paginator->sort('title'); ?></th>
+			<th><?php echo $this->Paginator->sort('text'); ?></th>
+			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('created'); ?></th>			
 		</tr>
-		<?php foreach (array_reverse($posts) as $post): ?>
+	<?php foreach (array_reverse($posts) as $post): ?>
 		<tr>
 			
 			
@@ -57,21 +55,22 @@
 			</td>
 			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['created'])); ?>&nbsp;</td>			
 		</tr>
-	<?php endforeach; ?>
-		</table>
-		
-		<p>
+		<?php endforeach; ?>
+	</table>
+	
+	<p>
 		<?php
 		echo $this->Paginator->counter(array(
 		'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
 		));
-		?>	</p>
-		<div class="paging">
-		<?php
-			echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-			echo $this->Paginator->numbers(array('separator' => ''));
-			echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-		?>
+		?>	
+	</p>
+	<div class="paging">
+	<?php
+		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+	?>
 	</div>
 </div>
 
