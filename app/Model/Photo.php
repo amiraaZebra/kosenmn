@@ -44,9 +44,9 @@ class Photo extends AppModel {
 	'Uploader.FileValidation' => array(
 		'pic' => array(
 			
-			'maxWidth' => array('value' => 2000),
+			'maxWidth' => array('value' => 6000),
 			
-			'maxHeight' => array('value' => 2000, 'error' => 'File is too big', ),
+			'maxHeight' => array('value' => 6000, 'error' => 'File is too big', ),
 			'extension' => array('gif', 'jpg', 'png', 'jpeg'),
 			'type' => 'image',
 			'filesize' => 5242880,
