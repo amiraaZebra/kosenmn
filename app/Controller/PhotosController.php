@@ -17,6 +17,7 @@ class PhotosController extends AppController {
  *
  * @return void
  */
+  
 	public function index() {
 		$this->set('allAlbum' , $this->Photo->find('list',array(
 			'fields' => array('Photo.album', 'Photo.album'),
