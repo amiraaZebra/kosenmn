@@ -81,7 +81,7 @@ class AppController extends Controller {
 	  
 	    //ログイン状態によりレイアウト変更  
 	    if ($this->Auth->user()) {  
-	        $this->layout = 'default_login_after_ver02';  
+	        $this->layout = 'default_login_after';  
         } else {  
             $this->layout = 'default';  
         }  

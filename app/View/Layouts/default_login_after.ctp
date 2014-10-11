@@ -72,8 +72,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			
 				<ul class="pull-right logout">					
 					
-					<li><?php echo $this->Html->link(__('Admin'), array(
-						'controller' => 'pages', 'action' => 'admin')); ?></li>
+					<li><?php echo $this->Html->link(__('Admin tools'), array(
+						'controller' => 'users', 'action' => 'admin_tools')); ?></li>
 					<li><?php echo $this->Html->link(__('Logout'), array('plugin'=>'users', 
 						'controller' => 'users', 'action' => 'logout')); ?></li>
 				</ul>

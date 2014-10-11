@@ -282,6 +282,14 @@ class UsersController extends UsersAppController {
 		
 	}
 
+	public function admin_tools() {
+		$user = $this->{$this->modelClass}->read(null, $this->Auth->user('id'));
+		$this->set('user', $user);
+		
+		
+		
+	}
+
 /**
  * Shows a users profile
  *

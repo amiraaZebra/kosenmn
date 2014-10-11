@@ -1,15 +1,17 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
+		<li><?php echo $this->Html->link(__('My Profile'), array(
+			'plugin'=>'users', 'controller'=>'users', 'action' => 'view', $this->Session->read('Auth.User.id'))); ?></li>
+		<li><?php echo $this->Html->link(__('Edit Profile'), array(
+			'plugin'=>'users', 'controller'=>'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?></li>
+		<li><?php echo $this->Html->link(__('Add User'), array(
+			'controller' => 'users', 'action' => 'admin_add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Add Photo'), array(
-			'controller' => 'photos', 'action' => 'add')); ?></li>
+			'plugin' => NULL, 'controller' => 'photos', 'action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('Add File'), array(
-			'controller' => 'kakomons', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group'), array(
-			'controller' => 'groups', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array(
-			'controller' => 'users', 'action' => 'add')); ?> </li>
+			'plugin' => NULL, 'controller' => 'kakomons', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Post'), array(
-			'controller' => 'posts', 'action' => 'add')); ?> </li>
+			'plugin' => NULL, 'controller' => 'posts', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
