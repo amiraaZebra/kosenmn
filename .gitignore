@@ -1,6 +1,9 @@
 # User specific & automatically generated files #
 #################################################
 /app/Config/database.php
+/app/tmp
+/app/webroot/img/photo_img
+/app/webroot/img/post_img
 
 # OS generated files #
 ######################
