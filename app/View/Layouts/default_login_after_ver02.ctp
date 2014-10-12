@@ -24,7 +24,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 </head>
 
 <body class="bodyClass">
-	<div id="container">
+	<div id="container" class="container">
 		<div class="row">
 			<div class="col-xs-12 page-header">
 				<?php
