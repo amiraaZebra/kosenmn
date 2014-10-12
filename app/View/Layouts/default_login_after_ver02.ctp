@@ -48,10 +48,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
   					<?php echo $this->fetch('content'); ?>
   				</div>
   			</div>
-  			<div class="col-xs-4">
-  				<?
-  					//php echo $this->element('link_list')
-  				?>
+  			<div class="col-xs-4">  				
   				end gazriin zurag, news ursah ch ym uu tiimerhuu ym baina
   			</div>  			  			
 		</div>
