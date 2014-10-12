@@ -53,8 +53,7 @@ class AppController extends Controller {
     
   	public function restoreLoginFromCookie() {  
     	$this->Cookie->name = 'Users';  
-    	$cookie = $this->Cookie->read('rememberMe');  
-	      
+    	$cookie = $this->Cookie->read('rememberMe');	      
 	    if (!empty($cookie) && !$this->Auth->user()) {  
 	        $data['User'][$this->Auth->fields['username']] = $cookie[$this->Auth->fields['username']];  
 	        $data['User'][$this->Auth->fields['password']] = $cookie[$this->Auth->fields['password']];  

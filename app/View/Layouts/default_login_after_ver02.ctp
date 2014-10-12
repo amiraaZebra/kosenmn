@@ -22,7 +22,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		
 	?>
 </head>
-<body>
+
+<body class="bodyClass">
 	<div id="container">
 		<div class="row">
 			<div class="col-xs-12 page-header">
@@ -58,3 +59,4 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div>	
 </body>
 </html>
+
