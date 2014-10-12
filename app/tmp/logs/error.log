@@ -10992,3 +10992,59 @@ Request URL: /myDocs/aptana/kosenmn/js/jquery.js
 Stack Trace:
 #0 C:\xampp\htdocs\myDocs\aptana\kosenmn\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-10-12 05:42:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /kosenmn/js/jquery.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/kosenmn/app/webroot/index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-12 05:42:10 Error: [CakeException] $controller does not implement an isAuthorized() method.
+Request URL: /kosenmn/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Controller/Component/Auth/BaseAuthorize.php(74): ControllerAuthorize->controller(Object(PagesController))
+#1 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Controller/Component/AuthComponent.php(497): BaseAuthorize->__construct(Object(ComponentCollection), Array)
+#2 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Controller/Component/AuthComponent.php(459): AuthComponent->constructAuthorize()
+#3 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Controller/Component/AuthComponent.php(307): AuthComponent->isAuthorized(Array)
+#4 [internal function]: AuthComponent->startup(Object(PagesController))
+#5 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#8 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#10 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Applications/MAMP/htdocs/kosenmn/app/webroot/index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-10-12 05:42:47 Error: [MissingActionException] Action UsersController::search() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'search',
+)
+Request URL: /kosenmn/users/search
+Stack Trace:
+#0 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/kosenmn/app/webroot/index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-12 05:42:49 Error: [MissingActionException] Action UsersController::search() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'search',
+)
+Request URL: /kosenmn/users/search
+Stack Trace:
+#0 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/kosenmn/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/kosenmn/app/webroot/index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-12 05:43:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /kosenmn/js/jquery.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/kosenmn/app/webroot/index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
