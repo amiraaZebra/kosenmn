@@ -8,10 +8,10 @@
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%; 
 }
 body {
-  margin: 0;
+  margin: 0;  
 }
 article,
 aside,
@@ -5049,6 +5049,7 @@ a.list-group-item-danger.active:focus {
   margin-top: 30px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
+  width: 100%;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }

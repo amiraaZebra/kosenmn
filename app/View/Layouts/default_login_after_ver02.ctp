@@ -23,10 +23,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 
-<body class="bodyClass">
+<body>
 	<div id="container">
 		<div class="row">
-			<div class="col-xs-12 page-header">
+			<div class="col-md-12 page-header">
 				<?php
 					echo $this->Html->link($this->Html->image('tempHeaderPic.jpg',array('class'=>'img-responsive')),
 					array('controller' => 'users', 'action' => 'index'),array('escape'=>false)); 
@@ -35,26 +35,28 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     	</div>
 		<div class="row">
 			<!--(create menu)-->
-			<div class="col-xs-12">
+			<div class="col-md-12">
 				<?php echo $this->element('myMenu'); ?>
 			</div>
 		</div>	
 		<div class="row">
-			<div class="col-xs-2">
+			<div class="col-md-2 ">
 				<?php echo $this->Session->flash(); ?>
 				<?php echo $this->element('link_list')?>
 			</div>
-  			<div class="col-xs-6 panel panel-default">
+  			<div class="col-md-6 panel panel-default">
   				<div class="panel-body">
   					<?php echo $this->fetch('content'); ?>
   				</div>
   			</div>
-  			<div class="col-xs-4">
+  			<div class="col-md-4">
   				<?php echo $this->element('actions'); ?>  				
   			</div>  			  			
 		</div>
-		<div class="row my-panel-footer">
-			<h6 class="text-center">KosenClub 2014.</h6>
+		<div class="row my-panel-footer">			
+			<div class="col-md-12">
+				<h6 class="text-center">KosenClub 2014.</h6>  							
+  			</div>
 		</div>				
 	</div>	
 </body>
