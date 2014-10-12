@@ -1,6 +1,6 @@
 <head>
 	<?php
-		echo $this->Html->css('photos.styles');
+		//echo $this->Html->css('photos.styles');
 	?>
 </head>
 
