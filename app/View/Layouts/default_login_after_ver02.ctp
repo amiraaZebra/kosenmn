@@ -40,18 +40,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			</div>
 		</div>	
 		<div class="row">
-			<div class="col-xs-2">
-				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->element('link_list')?>
-			</div>
-  			<div class="col-xs-6 panel panel-default">
+			<div class="col-xs-12 panel panel-default">
   				<div class="panel-body">
   					<?php echo $this->fetch('content'); ?>
   				</div>
   			</div>
-  			<div class="col-xs-4">
-  				<?php echo $this->element('actions'); ?>  				
-  			</div>  			  			
+  			 			  			
 		</div>
 		<div class="row my-panel-footer">
 			<h6 class="text-center">KosenClub 2014.</h6>
