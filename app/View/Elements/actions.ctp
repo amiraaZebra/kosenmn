@@ -6,4 +6,6 @@
 	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Add Photo'), array('plugin' => NULL, 'controller' => 'photos', 'action' => 'add')); ?></button>
 	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Add File'), array('plugin' => NULL, 'controller' => 'kakomons', 'action' => 'add')); ?> </button>
 	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('New Post'), array('plugin' => NULL, 'controller' => 'posts', 'action' => 'add')); ?> </button>
+	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Post View'), array('plugin' => NULL, 'controller' => 'posts', 'action' => 'index_admin')); ?> </button>
+
 </div>

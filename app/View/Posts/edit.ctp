@@ -1,16 +1,7 @@
-<?php
-/**
- * Copyright 2010 - 2013, Cake Development Corporation (http://cakedc.com)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright 2010 - 2013, Cake Development Corporation (http://cakedc.com)
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-?>
-<div class="users form">
-	
+
+<div class="posts form">
+	<?php	echo $this->Html->script('ckeditor/ckeditor', array('inline' => false)); ?>
+
 	<?php echo $this->Form->create($model); ?>
 		<fieldset>
 			<legend><?php echo __d('posts', 'Edit Post'); ?></legend>
@@ -27,7 +18,8 @@
 				echo $this->Form->input('title', array(
 					'label' => __d('posts', 'title')));
 				echo $this->Form->input('text', array(
-					'label' => __d('posts', 'text')));
+					'label' => __d('posts', 'text'),
+					'class' => 'ckeditor'));
 					                
 			?>
 		</fieldset>

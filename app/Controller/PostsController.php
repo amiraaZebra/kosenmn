@@ -47,6 +47,12 @@ class PostsController extends AppController {
 		$this->Prg->commonProcess();
         $this->Paginator->settings['conditions'] = $this->Post->parseCriteria($this->Prg->parsedParams());
         $this->set('posts', $this->Paginator->paginate());
+	}
+
+	public function index_admin() {
+		$this->Prg->commonProcess();
+        $this->Paginator->settings['conditions'] = $this->Post->parseCriteria($this->Prg->parsedParams());
+        $this->set('posts', $this->Paginator->paginate());
 		$this->set('userlists', $this->Post->User->find('list',array('fields' => 'User.username')));
 	}
 

@@ -1,0 +1,12 @@
+
+.table-overflow-hide td{
+	max-width: 10px;
+	max-height: 10px;
+	overflow: hidden;
+}
+
+.post-text{
+	max-height: 200px;
+	width: 100%;
+	overflow: hidden;
+}
