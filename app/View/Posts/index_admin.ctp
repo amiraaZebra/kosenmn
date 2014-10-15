@@ -40,28 +40,36 @@
 <div class="row">
 	
 	<table class="table table-bordered table-striped table-overflow-hide">
-		<tr>		
-			<th class="col-xs-2"><?php echo $this->Paginator->sort('title'); ?></th>
-			<th class="col-xs-6"><?php echo $this->Paginator->sort('text'); ?></th>
-			<th class="col-xs-2"><?php echo $this->Paginator->sort('user_id'); ?></th>
-			<th class="col-xs-2"><?php echo $this->Paginator->sort('created'); ?></th>			
+		<tr>
+			<th class="col-xs-1"><?php echo $this->Paginator->sort('id'); ?></th>
+			<th class="col-xs-1"><?php echo $this->Paginator->sort('title'); ?></th>
+			<th class="col-xs-7"><?php echo $this->Paginator->sort('text'); ?></th>
+			<th class="col-xs-1"><?php echo $this->Paginator->sort('user_id'); ?></th>
+			<th class="col-xs-1"><?php echo $this->Paginator->sort('created'); ?></th>
+			<th class="col-xs-1"><?php echo $this->Paginator->sort('modified'); ?></th>
+			<th class="col-xs-1">Actions</th>		
 		</tr>
 	<?php foreach (array_reverse($posts) as $post): ?>
 		<tr>
 			
-			
+			<td><?php echo $this->Html->link($post['Post']['id'], array(
+						'controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
+			</td>
 			<td><?php echo $this->Html->link($post['Post']['title'], array(
 						'controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array(	
-						'action' => 'edit', $post['Post']['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array(
-						'action' => 'delete', $post['Post']['id']), null, __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?>
 			</td>
 			<td><div class="post-text"><?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;</div></td>
 			<td>
 				<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
 			</td>
-			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['created'])); ?>&nbsp;</td>			
+			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['created'])); ?>&nbsp;</td>
+			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['modified'])); ?>&nbsp;</td>
+			<td>
+				<?php echo $this->Html->link(__('Edit'), array(	
+						'action' => 'edit', $post['Post']['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array(
+						'action' => 'delete', $post['Post']['id']), null, __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?>
+			</td>			
 		</tr>
 		<?php endforeach; ?>
 	</table>

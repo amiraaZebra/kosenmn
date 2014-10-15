@@ -14,8 +14,11 @@
     				<?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;
     			</div>
   			</div>
-  			<div class="panel-footer">
-  				<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
+  			<div class="panel-footer clearfix">
+  				<div class="pull-right">
+  					<span class="glyphicon glyphicon-user"></span>
+  					<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
+  				</div>
   			</div>
 		</div>
 	</div>
