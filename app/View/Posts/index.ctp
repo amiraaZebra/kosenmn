@@ -5,12 +5,17 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
     			<h3 class="panel-title">
-    				<?php echo $this->Html->link($post['Post']['title'], array(
-    						'controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
+    				<?php echo $this->Html->link($post['Post']['title']."  ".'<span class="glyphicon glyphicon-folder-open"></span>', array(
+    						'controller' => 'posts', 'action' => 'view', $post['Post']['id']),
+    						array('escape'=>false)); ?>
+    				<div class="pull-right">
+  						<?php echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?>
+  					</div>
 				</h3>
+				
   			</div>
 			<div class="panel-body">
-    			<div class="post-text">
+    			<div class="post-index-text">
     				<?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;
     			</div>
   			</div>

@@ -58,12 +58,12 @@
 			<td><?php echo $this->Html->link($post['Post']['title'], array(
 						'controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
 			</td>
-			<td><div class="post-text"><?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;</div></td>
+			<td><div class="post-index-text"><?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;</div></td>
 			<td>
 				<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
 			</td>
-			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['created'])); ?>&nbsp;</td>
-			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['modified'])); ?>&nbsp;</td>
+			<td><?php echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?>&nbsp;</td>
+			<td><?php echo h($this->Time->format('Y.m.d',$post['Post']['modified'])); ?>&nbsp;</td>
 			<td>
 				<?php echo $this->Html->link(__('Edit'), array(	
 						'action' => 'edit', $post['Post']['id'])); ?>

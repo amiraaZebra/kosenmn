@@ -5,10 +5,15 @@
 	overflow: hidden;
 }
 
-.post-text{
+.post-index-text{
 	max-height: 200px;
 	width: 100%;
 	overflow: hidden;
+}
+
+.post-view-text{
+	width: 100%;
+	overflow: auto;
 }
 
 th a.asc:after {
