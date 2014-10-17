@@ -1,10 +1,10 @@
 <div class="row">
-	<?php 
-	echo $this->Form->create('Post', array('action' => 'index','action' => 'index',
+	<div class="panel panel-default">
+  		<div class="panel-body">
+	<?php  echo $this->Form->create('Post', array('action' => 'index_admin',
 			'class' => 'form-horizontal',
 			'role' => 'form',
-			));
-			
+		));
 	?>
 	<div class="form-group">
 		<label for="inputEmail3" class="col-sm-2 control-label">Title</label>
@@ -30,10 +30,13 @@
 	
     <div class="col-xs-offset-6 col-xs-10">		      
       <?php
-		echo $this->Form->submit('Search Post',array('class' => 'btn btn-default'));
+		echo $this->Form->submit('Search Post',array('class' => 'btn btn-info btn-sm'));
       	echo $this->Form->end();
       ?>		      
+      &nbsp;
     </div>
+    </div>
+	</div>
 
 </div>
 
