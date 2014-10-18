@@ -1,0 +1,24 @@
+
+.table-overflow-hide td{
+	max-width: 10px;
+	max-height: 10px;
+	overflow: hidden;
+}
+
+.post-index-text{
+	max-height: 200px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.post-view-text{
+	width: 100%;
+	overflow: auto;
+}
+
+th a.asc:after {
+	content: ' ⇣';
+}
+th a.desc:after {
+	content: ' ⇡';
+}

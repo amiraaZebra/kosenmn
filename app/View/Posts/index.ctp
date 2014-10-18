@@ -1,63 +1,35 @@
-<div>
-	<?php 
-	echo $this->Form->create('Post', array('action' => 'index','action' => 'index',
-			'class' => 'form-horizontal',
-			'role' => 'form',
-			));
-			
-	?>
-	<div class="form-group">
-		<label for="inputEmail3" class="col-sm-2 control-label">Title</label>
-		<div class="col-sm-10">
-		  <?php
-			  echo $this->Form->input('title', array(
-				'label' => false,
-				'class' => 'form-control'));
-		  ?>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="inputEmail3" class="col-sm-2 control-label">Username</label>
-		<div class="col-sm-10">
-		  <?php
-			  echo $this->Form->input('user_id', array(
-				'label' => false,
-				'class' => 'form-control',
-				'options'=>$userlists));
-		  ?>
-		</div>
-	</div>
-	
-    <div class="col-xs-offset-6 col-xs-10">		      
-      <?php
-		echo $this->Form->submit('Search Post',array('class' => 'btn btn-default'));
-      	echo $this->Form->end();
-      ?>		      
-    </div>
 
-
-	
-	<table class="table table-bordered table-striped">
-		<tr>		
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('text'); ?></th>
-			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>			
-		</tr>
+<div class="row">
 	<?php foreach (array_reverse($posts) as $post): ?>
-		<tr>
-			
-			
-			<td><?php echo $this->Html->link($post['Post']['title'], array('controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?></td>
-			<td><?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;</td>
-			<td>
-				<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
-			</td>
-			<td><?php echo h($this->Time->format('y-m-d',$post['Post']['created'])); ?>&nbsp;</td>			
-		</tr>
-		<?php endforeach; ?>
-	</table>
-	
+	<div class="col-xs-8 col-xs-offset-2">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+    			<h3 class="panel-title">
+    				<?php echo $this->Html->link($post['Post']['title']."  ".'<span class="glyphicon glyphicon-folder-open"></span>', array(
+    						'controller' => 'posts', 'action' => 'view', $post['Post']['id']),
+    						array('escape'=>false)); ?>
+    				<div class="pull-right">
+  						<?php echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?>
+  					</div>
+				</h3>
+				
+  			</div>
+			<div class="panel-body">
+    			<div class="post-index-text">
+    				<?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;
+    			</div>
+  			</div>
+  			<div class="panel-footer clearfix">
+  				<div class="pull-right">
+  					<span class="glyphicon glyphicon-user"></span>
+  					<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
+  				</div>
+  			</div>
+		</div>
+	</div>
+	<?php endforeach; ?>
+</div>
+<div class="row">
 	<p>
 		<?php
 		echo $this->Paginator->counter(array(

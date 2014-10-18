@@ -14,6 +14,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 //		echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('zoloo');
 		echo $this->Html->script('jquery');
 
 		echo $this->fetch('meta');
@@ -22,7 +23,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 
-<body>
+<body class="bodyClass">
+
 	<div id="container" class="container">
 		<div class="row">
 			<div class="col-sm-12 page-header">
@@ -39,16 +41,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			</div>
 		</div>	
 		<div class="row">
-			<div class="col-sm-3">
-				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->element('link_list')?>
-			</div>
-  			<div class="col-sm-6 panel panel-default">
-  				<?php echo $this->fetch('content'); ?>
+
+			<div class="col-xs-12 panel panel-default">
+  				<div class="panel-body">
+  					<?php echo $this->fetch('content'); ?>
+  				</div>
   			</div>
-  			<div class="col-sm-3">
-  				<?php echo $this->element('actions'); ?>  				
-  			</div>  			  			
+  			 			  			
 		</div>
 		<div class="row my-panel-footer">			
 			<div class="col-sm-12">
