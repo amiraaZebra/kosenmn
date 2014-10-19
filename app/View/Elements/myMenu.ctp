@@ -15,7 +15,7 @@
 		<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Files'), array('plugin'=>NULL, 'controller'=>'kakomons', 'action' => 'index')); ?></button>
 		<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Logout'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'logout')); ?></button>
 	</div>
-	<?php debug($this->here); ?>
+	<?php //debug($this->here); ?>
 	
 <?php }else{ ?>
 	<div id="menubutton" class="btn-group btn-group-lg">

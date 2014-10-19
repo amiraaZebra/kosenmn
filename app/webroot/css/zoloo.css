@@ -22,3 +22,14 @@ th a.asc:after {
 th a.desc:after {
 	content: ' ⇡';
 }
+
+.hideOverflow
+{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.noPadding{
+	padding: 0;
+}
