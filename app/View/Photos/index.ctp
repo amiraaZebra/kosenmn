@@ -4,8 +4,8 @@
 	?>
 </head>
 
-<div class="photos index">
-	<h2><?php echo __('Albums'); ?></h2>
+<div class="row">
+	<h2><?php echo __('Зургийн цомог'); ?></h2>
 	
 	<?php
 		

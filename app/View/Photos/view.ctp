@@ -10,6 +10,12 @@
 	?>
 </head>
 
+<div class="row">
+  <div class="col-xs-offset-1">
+    <?php echo $this->Html->link('<span class="glyphicon glyphicon-arrow-left"></span>'."Back to Albums", array(
+                'controller' => 'photos', 'action' => 'index'), array('escape'=>false)); ?>
+  </div>
+</div>
 <div class="photos" id="MainContent">
 	
 	<?php $this->Html->image('log.png', array('alt' => 'logo', 'url'=>'/'));	?>

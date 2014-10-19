@@ -1,5 +1,5 @@
 <div id="menubutton" class="btn-group btn-group-vertical btn-group-lg">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Admin tools'); ?></h3>
 	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('My Profile'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'view', $this->Session->read('Auth.User.id'))); ?></button>
 	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Edit Profile'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?></button>
 	<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Add User'), array('controller' => 'users', 'action' => 'admin_add')); ?> </button>
