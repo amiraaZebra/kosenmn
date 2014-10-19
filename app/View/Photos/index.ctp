@@ -1,8 +1,3 @@
-<head>
-	<?php
-		//echo $this->Html->css('photos.styles');
-	?>
-</head>
 
 <div class="row">
 
