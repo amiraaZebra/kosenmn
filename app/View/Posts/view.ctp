@@ -1,5 +1,11 @@
-<div class="row">
 
+<div class="row">
+  <div class="col-xs-offset-1">
+    <?php echo $this->Html->link('<span class="glyphicon glyphicon-arrow-left"></span>'."Back to Post", array(
+                'controller' => 'posts', 'action' => 'index'), array('escape'=>false)); ?>
+  </div>
+</div>
+<div class="row">
 
 	<div class="col-xs-8 col-xs-offset-2">
 		<div class="panel panel-info">

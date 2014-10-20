@@ -15,10 +15,7 @@ class KakomonsController extends AppController {
  * @return void
  */
 	public function index() {
-		
 
-		
-		
 		if (!empty($this->params['url']['university'])){
 			if (!empty($this->params['url']['gakubu'])){
 				if (!empty($this->params['url']['year'])){
@@ -27,8 +24,43 @@ class KakomonsController extends AppController {
 						'Kakomon.university' => $this->params['url']['university'],
 						'Kakomon.gakubu' => $this->params['url']['gakubu'],
 						'Kakomon.year' => $this->params['url']['year'])));
-					
-					
+						
+				}
+				else{
+					$this->set('year_list', $this->Kakomon->find('list',array(
+						'fields' => array('Kakomon.year'),
+						'conditions' => array(
+							'Kakomon.university' => $this->params['url']['university'],
+							'Kakomon.gakubu' => $this->params['url']['gakubu']),
+						'group' => 'Kakomon.year')));
+				}
+			}
+			else{
+				
+				$this->set('gakubu_list', $this->Kakomon->find('list',array(
+					'fields' => array('Kakomon.gakubu'),
+					'conditions' => array('Kakomon.university' => $this->params['url']['university']),
+					'group' => 'Kakomon.gakubu')));
+			}
+		}
+		else{
+			$this->set('university_list', $this->Kakomon->find('list',array(
+				'fields' => array('Kakomon.university'),
+				'group' => 'Kakomon.university')));
+		}
+	}
+
+	public function index_admin() {
+
+		if (!empty($this->params['url']['university'])){
+			if (!empty($this->params['url']['gakubu'])){
+				if (!empty($this->params['url']['year'])){
+					$this->Kakomon->recursive = 0;
+					$this->set('kakomons', $this->paginate(array(
+						'Kakomon.university' => $this->params['url']['university'],
+						'Kakomon.gakubu' => $this->params['url']['gakubu'],
+						'Kakomon.year' => $this->params['url']['year'])));
+						
 				}
 				else{
 					$this->set('year_list', $this->Kakomon->find('list',array(

@@ -1,10 +1,12 @@
-<div class="photos add">
-<?php echo $this->Form->create('Photo', array('type' => 'file')); ?>
-	<fieldset>
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-2">
+		<?php echo $this->Form->create('Photo', array('type' => 'file', 'role' =>'form')); ?>
+	
 		<legend><?php echo __('Add Photo'); ?></legend>
 		 
 		<!--<input name="data[]" id="files" type="file" multiple="multiple">-->
-		<?php
+		<div class="form-group">
+			<?php
 			echo $this->Form->input('pic', array(
 				'name' => 'data[]',
 				'id' => 'files',
@@ -12,22 +14,29 @@
 				'multiple' => 'multiple',
 				'label' => 'Upload photos'
 			));
-		?>
+			?>
 		<output id="list"></output>
+		</div>
+		<div class="form-group">
 		
-		
-		<?php
+			<?php
 			echo $this->Form->input('album_select', array(
     			'options' => $album_options,
     			'empty' => '(choose)',
-				'label' => 'Album'));
+				'label' => 'Album',
+				'class' => 'form-control'));
+			?>
+		</div>
+		<div class="form-group">	
+			<?php
 			echo $this->Form->input('album',array(
-				'label' => 'New Album'
-			)); 
-
-		?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+				'label' => 'New Album',
+				'class' => 'form-control'
+			));
+			?>
+		</div>
+		<?php echo $this->Form->submit('Add', array('class' => 'btn btn-sm btn-default')); ?>
+	</div>
 </div>
 
 <script>
