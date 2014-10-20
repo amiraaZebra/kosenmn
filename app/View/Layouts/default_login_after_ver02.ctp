@@ -38,7 +38,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<?php echo $this->element('myMenu'); ?>
 				</div>
 
-				<div class="panel-body">
+				<div class="panel-body homePanel">
   					<?php echo $this->fetch('content'); ?>
   				</div>
 

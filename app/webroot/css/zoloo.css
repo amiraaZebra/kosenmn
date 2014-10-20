@@ -33,3 +33,7 @@ th a.desc:after {
 .noPadding{
 	padding: 0;
 }
+
+.homePanel{
+	min-height: 90%;
+}
