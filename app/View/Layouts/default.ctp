@@ -48,7 +48,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				$currentAction = $this->params['action'];
 				if($currentAction == 'contactus'){
 					echo $this->Html->link(
-					$this->Html->image('logo3.png', array('border' => '0', 'width'=>'180px', 'height'=>'60px' )),
+					$this->Html->image('logo3.png', array('alt'=>'Kosen Club', 'border' => '0', 'width'=>'180px', 'height'=>'60px' )),
 						array('controller'=>'users', 'action'=>'login'),
 						array('escape' => false));
 				}else{

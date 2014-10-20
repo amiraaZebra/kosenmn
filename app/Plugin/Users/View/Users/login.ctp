@@ -78,4 +78,4 @@
 			echo $this->Form->end(__d('users', 'Submit'));
 		?>
 -->
-</div>
+</div> <!-- end of row-centered -->

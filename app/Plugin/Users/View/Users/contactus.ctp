@@ -11,5 +11,5 @@
 ?>
 <div class="users index">
 	<h2><?php echo __d('users', 'about KosenClub'); ?></h2>
-	kosengiin talaar tailbar end baina bas mail bichuulj avah
+	<p>kosengiin talaar tailbar end baina bas mail bichuulj avah</p>
 </div>
