@@ -19,6 +19,6 @@
 	
 <?php }else{ ?>
 	<div id="menubutton" class="btn-group btn-group-lg">
-		
+		<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('Logout'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'logout')); ?></button>
 	</div>
 <?php }	?>
