@@ -110,7 +110,7 @@ class PhotosController extends AppController {
 				// Do something
 				$this->Session->setFlash(__('Photo Saved'));
 				
-				//$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index'));
 			}
 			else{
 				//pr($this->Form->error('data[]'));

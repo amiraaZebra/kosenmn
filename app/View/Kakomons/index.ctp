@@ -3,7 +3,7 @@
 		if (!empty($this->params['url']['year'])){
 	?>	
 			<div class="col-xs-offset-1">
-    			<?php echo $this->Html->link('<span class="glyphicon glyphicon-arrow-left"></span>'."Back to Files/".$this->params['url']['university']."/".$this->params['url']['gakubu']."/", array(
+    			<?php echo $this->Html->link('<span class="glyphicon glyphicon-arrow-left"></span>'."Back to Files/".h($this->params['url']['university'])."/".h($this->params['url']['gakubu'])."/", array(
              		'controller' => 'kakomons',
              		'action' => 'index',
              		'?' => array(
@@ -25,7 +25,7 @@
 					<?php
 					foreach ($kakomons as $kakomon):?>
 						<tr>
-							<td><?php echo $this->Html->link(__($kakomon['Kakomon']['name']), '/app/webroot/'.$kakomon['Kakomon']['dir'],array('target' => '_blank')); ?></td>
+							<td><?php echo $this->Html->link(__(h($kakomon['Kakomon']['name'])), '/app/webroot/'.h($kakomon['Kakomon']['dir']),array('target' => '_blank')); ?></td>
 							<td><?php echo h($kakomon['Kakomon']['university']); ?>&nbsp;</td>
 							<td><?php echo h($kakomon['Kakomon']['gakubu']); ?>&nbsp;</td>
 							<td><?php echo h($kakomon['Kakomon']['year']); ?>&nbsp;</td>
@@ -39,7 +39,7 @@
 			
 			if (!empty($this->params['url']['gakubu'])){ ?>
 					<div class="col-xs-offset-1">
-    					<?php echo $this->Html->link('<span class="glyphicon glyphicon-arrow-left"></span>'."Back to Files/".$this->params['url']['university']."/", array(
+    					<?php echo $this->Html->link('<span class="glyphicon glyphicon-arrow-left"></span>'."Back to Files/".h($this->params['url']['university'])."/", array(
                 			'controller' => 'kakomons',
                 			'action' => 'index',
                 			'?' => array('university' => $this->params['url']['university'])), array('escape'=>false)); ?>
@@ -47,7 +47,7 @@
 
   				<div class="row">
 					<div class="col-xs-8 col-xs-offset-2">
-						<h2><?php echo __($this->params['url']['university']."->".$this->params['url']['gakubu']); ?></h2>
+						<h2><?php echo __(h($this->params['url']['university'])."->".h($this->params['url']['gakubu'])); ?></h2>
 						<ul class="list-group">
   							<?php foreach ($year_list as $year):
 								echo '<li class="list-group-item">';
@@ -70,7 +70,7 @@
 
   					<div class="row">
 						<div class="col-xs-8 col-xs-offset-2">
-							<h2><?php echo __($this->params['url']['university']); ?></h2>
+							<h2><?php echo __(h($this->params['url']['university'])); ?></h2>
 							<ul class="list-group">
 
   								<?php

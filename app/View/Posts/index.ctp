@@ -5,7 +5,7 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
     			<h3 class="panel-title">
-    				<?php echo $this->Html->link($post['Post']['title']."  ".'<span class="glyphicon glyphicon-folder-open"></span>', array(
+    				<?php echo $this->Html->link(h($post['Post']['title'])."  ".'<span class="glyphicon glyphicon-folder-open"></span>', array(
     						'controller' => 'posts', 'action' => 'view', $post['Post']['id']),
     						array('escape'=>false)); ?>
     				<div class="pull-right">
@@ -16,7 +16,7 @@
   			</div>
 			<div class="panel-body">
     			<div class="post-index-text">
-    				<?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;
+    				<?php echo html_entity_decode(h($post['Post']['text'])); ?>&nbsp;
     			</div>
   			</div>
   			<div class="panel-footer clearfix">
