@@ -11,7 +11,7 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
     			<h3 class="panel-title">
-    				<?php echo  html_entity_decode(($post['Post']['title'])) ?>
+    				<?php echo h(html_entity_decode($post['Post']['title'])); ?>&nbsp;
     				<div class="pull-right">
   						<?php echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?>
   					</div>
@@ -20,7 +20,7 @@
   			</div>
 			<div class="panel-body">
     			<div class="post-view-text">
-    				<?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;
+    				<?php echo html_entity_decode(h($post['Post']['text'])); ?>&nbsp;
     			</div>
   			</div>
   			<div class="panel-footer clearfix">
