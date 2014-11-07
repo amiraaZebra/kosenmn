@@ -84,10 +84,10 @@ class PostsController extends AppController {
 			
 			$userId = $this->Auth->user('id');
 			$this->request->data['Post']['user_id']=$userId;
-			
+			echo print_r($this->request->data);
 			if ($this->Post->save($this->request->data)) {
 				$this->Session->setFlash(__('The post has been saved'));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The post could not be saved. Please, try again.'));
 			}

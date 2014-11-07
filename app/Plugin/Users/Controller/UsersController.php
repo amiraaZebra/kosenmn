@@ -514,7 +514,7 @@ class UsersController extends UsersAppController {
  * @return void
  */
 	public function login() {
-		
+
 		$this->set('title_for_layout','KosenClub');
 		
 		$Event = new CakeEvent(

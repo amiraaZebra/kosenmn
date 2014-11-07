@@ -65,8 +65,8 @@ class AppController extends Controller {
 	    parent::beforeFilter();  
 	    $this->Auth->fields = array('username' => 'email', 'password' => 'passwd');  
 	    $this->Auth->loginAction = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login', 'admin' => false);  
-	    $this->Auth->loginRedirect = '/users';  
-	    $this->Auth->logoutRedirect = '/users';  
+	    $this->Auth->loginRedirect = array('plugin' => 'users', 'controller' => 'users', 'action' => 'dashboard');  
+	    $this->Auth->logoutRedirect = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login');  
 	    $this->Auth->authError = __('Sorry, but you need to login to access this location.', true);  
 	    $this->Auth->loginError = __('Invalid e-mail / password combination.  Please try again', true);  
 	    $this->Auth->autoRedirect = false;  
