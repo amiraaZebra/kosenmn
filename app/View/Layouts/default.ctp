@@ -11,6 +11,7 @@
 		echo $this->Html->meta('icon');		
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('chinbaa');
 		echo $this->Html->script('jquery');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -47,8 +48,11 @@
 		  			echo $this->Session->flash();
 					echo $this->fetch('content'); 
 				}else{
+				    echo '<div class=row row-centered>';
+				    echo '<div class="col-xs-6 col-centered" style="padding-bottom:10px; text-align: center;">';
+				    echo $this->Session->flash();
+				    echo '</div></div>';
 					echo '<div class="col-xs-3 col-centered">';
-		  			echo $this->Session->flash();
 					echo $this->fetch('content'); 
 				}
 				echo '</div>'

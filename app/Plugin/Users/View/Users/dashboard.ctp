@@ -11,20 +11,18 @@
 ?>
 
 <div class="row">
-			<div class="col-xs-2">
-				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->element('link_list')?>
+			<div class="col-xs-2" style="text-align:left">
+				<?php echo $this->element('link_list');?>
 			</div>
-  			<div class="col-xs-6 users overview">
-  				<h2><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></h2>
-				<h3><?php echo __d('users', 'Recent broadcasts'); ?></h3>
+  			<div class="col-xs-8 users overview">
+  				<p><?php echo $this->Session->flash(); ?></p>
+  				<p><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></p>
+				<p><?php echo __d('users', 'Recent broadcasts'); ?></p>
   			</div>
-  			<div class="col-xs-4">
+  			<div class="col-xs-2 style="text-align:right">
   				<?php echo $this->element('actions'); ?>  				
-  			</div>  			  			
-		</div>
-
-
+			</div>  			  			
+</div>
 
 <?php 
 //	debug($user);
