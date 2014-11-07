@@ -64,14 +64,25 @@ class Kakomon extends AppModel {
         	    'rule' => array('hasUniversity'),
             	'allowEmpty' => 'null',
             	'message' => 'University name is required.'
-        	)
+        	),
+        	'alpha' => array(
+				'rule' => array('alphaNumeric'),
+				'message' => 'The university name must be alphanumeric.')
     	),
     	'gakubu' => array(
     	    'rule1' => array(
         	    'rule' => array('hasGakubu'),
             	'allowEmpty' => 'null',
             	'message' => 'Gakubu name is required.'
-        	)
+        	),
+        	'alpha' => array(
+				'rule' => array('alphaNumeric'),
+				'message' => 'The gakubu name must be alphanumeric.'),
+    	),
+    	'other' => array(
+        	'alpha' => array(
+				'rule' => array('alphaNumeric'),
+				'message' => 'The other comment must be alphanumeric.'),
     	),
     	'file' => array(
     		'rule' => 'notEmpty',

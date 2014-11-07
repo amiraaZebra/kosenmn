@@ -75,8 +75,11 @@ class Photo extends AppModel {
             	//'required' => true,
             	'allowEmpty' => 'null',
             	'message' => 'Album name is required.'
-        	)
-    	),
+        	),
+			'alpha' => array(
+				'rule' => array('alphaNumeric'),
+				'message' => 'The username must be alphanumeric.'),
+    		),
     	
 		'pic' => array(
 			'rule' => 'notEmpty'
