@@ -57,7 +57,7 @@
 		</dd>
 		<dt><?php echo __('Download'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($post['Kakomon']['name'], $dir.$post['Kakomon']['dir']); ?>
+			<?php echo $this->Html->link(h($post['Kakomon']['name']), $dir.$post['Kakomon']['dir']); ?>
 			&nbsp;
 		</dd>
 	</dl>
