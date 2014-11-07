@@ -154,7 +154,7 @@ class KakomonsController extends AppController {
 			if ($this->Kakomon->save($data, true)) {
 				// Do something
 				$this->Session->setFlash(__('Kakomon Saved'));
-				//$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index'));
 			}
 			else{
 				$this->Session->setFlash(__('Failed'));

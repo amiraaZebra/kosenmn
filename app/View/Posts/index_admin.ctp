@@ -58,10 +58,10 @@
 			<td><?php echo $this->Html->link($post['Post']['id'], array(
 						'controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
 			</td>
-			<td><?php echo $this->Html->link($post['Post']['title'], array(
+			<td><?php echo $this->Html->link(h($post['Post']['title']), array(
 						'controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
 			</td>
-			<td><div class="post-index-text"><?php echo html_entity_decode($post['Post']['text']); ?>&nbsp;</div></td>
+			<td><div class="post-index-text"><?php echo html_entity_decode(h($post['Post']['text'])); ?>&nbsp;</div></td>
 			<td>
 				<?php echo $this->Html->link($post['User']['username'], array('controller' => 'users', 'action' => 'view', $post['User']['username'])); ?>
 			</td>
