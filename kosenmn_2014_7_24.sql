@@ -205,6 +205,19 @@ INSERT INTO `users` (`id`, `username`, `slug`, `password`, `password_token`, `em
 ('53be4d58-86dc-4397-96e8-1a3440766f4b', 'amiraa', 'amiraa', 'a8fc5c821a3628d2e72662c2328d2a2e052721a6', NULL, 'amiraa.ax@gmail.com', 1, 'i36s0k4zut', '2014-07-11 10:22:47', 1, 1, '2014-07-23 21:45:26', NULL, 1, 'admin', '2014-07-10 10:22:48', '2014-07-23 21:45:26', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL),
 ('53be5148-bd10-47fa-b937-1a3440766f4b', 'sura', 'sura', 'f9cd4853f5a11f9e88d32745f321fb4f4bd0cceb', NULL, 'sura@sura.com', 1, NULL, NULL, 1, 1, '2014-07-10 10:39:56', NULL, 0, 'registered', '2014-07-10 10:39:36', '2014-07-10 10:39:56', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL);
 
+
+CREATE TABLE IF NOT EXISTS `contact_us` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `text` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `ip_address` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
