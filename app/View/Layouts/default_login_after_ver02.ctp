@@ -31,7 +31,7 @@
 				</ul>
 			</div>
 	</nav>
-	<div id="container" class="container">
+	<div id="container" class="container-fluid">
 		<div class="row">
 			<div class="page-header" >
 				<?php
