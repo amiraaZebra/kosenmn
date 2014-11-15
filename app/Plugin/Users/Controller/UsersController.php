@@ -514,9 +514,10 @@ class UsersController extends UsersAppController {
  * @return void
  */
 	public function login() {
-
 		$this->set('title_for_layout','KosenClub');
-		
+		if($this->Auth->login()){
+			$this->redirect(array('controller'=>'users', 'action'=>'dashboard'));
+		}		
 		$Event = new CakeEvent(
 			'Users.Controller.Users.beforeLogin',
 			$this,
