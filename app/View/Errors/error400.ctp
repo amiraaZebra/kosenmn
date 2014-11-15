@@ -20,8 +20,7 @@
 <h2><?php echo $name; ?></h2>
 <p class="error">
 	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
-	<?php printf(
-		__d('cake', 'The requested address %s was not found on this server.'),
+	<?php printf("%s хуудас олдсонгүй.",
 		"<strong>'{$url}'</strong>"
 	); ?>
 </p>
