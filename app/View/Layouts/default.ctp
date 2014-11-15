@@ -31,12 +31,11 @@
 						array('escape' => false));	
 				}
 
-				$currentAction = $this->params['action'];
 				if($currentAction == 'contactus'){
-		  			echo $this->Session->flash();
+		  			//echo $this->Session->flash();
 					echo $this->fetch('content'); 
 				}else{
-				    echo $this->Session->flash();
+				    //echo $this->Session->flash();
 					echo $this->fetch('content'); 
 				}
 			?>
