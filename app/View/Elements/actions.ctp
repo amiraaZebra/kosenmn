@@ -1,3 +1,4 @@
+<!-- not used -->
 <div id="menubutton" class="btn-group btn-group-vertical btn-group-lg btn-group-admin">
 	<p style="text-align:center"><?php echo __('Admin tools'); ?></p>
 	<button type="button" class="btn btn-default btn-admin"><?php echo $this->Html->link(__('Edit Profile'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?></button>
