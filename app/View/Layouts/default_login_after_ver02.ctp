@@ -23,7 +23,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/kosenmn/">Kosen Club</a>
+				<?php echo $this->Html->link(__('Kosen Club'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
