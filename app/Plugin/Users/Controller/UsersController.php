@@ -595,7 +595,7 @@ class UsersController extends UsersAppController {
 		$user = $this->Auth->user();
 		$this->Session->destroy();
 		if (isset($_COOKIE[$this->Cookie->name])) {
-		$this->Cookie->destroy();
+			$this->Cookie->destroy();
 		}
 		$this->RememberMe->destroyCookie();
 		$this->Session->setFlash(sprintf(__d('users', '%s you have successfully logged out'), $user[$this->{$this->modelClass}->displayField]));
@@ -707,7 +707,7 @@ class UsersController extends UsersAppController {
 				$this->Session->setFlash(__d('users', 'Password changed.'));
 				// we don't want to keep the cookie with the old password around
 				$this->RememberMe->destroyCookie();
-				$this->redirect('/');
+				$this->redirect(array('controller'=>'users', 'action'=>'dashboard'));
 			}
 		}
 	}
