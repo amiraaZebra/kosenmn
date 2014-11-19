@@ -4,6 +4,15 @@
 		<table class="table table-striped table-bordered">
 			<tr>
 				<td>		
+					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Profile Photo'); ?></dt>
+					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+						<?php echo $this->Html->image('profile//profilePhoto_'.$this->session->read('Auth.User.username').'.jpg', array('width'=>'150')); ?>
+						&nbsp;						
+					</dd>
+				</td>
+			</tr>
+			<tr>
+				<td>		
 					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
 					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
 						<?php echo $user[$model]['username']; ?>

@@ -2,7 +2,10 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $login_page_title; ?>
+		<?php 
+			$login_page_title="KosenClub";
+			echo $login_page_title; 
+			?>
 	</title>
 
 	<?php

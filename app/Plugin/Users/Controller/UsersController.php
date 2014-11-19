@@ -909,6 +909,15 @@ class UsersController extends UsersAppController {
 		
 	} 
  
+	public function searchAll(){
+		if (!empty($this->request->data)) {
+			//echo var_dump($this->request->data);
+			$this->set("data",$this->request->data);
+			
+		}
+		$this->set("user_id",$this->Auth->User('id'));
+		//$this->set("user_data",$this->User->find('all'));
+	} 
   
 	public function isAuthorized($user = null) {
 		

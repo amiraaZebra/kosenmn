@@ -4,7 +4,10 @@
 	<?php echo $scripts_for_layout; ?>	
 
 	<title>
-		<?php echo $title_for_layout; ?>
+		<?php
+			$title_for_layout="KosenClub/".$this->params['controller']; 
+			echo $title_for_layout; 
+		?>
 	</title>
 
 	<?php
@@ -16,7 +19,8 @@
 		echo $this->Html->script('bootstrap');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->fetch('script');		
+		echo $this->fetch('script');
+				
 	?>
 </head>
 <body>
