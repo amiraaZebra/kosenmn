@@ -34,6 +34,7 @@
 
 	<table class="table table-striped table-bordered">
 		<tr>
+			<th><?php echo "profilePhoto"; ?></th>
 			<th><?php echo $this->Paginator->sort('username'); ?></th>
 			<th><?php echo $this->Paginator->sort('first_name'); ?></th>
 			<th><?php echo $this->Paginator->sort('last_name'); ?></th>
@@ -49,6 +50,7 @@
 			}
 			?>
 			<tr<?php echo $class; ?>>
+				<td><?php echo $this->Html->image('profile//profilePhoto_'.$user[$model]['username'].'.jpg', array('width'=>'100')); ?></td>
 				<td><?php echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id'])); ?></td>
 				<td><?php echo $user[$model]['first_name']; ?></td>
 				<td><?php echo $user[$model]['last_name']; ?></td>
