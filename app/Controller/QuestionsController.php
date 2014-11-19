@@ -78,9 +78,10 @@ class QuestionsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
-		public function beforeFilter() {
+	
+	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow();		
+		$this->Auth->allow('add');		
 	}	
 	
 	public function isAuthorized($user = null) {

@@ -1,6 +1,6 @@
 <div class="questions form">
 <?php echo $this->Form->create('Question'); ?>
-		<legend><?php echo __('Add Question'); ?></legend>
+		<legend><?php echo __('Бидэнд илгээх санал хүсэлт байвал чөлөөтэй бичнэ үү.'); ?></legend>
 	<?php
 		//echo var_dump($this->request);
 		echo $this->Form->input('name');
