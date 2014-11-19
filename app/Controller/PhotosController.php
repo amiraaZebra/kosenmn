@@ -9,14 +9,32 @@ class PhotosController extends AppController {
 	
 	public $helpers = array('Html', 'Form');
 	
-
+	public function profilephoto(){
+		if ($this->request->is('post')) {
+			$filename = "C:\\xampp\\htdocs\\myDocs\\aptana\\kosenmn\\app\\webroot\\img\\profile";
+			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'\\profilePhoto_'.$this->Auth->User('username').".jpg")) {
+				$this->Session->setFlash('Success');
+			} else {
+				$this->Session->setFlash('There was a problem uploading file. Please try again.');
+				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
+			}        	
+			$this->Photo->create();
+			$this->request->data['Photo']['user_id']=$this->Auth->user('id');
+			if ($this->Photo->save($this->request->data)) {
+				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
+			} else {
+				$this->Session->setFlash(__('The photo could not be saved. Please, try again.'));
+			}
+		}
+	}	 
+			
 	
 	
 /**
  * index method
  *
  * @return void
- */
+ */  
   
 	public function index() {
 		$this->set('allAlbum' , $this->Photo->find('list',array(

@@ -11,10 +11,23 @@
 ?>
 <div class="users form">
 	<?php echo $this->Form->create($model); ?>
-	<legend><?php echo __d('users', 'Edit User'); ?></legend>
-	
+	<legend><?php echo __d('users', 'Edit User'); ?></legend>	
 	<dl class="dl-horizontal"><?php $i = 0; $class = ' class="altrow"';?>
 		<table class="table table-striped table-bordered">
+			<tr>
+				<td>		
+					<dt><?php echo __d('users', 'Edit Profile Photo'); ?></dt>
+					<dd>
+											
+						<?php 						
+							echo $this->Html->link(
+							$this->Html->image('profile//profilePhoto_'.$this->session->read('Auth.User.username').'.jpg', array('width'=>'150')),
+							array('plugin'=>NULL, 'controller'=>'photos', 'action'=>'profilephoto'),array('escape' => false)) ;
+						?>
+						&nbsp;						
+					</dd>
+				</td>
+			</tr>
 			<tr>
 				<td>		
 					<dt><?php echo __d('users', 'Username'); ?></dt>
