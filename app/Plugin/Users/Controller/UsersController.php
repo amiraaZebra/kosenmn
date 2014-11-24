@@ -904,11 +904,6 @@ class UsersController extends UsersAppController {
  * @link http://book.cakephp.org/2.0/en/core-libraries/components/authentication.html#using-controllerauthorize
  */
 
- 
-	public function contactus(){
-		
-	} 
- 
 	public function searchAll(){
 		if (!empty($this->request->data)) {
 			//echo var_dump($this->request->data);
