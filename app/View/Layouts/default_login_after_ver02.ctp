@@ -27,9 +27,14 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            	<span class="sr-only">Toggle navigation</span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+         	 	</button>
 				<?php echo $this->Html->link(__('Kosen Club'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
 			</div>
-			<div class="navbar-collapse collapse">
+			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<?php echo $this->element('navbar');?>
 				</ul>
@@ -37,6 +42,7 @@
 					<?php echo $this->element('profile');?>
 				</ul>
 			</div>
+		</div>
 	</nav>
 	<div id="container" class="container-fluid">
 		<div class="row">
