@@ -11,8 +11,8 @@ class PhotosController extends AppController {
 	
 	public function profilephoto(){
 		if ($this->request->is('post')) {
-			$filename = "C:\\xampp\\htdocs\\myDocs\\aptana\\kosenmn\\app\\webroot\\img\\profile";
-			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'\\profilePhoto_'.$this->Auth->User('username').".jpg")) {
+			$filename = "img/profile/";
+			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'profilePhoto_'.$this->Auth->User('username').".jpg")) {
 				$this->Session->setFlash('Success');
 			} else {
 				$this->Session->setFlash('There was a problem uploading file. Please try again.');
