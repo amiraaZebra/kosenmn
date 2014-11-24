@@ -33,6 +33,9 @@
 				<ul class="nav navbar-nav">
 					<?php echo $this->element('navbar');?>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<?php echo $this->element('profile');?>
+				</ul>
 			</div>
 	</nav>
 	<div id="container" class="container-fluid">
