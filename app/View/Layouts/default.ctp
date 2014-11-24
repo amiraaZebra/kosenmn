@@ -16,7 +16,6 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-	<style>body {min-width: 800px;}</style>
 </head>
 <body>
 	<div class="container">			
