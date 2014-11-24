@@ -2,7 +2,7 @@
 	if ($this->Session->read('Auth.User')){
 		echo 'you already logged in.'; 
 	}else{
-				echo $this->Session->flash('auth');
+				//echo $this->Session->flash('auth');
 				echo $this->Form->create($model, array(
 					'action' => 'login',
 					'class' => 'form-signin',
