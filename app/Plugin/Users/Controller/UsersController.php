@@ -207,8 +207,8 @@ class UsersController extends UsersAppController {
 		if (Configure::read('Users.disableDefaultAuth') === true) {
 			return;
 		}
-
-		$this->Auth->allow('reset', 'verify', 'logout', 'reset_password', 'login', 'resend_verification', 'contactus', 'add');
+		
+		$this->Auth->allow('reset', 'verify', 'logout', 'reset_password', 'login', 'resend_verification', 'contactus');
 
 		if (!is_null(Configure::read('Users.allowRegistration')) && !Configure::read('Users.allowRegistration')) {
 			$this->Auth->deny('add');
@@ -231,6 +231,7 @@ class UsersController extends UsersAppController {
 		$this->Auth->loginRedirect = '/users';
 		$this->Auth->logoutRedirect = array('plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');
 		$this->Auth->loginAction = array('admin' => false, 'plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');
+
 	}
 
 
@@ -923,7 +924,13 @@ class UsersController extends UsersAppController {
 				return false;
 			}				
 		}
-		return true;
+
+		//nemsen
+		if ($this->action === 'index' || $this->action === 'dashboard' || $this->action === 'view')
+			return true;
+
+		return parent::isAuthorized($user);
+		//return true;
 	}
 }
 
