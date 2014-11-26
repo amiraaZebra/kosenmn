@@ -93,7 +93,9 @@ class AppController extends Controller {
     	}
 
     	// Default deny
-    	return false;
+    	//return false;
+    	return true;
+		
 	}
 
 
