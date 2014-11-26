@@ -8,11 +8,21 @@ App::uses('AppController', 'Controller');
 class PhotosController extends AppController {
 	
 	public $helpers = array('Html', 'Form');
-	
+	var $uses=array('User','Photo');
 	public function profilephoto(){
 		if ($this->request->is('post')) {
 			$filename = "img/profile/";
-			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'profilePhoto_'.$this->Auth->User('username').".jpg")) {
+			//6400x4800 max size
+			if($this->data['Photo']['file']['size']>30720000){
+				$this->Session->setFlash(__('Зурагний хэмжээ хэтэрхий том байна.'));
+				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
+			}
+			if(!($this->data['Photo']['file']['type']=='image/jpeg' || $this->data['Photo']['file']['type']=='image/jpg' || $this->data['Photo']['file']['type']=='image/png')){
+				$this->Session->setFlash(__('Зөвхөн зураг сонгоно уу.'));
+				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
+			}
+			$imageType=split('/', $this->data['Photo']['file']['type']);			
+			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'profilePhoto_'.$this->Auth->User('username').".".$imageType[1])) {
 				$this->Session->setFlash('Success');
 			} else {
 				$this->Session->setFlash('There was a problem uploading file. Please try again.');
@@ -21,6 +31,13 @@ class PhotosController extends AppController {
 			$this->Photo->create();
 			$this->request->data['Photo']['user_id']=$this->Auth->user('id');
 			if ($this->Photo->save($this->request->data)) {
+				
+				$thisUser = $this->User->find('first', array('conditions' => array('User.id'=> $this->Session->read('Auth.User.id'))));			
+				//echo var_dump($this->Session->read('Auth.User.id'));
+				//echo var_dump($thisUser);
+				$thisUser['User']['profile_image'] = 'profile/profilePhoto_'.$this->Auth->User('username').".".$imageType[1];
+				$this->User->save($thisUser);
+				$this->Session->write('Auth.User.profile_image',$thisUser['User']['profile_image']);
 				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
 			} else {
 				$this->Session->setFlash(__('The photo could not be saved. Please, try again.'));

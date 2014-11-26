@@ -21,7 +21,7 @@
 											
 						<?php 						
 							echo $this->Html->link(
-							$this->Html->image('profile//profilePhoto_'.$this->session->read('Auth.User.username').'.jpg', array('width'=>'150')),
+							$this->Html->image($this->session->read('Auth.User.profile_image'), array('width'=>'150')),
 							array('plugin'=>NULL, 'controller'=>'photos', 'action'=>'profilephoto'),array('escape' => false)) ;
 						?>
 						&nbsp;						

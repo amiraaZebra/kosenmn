@@ -873,5 +873,4 @@ class User extends UsersAppModel {
 			$this->alias . '.email_verified' => 0,
 			$this->alias . '.email_token_expires <' => date('Y-m-d H:i:s')));
 	}
-
 }

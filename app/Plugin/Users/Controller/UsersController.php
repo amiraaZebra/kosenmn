@@ -914,7 +914,7 @@ class UsersController extends UsersAppController {
 		$this->set("user_id",$this->Auth->User('id'));
 		//$this->set("user_data",$this->User->find('all'));
 	} 
-  
+	
 	public function isAuthorized($user = null) {
 		
 		
