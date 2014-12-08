@@ -1,4 +1,5 @@
-<ul class="nav nav-sidebar">
+<ul class="nav nav-pills nav-stacked side-menu">
+		<li><?php echo $this->Html->link(__('Dashboard'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard')); ?></li>
 		<li><?php echo $this->Html->link(__('User search'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('Post List'), array('plugin'=>NULL, 'controller'=>'posts', 'action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('New Post'), array('plugin'=>NULL, 'controller'=>'posts', 'action' => 'add')); ?></li>
