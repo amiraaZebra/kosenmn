@@ -17,6 +17,7 @@
 		echo $this->Html->css('dashboard');
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('bootstrap');
+		echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -25,7 +26,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             	<span class="sr-only">Toggle navigation</span>
@@ -62,13 +63,11 @@
 				<div class="row">
 				<div class="col-sm-3 col-md-2 sidebar">
 					<?php echo $this->element('sidebar');?>
-					<div class="text-center" style="padding-top:50px;padding-bottom:50px">
-					<?php echo $this->Html->image('colleges.jpg',array('width'=>'80%'));?>
+					<div class="text-center" style="padding-top:50px;padding-bottom:50px;">
+					<?php echo $this->Html->image('colleges.jpg',array('width'=>'150px'));?>
 					</div>
 				</div>
 				<div class="col-sm-9 col-md-10 main">
-
-					<?php echo $this->Session->flash(); ?>
 					<?php echo $this->Session->flash('auth'); ?>
 
   					<?php echo $this->fetch('content'); ?>
