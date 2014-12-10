@@ -78,7 +78,7 @@ class Photo extends AppModel {
         	),
 			'alpha' => array(
 				'rule' => array('alphaNumeric'),
-				'message' => 'The username must be alphanumeric.'),
+				'message' => 'Зөвхөн үсэг болон тоо ашиглан бичнэ үү.')
     		),
     	
 		'pic' => array(

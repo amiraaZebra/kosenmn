@@ -54,10 +54,10 @@ class Kakomon extends AppModel {
 				'rule' => 'numeric',
 				'allowEmpty' => false,
 			),
-			'rule2' => array(
-				'rule' => array('comparison','>',0),
-				'message' => 'Please enter a natural number'
-			)
+			'number' => array(
+		        'rule' => array('range', 1950, 2050),
+		        'message' => '1950 аас их 2050 аас бага байх он бичнэ үү.'
+		    )
 		),
 		'university' => array(
     	    'rule1' => array(
