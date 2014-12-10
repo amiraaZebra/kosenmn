@@ -223,9 +223,5 @@ class PhotosController extends AppController {
 		return false;		
 		*/
 		return true;
-	}
-	
+	}	
 }
-
-
-
