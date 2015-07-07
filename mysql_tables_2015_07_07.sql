@@ -1,33 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.0.4.1
--- http://www.phpmyadmin.net
---
--- ホスト: 127.0.0.1
--- 生成日時: 2014 年 7 月 24 日 12:13
--- サーバのバージョン: 5.5.32
--- PHP のバージョン: 5.4.16
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- データベース: `kosenmn`
---
-CREATE DATABASE IF NOT EXISTS `kosenmn` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `kosenmn`;
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `comments`
---
-
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
   `parent_id` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -49,13 +19,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `kakomons`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `kakomons` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -72,20 +36,7 @@ CREATE TABLE IF NOT EXISTS `kakomons` (
   `extra1` text COLLATE utf8_unicode_ci,
   `extra2` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
-
---
--- テーブルのデータのダンプ `kakomons`
---
-
-INSERT INTO `kakomons` (`id`, `name`, `dir`, `university`, `gakubu`, `year`, `other`, `created`, `modified`, `deleted`, `user_id`, `extra1`, `extra2`) VALUES
-(1, 'dentsuu_jyouhou_H2009.jpg', '/files/uploads/dentsuu_jyouhou_H2009.jpg', 'dentsuu', 'jyouhou', 2009, '', '2014-03-12 14:39:17', '2014-03-12 14:39:17', NULL, '53205f3a-8490-477f-b96d-0c8040766f4b', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `photos`
---
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `photos` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -101,20 +52,7 @@ CREATE TABLE IF NOT EXISTS `photos` (
   `extra1` text COLLATE utf8_unicode_ci,
   `extra2` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
-
---
--- テーブルのデータのダンプ `photos`
---
-
-INSERT INTO `photos` (`id`, `title`, `description`, `album`, `height`, `width`, `created`, `modified`, `deleted`, `user_id`, `extra1`, `extra2`) VALUES
-(6, '', NULL, 'hi there', NULL, NULL, '2014-07-10 10:30:54', '2014-07-10 10:30:54', 0, '53be4d58-86dc-4397-96e8-1a3440766f4b', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `posts`
---
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -128,20 +66,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `extra1` text COLLATE utf8_unicode_ci,
   `extra2` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
-
---
--- テーブルのデータのダンプ `posts`
---
-
-INSERT INTO `posts` (`id`, `user_id`, `title`, `text`, `file`, `created`, `modified`, `deleted`, `extra1`, `extra2`) VALUES
-(3, '53be4d58-86dc-4397-96e8-1a3440766f4b', 'welcome to kosem.mn', '<p>hi</p>\r\n', NULL, '2014-07-10 10:38:55', '2014-07-10 10:38:55', 0, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `users`
---
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
@@ -197,15 +122,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `BY_EMAIL` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- テーブルのデータのダンプ `users`
---
-
-INSERT INTO `users` (`id`, `username`, `slug`, `password`, `password_token`, `email`, `email_verified`, `email_token`, `email_token_expires`, `tos`, `active`, `last_login`, `last_action`, `is_admin`, `role`, `created`, `modified`, `first_name`, `last_name`, `gender`, `birthday`, `status`, `major`, `kosen_kanji`, `kosen_roman`, `kosen_year`, `fb_acc`, `high_school`, `university1`, `course1`, `university2`, `course2`, `university3`, `course3`, `work1`, `department1`, `work2`, `department2`, `work3`, `department3`, `country`, `city`, `phone_number_mon`, `phone_number_jap`, `photo_id`, `deleted`, `extra1`, `extra2`) VALUES
-('53be4d58-86dc-4397-96e8-1a3440766f4b', 'amiraa', 'amiraa', 'a8fc5c821a3628d2e72662c2328d2a2e052721a6', NULL, 'amiraa.ax@gmail.com', 1, 'i36s0k4zut', '2014-07-11 10:22:47', 1, 1, '2014-07-23 21:45:26', NULL, 1, 'admin', '2014-07-10 10:22:48', '2014-07-23 21:45:26', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL),
-('53be5148-bd10-47fa-b937-1a3440766f4b', 'sura', 'sura', 'f9cd4853f5a11f9e88d32745f321fb4f4bd0cceb', NULL, 'sura@sura.com', 1, NULL, NULL, 1, 1, '2014-07-10 10:39:56', NULL, 0, 'registered', '2014-07-10 10:39:36', '2014-07-10 10:39:56', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL);
-
-
 CREATE TABLE IF NOT EXISTS `contact_us` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
@@ -217,7 +133,13 @@ CREATE TABLE IF NOT EXISTS `contact_us` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE IF NOT EXISTS `questions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `text` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `ip_address` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
