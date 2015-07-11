@@ -299,7 +299,15 @@ class UsersController extends UsersAppController {
  */
 	public function view($slug = null) {
 		try {
-			$this->set('user', $this->{$this->modelClass}->view($slug));
+			$tempUser = $this->{$this->modelClass}->view($slug);
+			$this->set('user', $tempUser);
+			/*
+			App::import('Model', 'Photo');
+			$this->Photo = new Photo();
+			$profilePic = $this->Photo->findById($tempUser['User']['photo_id']);
+			print_r($profilePic);
+			$this->set('profilePic', $profilePic['Photo']['title']);
+			*/
 		} catch (Exception $e) {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');

@@ -2,7 +2,7 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php
 			//echo '<img class= "propic" src="/img/profile/profilePhoto_'.$this->Session->read('Auth.User.username').'.jpg">';
 			
-			echo $this->Html->image($this->Session->read('Auth.User.profile_image'), array('class'=>'propic'));         
+			echo $this->Html->image("profile/".$this->Session->read('Auth.User.profile_image'), array('class'=>'propic'));         
 			echo "   ".$this->Session->read('Auth.User.username');			
 			?><span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
