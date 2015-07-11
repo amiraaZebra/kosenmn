@@ -34,6 +34,8 @@
 						'label' => __d('users', 'Is Admin')));
 				echo $this->Form->input('active', array(
 					'label' => __d('users', 'Active')));
+				echo $this->Form->input('profile_image', array(
+					'type' => 'hidden', 'default' => 'kosenUser.jpg'));
 			?>
 		</fieldset>
 	<?php echo $this->Form->end('Submit'); ?>
