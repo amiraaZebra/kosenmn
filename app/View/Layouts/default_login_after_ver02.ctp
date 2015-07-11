@@ -50,8 +50,8 @@
 			<div class="page-header" >
 				<?php
 					//echo "Kosen Club"
-					echo $this->Html->link($this->Html->image('tempHeaderPic.jpg',array('height'=>'150px','width'=>'100%')),
-					array('controller' => 'users', 'action' => 'index'),array('escape'=>false)); 
+					//echo $this->Html->link($this->Html->image('tempHeaderPic.jpg',array('height'=>'150px','width'=>'100%')),
+					//array('controller' => 'users', 'action' => 'index'),array('escape'=>false)); 
 				?>
 			</div>
 			<div class="panel panel-success">
