@@ -114,6 +114,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone_number_mon` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `phone_number_jap` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `photo_id` int(10) DEFAULT NULL,
+  `profile_image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `deleted` tinyint(1) DEFAULT '0',
   `extra1` text COLLATE utf8_unicode_ci,
   `extra2` text COLLATE utf8_unicode_ci,
