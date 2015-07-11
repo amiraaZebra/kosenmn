@@ -50,7 +50,7 @@
 			}
 			?>
 			<tr<?php echo $class; ?>>
-				<td><?php echo $this->Html->image($user[$model]['profile_image'], array('width'=>'100')); ?></td> 
+				<td><?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?></td> 
 				<td><?php echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id'])); ?></td>
 				<td><?php echo $user[$model]['first_name']; ?></td>
 				<td><?php echo $user[$model]['last_name']; ?></td>

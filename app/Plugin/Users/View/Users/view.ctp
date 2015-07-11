@@ -6,7 +6,11 @@
 				<td>		
 					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Profile Photo'); ?></dt>
 					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $this->Html->image($user[$model]['profile_image'], array('width'=>'250')); ?>
+						<?php 
+							echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'250'));
+							
+							//echo $this->Html->image("profile/".$profilePic, array('width'=>'250'));
+						?>
 						&nbsp;						
 					</dd>
 				</td>

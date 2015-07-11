@@ -22,7 +22,8 @@ class PhotosController extends AppController {
 				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
 			}
 			$imageType=split('/', $this->data['Photo']['file']['type']);			
-			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'profilePhoto_'.$this->Auth->User('username').".".$imageType[1])) {
+			//if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'profilePhoto_'.$this->Auth->User('username').".".$imageType[1])) {
+			if (move_uploaded_file($this->data['Photo']['file']['tmp_name'],$filename.'profilePhoto_'.$this->Auth->User('id').".".$imageType[1])) {
 				$this->Session->setFlash('Success');
 			} else {
 				$this->Session->setFlash('There was a problem uploading file. Please try again.');
@@ -30,14 +31,15 @@ class PhotosController extends AppController {
 			}        	
 			$this->Photo->create();
 			$this->request->data['Photo']['user_id']=$this->Auth->user('id');
+			$this->request->data['Photo']['title']='profilePhoto_'.$this->Auth->User('id').".".$imageType[1];
 			if ($this->Photo->save($this->request->data)) {
 				
 				$thisUser = $this->User->find('first', array('conditions' => array('User.id'=> $this->Session->read('Auth.User.id'))));			
 				//echo var_dump($this->Session->read('Auth.User.id'));
 				//echo var_dump($thisUser);
-				$thisUser['User']['profile_image'] = 'profile/profilePhoto_'.$this->Auth->User('username').".".$imageType[1];
+				$thisUser['User']['profile_image'] = 'profilePhoto_'.$this->Auth->User('id').".".$imageType[1];
 				$this->User->save($thisUser);
-				$this->Session->write('Auth.User.profile_image',$thisUser['User']['profile_image']);
+				$this->Session->write('Auth.User.profile_image','profilePhoto_'.$this->Auth->User('id').".".$imageType[1]);
 				return $this->redirect(array('controller'=>'users', 'action' => 'edit', $this->Auth->user('id')));
 			} else {
 				$this->Session->setFlash(__('The photo could not be saved. Please, try again.'));
