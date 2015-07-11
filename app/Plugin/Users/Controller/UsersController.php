@@ -573,7 +573,7 @@ class UsersController extends UsersAppController {
 					$this->redirect($this->Auth->redirect($data[$this->modelClass]['return_to']));
 				}
 			} else {
-				$this->Auth->flash(__d('users', 'Имэйл хаяг эсвэл нууц үг буруу байна.'));
+				$this->Auth->flash('Имэйл хаяг эсвэл нууц үг буруу байна.');
 			}
 		}
 		if (isset($this->request->params['named']['return_to'])) {
