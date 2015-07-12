@@ -14,7 +14,7 @@
 		<label for="inputPassword3" class="col-sm-3 control-label">new password</label>
 		<div class="col-sm-9">
 		  <?php
-			  echo $this->Form->input('New_password', array(
+			  echo $this->Form->input('new_password', array(
 				'label' => false,
 				'type' => 'password',
 				'class' => 'form-control',
