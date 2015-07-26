@@ -19,7 +19,7 @@
 							'placeholder' => 'Password',
 							'class' => 'form-control',
 							'id'=>'inputPassword3'));
-	      		echo '<p>' . $this->Form->input('remember_me', array('type' => 'checkbox', 'label' =>  __d('users', 'Намайг сана'))) . '</p>';
+	      		//echo '<p>' . $this->Form->input('remember_me', array('type' => 'checkbox', 'label' =>  __d('users', 'Намайг сана'))) . '</p>';
 
 	      		echo '<p>' . $this->Html->link(__d('users', 'Нууц үгээ мартсан'), array('action' => 'reset_password')) . '</p>';
 
