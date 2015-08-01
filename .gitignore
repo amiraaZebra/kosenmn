@@ -1,11 +1,11 @@
 # User specific & automatically generated files #
 #################################################
-#/app/Config/*
+/app/Config/*
 /app/webroot/img/profile
 /app/webroot/img/photo_img
 /app/webroot/img/post_img
 /app/tmp/*
-/app/webroot/files/*
+/app/webroot/files/uploads/*
 # OS generated files #
 ######################
 .DS_Store
