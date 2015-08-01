@@ -152,8 +152,9 @@ class UsersController extends UsersAppController {
  */
 	public function beforeFilter() {
 		parent::beforeFilter();
+        
 		$this->_setupAuth();
-		
+        $this->Auth->Allow('admin_add');		
 		$this->_setupPagination();
 
 		$this->set('model', $this->modelClass);
@@ -278,10 +279,13 @@ class UsersController extends UsersAppController {
 	public function dashboard() {
 		$user = $this->{$this->modelClass}->read(null, $this->Auth->user('id'));
 		$this->set('user', $user);
-		
-		
-		
-	}
+
+    }
+
+    # by CHinbaa
+    public function manage_users() {
+        
+    }
 
 	public function admin_tools() {
 		$user = $this->{$this->modelClass}->read(null, $this->Auth->user('id'));
@@ -940,5 +944,7 @@ class UsersController extends UsersAppController {
 		return parent::isAuthorized($user);
 		//return true;
 	}
+
+    
 }
 
