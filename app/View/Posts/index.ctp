@@ -1,6 +1,6 @@
 
 <div class="row">
-	<?php foreach (array_reverse($posts) as $post): ?>
+	<?php foreach ($posts as $post): ?>
 	<div class="col-xs-8 col-xs-offset-2">
 		<div class="panel panel-info">
 			<div class="panel-heading">
