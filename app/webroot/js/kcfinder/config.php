@@ -25,7 +25,7 @@ $_CONFIG = array(
 
     'theme' => "oxygen",
 
-    'uploadURL' => "/kosenmn/app/webroot/img/post_img",
+    'uploadURL' => "/myDocs/aptana/kosenmn/app/webroot/img/post_img",
     'uploadDir' => "",
 
     'dirPerms' => 0755,
