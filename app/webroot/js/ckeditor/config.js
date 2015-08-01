@@ -38,10 +38,10 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	// KCFinder tohirgoo
    
-   config.filebrowserBrowseUrl = '/kosenmn/js/kcfinder/browse.php?type=files';
-   config.filebrowserImageBrowseUrl = '/kosenmn/js/kcfinder/browse.php?type=images';
-   config.filebrowserFlashBrowseUrl = '/kosenmn/js/kcfinder/browse.php?type=flash';
-   config.filebrowserUploadUrl = '/kosenmn/js/kcfinder/upload.php?type=files';
-   config.filebrowserImageUploadUrl = '/kosenmn/js/kcfinder/upload.php?type=images';
-   config.filebrowserFlashUploadUrl = '/kosenmn/js/kcfinder/upload.php?type=flash';
+   config.filebrowserBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=files';
+   config.filebrowserImageBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=images';
+   config.filebrowserFlashBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=flash';
+   config.filebrowserUploadUrl = '/myDocs/aptana/kosenmn/js/kcfinder/upload.php?type=files';
+   config.filebrowserImageUploadUrl = '/myDocs/aptana/kosenmn/js/kcfinder/upload.php?type=images';
+   config.filebrowserFlashUploadUrl = '/myDocs/aptana/kosenmn/js/kcfinder/upload.php?type=flash';
 };
