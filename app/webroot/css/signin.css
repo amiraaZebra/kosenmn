@@ -1,4 +1,4 @@
-body {
+/*body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
@@ -48,4 +48,115 @@ body {
 }
 .form-signin input[type="checkbox"]{
   margin-left: 0;
+}*/
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
 }
+.s-slider-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.caption{
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  float: right;
+}
+.s-slider h2,
+.s-slider blockquote{
+  padding: 100px 30px 10px 30px;
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
+  width: 80%;
+  max-width: 960px;
+  color: #fff;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+}
+.s-slider h2{
+  font-size: 100px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+}
+.s-slider blockquote{
+  font-size: 28px;
+  padding-top: 10px;
+  font-weight: 300;
+  text-shadow:0 -1px 0 rgba(0,0,0,0, 2);
+}
+.s-slider blockquote cite {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding-top: 30px;
+  display: inline-block;
+}
+.s-bg-img{
+  /*padding: 200px;*/
+  position: absolute;
+  top: 0px;
+  /*left: -200px;*/
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center center; 
+}
+.kosen-login-container{
+  position: absolute;
+  width: 100%;
+  max-width: 1000px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 100%
+}
+.kosen-login-form{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  
+}
+.kosen-login-box{
+  z-index: 101;
+  margin: auto;
+  padding: 20px;
+  width: 350px;
+  opacity: 0.8;
+  border-radius: 20px;
+}
+#kosenName h1{
+    padding-bottom: 150px;
+    font-size: 80px;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+  }
+
+/*.s-bg-img-1 {
+  background-image: url(../images/1.jpg);
+}
+.s-bg-img-2 {
+  background-image: url(../images/2.jpg);
+}
+.s-bg-img-3 {
+  background-image: url(../images/3.jpg);
+}
+.s-bg-img-4 {
+  background-image: url(../images/4.jpg);
+}
+.s-bg-img-5 {
+  background-image: url(../images/5.jpg);
+}*/
