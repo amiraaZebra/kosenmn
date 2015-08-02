@@ -12,14 +12,19 @@
 		echo $this->Html->meta('icon');		
 		echo $this->Html->css('bootstrap');
 		echo $this->Html->css('signin');
+		echo $this->Html->script('jquery');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
+	<?php
+		echo $this->fetch('content');			 
+	?>
 	<div class="container">			
-		 	<?php 
+		 	<?php
+		 		
 				$currentAction = $this->params['action'];
 				if($currentAction == 'add'){
 					echo $this->Html->link(
@@ -32,7 +37,7 @@
 						array('plugin'=>null, 'controller'=>'questions', 'action'=>'add'),
 						array('escape' => false));						
 				}		
-				echo $this->fetch('content');			
+				
 			?>
 	</div> <!-- /container -->
 </body>
