@@ -19,11 +19,15 @@
 	?>
 </head>
 <body>
-	<?php
-		echo $this->fetch('content');			 
-	?>
 	<div class="container">			
 		 	<?php
+		 	$currentAction = $this->params['action'];
+		 		if($currentAction == 'add'){
+					echo $this->Html->link(
+					$this->Html->image('logo3.png', array('alt'=>'KosenClub logo','width'=>'120px', 'height'=>'60px' )),
+						array('controller'=>'users', 'action'=>'login'),
+						array('escape' => false));						
+				}
 		 		
 				/*$currentAction = $this->params['action'];
 				if($currentAction == 'add'){
@@ -39,7 +43,11 @@
 				}*/		
 				
 			?>
-	</div> <!-- /container -->
+	</div><!-- /container -->
+			<?php
+				echo $this->fetch('content');			 
+			?>
+	 
 </body>
 
 

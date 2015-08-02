@@ -2,7 +2,6 @@
 	if ($this->Session->read('Auth.User')){
 		echo 'you already logged in.';
 	}else{
-echo $this->Session->flash('auth');
 ?>
 
 <div id="slider" class="s-slider-wrapper">
@@ -78,6 +77,9 @@ echo $this->Session->flash('auth');
 							echo $this->Form->hidden('User.return_to', array(
 							'value' => $return_to));
 							echo $this->Form->end();
+							echo "<div class='login-message'>";
+							echo $this->Session->flash('auth');
+							echo "</div>";
 						?>
 					</div>
 				</div>
