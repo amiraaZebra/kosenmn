@@ -55,6 +55,9 @@ body{
   padding: 0;
   font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
 }
+
+/* Slider Design */
+
 .s-slider-wrapper{
   position: absolute;
   width: 100%;
@@ -62,31 +65,14 @@ body{
   top: 0;
   left: 0;
 }
+
 .caption{
   width: 100%;
   position: absolute;
   margin: auto;
   float: right;
 }
-.login-menu{
-  padding-bottom: 100px;
-}
-.contact-link{
-  text-align: right;
-  padding-right: 10px;
-}
-.contact-link > a{
-  text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
-  text-decoration: none;
-  font-size: 120%;
-  color: #fff;
-}
-.contact-link > a:hover,
-.contact-link > a:active,
-.contact-link > a:focus{
-  color: #ddd;
 
-}
 .s-slider h2,
 .s-slider blockquote{
   padding: 100px 30px 10px 30px;
@@ -150,6 +136,28 @@ body{
   min-height: 500px;
   background-position: center center; 
 } */
+
+/* Login Menu */
+.login-menu{
+  padding-bottom: 100px;
+}
+.contact-link{
+  text-align: right;
+  padding-right: 10px;
+}
+.contact-link > a{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+  text-decoration: none;
+  font-size: 120%;
+  color: #fff;
+}
+.contact-link > a:hover,
+.contact-link > a:active,
+.contact-link > a:focus{
+  color: #ddd;
+
+}
+/* login-form */
 .kosen-login-container{
   position: absolute;
   width: 100%;
@@ -183,26 +191,47 @@ body{
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
   }
-.sura-right{
-  float: right;
-  margin-bottom: 10px;
-}
 .login-message{
   color: #a94442;
 }
 
-/*.s-bg-img-1 {
-  background-image: url(../images/1.jpg);
+/* Q&A form */
+.question-container{
+  width: 100%;
+  height: auto;
+  background-color: #eee;
 }
-.s-bg-img-2 {
-  background-image: url(../images/2.jpg);
+.question-form{
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 700px;
+  margin: auto;
+  background-color: #fff;
 }
-.s-bg-img-3 {
-  background-image: url(../images/3.jpg);
+.question-form label{
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
-.s-bg-img-4 {
-  background-image: url(../images/4.jpg);
+.question-btn{
+  margin: auto;
+  font-size: 130%;
+  max-width: 150px;
+  margin-top: 20px;
 }
-.s-bg-img-5 {
-  background-image: url(../images/5.jpg);
-}*/
+.login-logo{
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 60px;
+}
+
+.spacer{
+  width: 100%;
+  height: 200px;
+}
+.sura-right{
+  float: right;
+  margin-bottom: 10px;
+}
+
