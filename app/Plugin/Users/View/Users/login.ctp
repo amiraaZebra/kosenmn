@@ -38,8 +38,20 @@ echo $this->Session->flash('auth');
 		</div><!-- /s-slider-wrapper -->
 		<div class="kosen-login-container">
 			<div class="row kosen-login-form">
-				<div class="col-xs-12 col-sm-6 col-md-7" id="kosenName">
-					<h1>Kosen.mn</h1>
+				<div class="col-xs-12 col-sm-6 col-md-7 login-menu">
+					<h1 id="kosenName">Kosen.mn</h1>
+					<?php
+						$currentAction = $this->params['action'];
+						if($currentAction == 'add'){}
+							else{
+								echo "<div class='contact-link'>";
+								echo $this->Html->link(
+								__d('contact','бидэнтэй холбогдъё...'),
+								array('plugin'=>null, 'controller'=>'questions', 'action'=>'add'),
+								array('escape' => false));	
+								echo "</div>";				
+							}	
+					?>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-5">
 					<div class="kosen-login-box jumbotron">
