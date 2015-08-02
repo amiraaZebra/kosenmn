@@ -68,6 +68,25 @@ body{
   margin: auto;
   float: right;
 }
+.login-menu{
+  padding-bottom: 100px;
+}
+.contact-link{
+  text-align: right;
+  padding-right: 10px;
+}
+.contact-link > a{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+  text-decoration: none;
+  font-size: 120%;
+  color: #fff;
+}
+.contact-link > a:hover,
+.contact-link > a:active,
+.contact-link > a:focus{
+  color: #ddd;
+
+}
 .s-slider h2,
 .s-slider blockquote{
   padding: 100px 30px 10px 30px;
@@ -98,18 +117,39 @@ body{
   padding-top: 30px;
   display: inline-block;
 }
-.s-bg-img{
-  /*padding: 200px;*/
+.s-bg-img {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  .s-bg-img {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+/*.s-bg-img{
   position: absolute;
   top: 0px;
-  /*left: -200px;*/
   width: 100%;
   height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  min-height: 500px;
   background-position: center center; 
-}
+} */
 .kosen-login-container{
   position: absolute;
   width: 100%;
@@ -137,8 +177,7 @@ body{
   opacity: 0.8;
   border-radius: 20px;
 }
-#kosenName h1{
-    padding-bottom: 150px;
+#kosenName{
     font-size: 80px;
     font-weight: bolder;
     color: #fff;
