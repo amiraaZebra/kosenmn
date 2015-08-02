@@ -25,7 +25,7 @@
 	<div class="container">			
 		 	<?php
 		 		
-				$currentAction = $this->params['action'];
+				/*$currentAction = $this->params['action'];
 				if($currentAction == 'add'){
 					echo $this->Html->link(
 					$this->Html->image('logo3.png', array('alt'=>'KosenClub logo','width'=>'120px', 'height'=>'60px' )),
@@ -36,7 +36,7 @@
 					$this->Html->image('logo3.png', array('alt' => 'KosenClub logo','width'=>'120px', 'height'=>'60px' )),
 						array('plugin'=>null, 'controller'=>'questions', 'action'=>'add'),
 						array('escape' => false));						
-				}		
+				}*/		
 				
 			?>
 	</div> <!-- /container -->
