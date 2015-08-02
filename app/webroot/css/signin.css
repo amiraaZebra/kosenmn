@@ -187,6 +187,9 @@ body{
   float: right;
   margin-bottom: 10px;
 }
+.login-message{
+  color: #a94442;
+}
 
 /*.s-bg-img-1 {
   background-image: url(../images/1.jpg);
