@@ -1,29 +1,30 @@
-<div>
-	<?php
-		echo $this->Form->create($model, array(
+<?php
+	echo $this->Form->create($model,
+		array(
 			'action' => 'index',
 			'class' => 'form-horizontal',
 			'role' => 'form',
 			'id' => 'LoginForm'));			
-	?>		
+?>		
 			
-	<div class="form-group">
-		<label for="inputEmail3" class="col-xs-2 control-label">Username</label>
-		<div class="col-sm-10">
-		  <?php
-			  echo $this->Form->input('username', array(
-				'label' => false,
-				'class' => 'form-control',
-				'id'=>'username'));
-		  ?>
+<div class="form-group">
+	<label for="inputEmail3" class="control-label">Username</label>
+		<div>
+			<?php
+				echo $this->Form->input('username', array(
+					'label' => false,
+					'class' => 'form-control',
+					'id'=>'username'));
+		  	?>
 		</div>
-	</div>	
-	<div class="col-xs-offset-6 col-xs-10">		      
-	      <?php
-			echo $this->Form->submit('Search User',array('class' => 'btn btn-default'));
-	      	echo $this->Form->end();
-	      ?>		      
-	</div>
+</div>
+	
+<div class="col-xs-offset-6 col-xs-10">		      
+<?php
+	echo $this->Form->submit('Search User',array('class' => 'btn btn-default'));
+	echo $this->Form->end();
+?>		      
+</div>
 	
 	
 	<p><?php
@@ -49,14 +50,14 @@
 				$class = ' class="altrow"';
 			}
 			?>
-			<tr<?php echo $class; ?>>
-				<td><?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?></td> 
-				<td><?php echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id'])); ?></td>
-				<td><?php echo $user[$model]['first_name']; ?></td>
-				<td><?php echo $user[$model]['last_name']; ?></td>
-				<td><?php echo $user[$model]['kosen_year']; ?></td>
-				<td><?php echo $user[$model]['kosen_roman']; ?></td>
-			</tr>
+		<tr<?php echo $class; ?>>
+			<td><?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?></td> 
+			<td><?php echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id'])); ?></td>
+			<td><?php echo $user[$model]['first_name']; ?></td>
+			<td><?php echo $user[$model]['last_name']; ?></td>
+			<td><?php echo $user[$model]['kosen_year']; ?></td>
+			<td><?php echo $user[$model]['kosen_roman']; ?></td>
+		</tr>
 		<?php endforeach; ?>
 	</table>
 	<?php echo $this->element('Users.pagination'); ?>

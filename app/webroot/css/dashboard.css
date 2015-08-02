@@ -1,7 +1,7 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #eee; 
 }
 
 .propic {
@@ -9,3 +9,6 @@ body {
 	height: 25px;
 }
 
+#container {
+    margin-top: 30px;
+}
