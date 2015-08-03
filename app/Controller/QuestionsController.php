@@ -46,16 +46,20 @@ class QuestionsController extends AppController {
  * @return void
  */
 	public function add() {
+		$sent=false;
 		if ($this->request->is('post')) {
 //			$this->request->data['Question']['ip_address']=$this->request->clientIp();
 			$this->Question->create();
 			if ($this->Question->save($this->request->data)) {
-				$this->Session->setFlash(__('The question has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$sent=true;
+				$this->Session->setFlash(__('Таны санал хүсэлт илгээгдсэн. Баярлалаа.'));
+				//return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The question could not be saved. Please, try again.'));
+				$sent=false;
+				$this->Session->setFlash(__('Уучлаарай илгээхэд алдаа үүсэв. Дахин оролдоно уу.'));
 			}
 		}
+		$this->set('sent', $sent);
 	}
 
 /**

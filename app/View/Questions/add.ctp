@@ -20,8 +20,27 @@
 					}
 				echo $this->Form->create('Question');
 			?>
+			<?php
+				if($sent){
+					echo "<legend></legend><h4>";
+					echo $this->Session->flash();
+					echo "</h4><br>";
+					echo $this->Html->link(
+						"Буцах", 
+						array(
+							'controller' => 'users',
+							'action'=> 'index', 
+						), 
+						array( 
+							'class' => 'btn btn-lg btn-primary btn-block'
+						)
+					);
+					}else{
+			?>
 			<legend>
-				<?php echo __('Бидэнтэй санал хүсэлтээ хуваалцах'); ?>
+				<?php 
+				echo __('Бидэнтэй санал хүсэлтээ хуваалцах'); 
+				?>
 			</legend>
 			<?php
 					echo $this->Html->image("test/3.jpg", array('class'=>'img-responsive'));
@@ -33,8 +52,7 @@
 				echo $this->Form->input('name', array(
 				'label' => 'Нэр',
 				'class' => 'form-control',
-				'type' => 'text',
-				'placeholder' => 'болд',
+				'type' => 'text'
 				));
 				echo $this->Form->input('email', array(
 				'label' => 'Имэйл',
@@ -52,6 +70,9 @@
 			?>
 			<?php
 			echo $this->Form->end(); ?>
+			<?php
+			}
+			?>
 			<div class="spacer">
 				
 			</div>
