@@ -63,12 +63,12 @@
 							echo '<h4>'.'Косэн клубын гишүүд нэвтрэх эрхтэй.'.'</h4><br>';
 							echo $this->Form->input('email', array(
 							'label' => false,
-							'placeholder' => 'Email address',
+							'placeholder' => 'имэйл хаяг',
 							'class' => 'form-control',
 							'id'=>'inputEmail3'));
 							echo $this->Form->input('password', array(
 							'label' => false,
-							'placeholder' => 'Password',
+							'placeholder' => 'нууц үг',
 							'class' => 'form-control',
 							'id'=>'inputPassword3'));
 							//echo '<p>' . $this->Form->input('remember_me', array('type' => 'checkbox', 'label' =>  __d('users', 'Намайг сана'))) . '</p>';
