@@ -22,17 +22,17 @@
 			?>
 			<?php
 				if($sent){
-					echo "<legend></legend><h4>";
+					echo "<legend></legend><div class='spacer-small'></div><h4 class='text-center'>";
 					echo $this->Session->flash();
 					echo "</h4><br>";
 					echo $this->Html->link(
 						"Буцах", 
 						array(
 							'controller' => 'users',
-							'action'=> 'index', 
+							'action'=> 'login', 
 						), 
 						array( 
-							'class' => 'btn btn-lg btn-primary btn-block'
+							'class' => 'btn btn-primary btn-block question-btn'
 						)
 					);
 					}else{
