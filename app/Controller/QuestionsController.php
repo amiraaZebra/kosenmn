@@ -52,7 +52,7 @@ class QuestionsController extends AppController {
 			$this->Question->create();
 			if ($this->Question->save($this->request->data)) {
 				$sent=true;
-				$this->Session->setFlash(__('Таны санал хүсэлт илгээгдсэн. Баярлалаа.'));
+				$this->Session->setFlash(__('Таны санал хүсэлт илгээгдлээ. Таньд баярлалаа.'));
 				//return $this->redirect(array('action' => 'index'));
 			} else {
 				$sent=false;
