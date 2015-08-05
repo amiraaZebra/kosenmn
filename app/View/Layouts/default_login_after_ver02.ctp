@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<?php echo $scripts_for_layout; ?>	
-
+	<?php echo $scripts_for_layout; ?>
 	<title>
-		<?php
-			$title_for_layout="KosenClub/".$this->params['controller']; 
-			echo $title_for_layout; 
-		?>
-	</title>
-
 	<?php
-		echo $this->Html->meta('icon');
+		$title_for_layout="KosenClub/".$this->params['controller'];
+		echo $title_for_layout;
+	?>
+	</title>
+	<?php
 		echo $this->Html->css('bootstrap');
-		echo $this->Html->css('zoloo');
-		echo $this->Html->css('dashboard');
-		echo $this->Html->script('jquery');
+		echo $this->Html->css('kosencss');
+		echo $this->Html->css('simple-sidebar');
 		echo $this->Html->script('bootstrap');
-		echo $this->Html->script('dashboard');
+		echo $this->Html->meta('icon');
+		
+		echo $this->Html->script('jquery');
+		
+		// echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -25,44 +25,64 @@
 	?>
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top kosen-nav">
+		<div class="container-fluid" style="margin-right:10px; margin-left:20px;">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-         	 	</button>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#kosen-navbar-1" aria-expanded="false" id="menu-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
 				<?php echo $this->Html->link(__('Kosen Club'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<?php echo $this->element('navbar');?>
-				</ul>
+			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
+					<?php echo $this->element('admintool');?>
+					<li><a href="#">Нүүр</a></li>
 					<?php echo $this->element('profile');?>
 				</ul>
 			</div>
 		</div>
+	</nav>
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<?php echo $this->element('sidebar');?>
+		</div>
+		<!-- /#sidebar-wrapper -->
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<?php echo $this->Session->flash('auth'); ?>
+				<?php echo $this->fetch('content'); ?>
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
 	</div>
-	<div id="container" class="container">
-		<div class="row">
-				<div class="row">
-				    <div class="col-sm-3 col-md-2 sidebar">
-					        <?php echo $this->element('sidebar');?>
-				    </div>
-				    <div class="col-sm-9 col-md-10 main">
-                        <div class="container">
-					        <?php echo $this->Session->flash('auth'); ?>
-  					        <?php echo $this->fetch('content'); ?>
-                        </div>
-  				    </div>
-				</div>
-        </div>
-    </div>
-    <footer class="footer">						
-        <h6 class="text-center">&copyKosenClub 2014.</h6>  							
+	<!-- /#wrapper -->
+	<footer class="footer">
+		<div class="container">
+			<h6 class="text-center">&copyKosenClub 2014.</h6>
+		</div>
 	</footer>
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$("#wrapper").toggleClass("toggled");
+	});
+	$("#page-content-wrapper").click(function(e){
+		if($("#wrapper").hasClass("toggled")){
+			e.preventDefault();
+			$("#wrapper").removeClass("toggled");
+		}
+	});
+	</script>
+	
 </body>
 </html>
-
