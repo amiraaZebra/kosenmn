@@ -1,0 +1,108 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+body{
+  background-color: #eee;
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: 300px;
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
+}
+.login{
+  text-align: center;
+  padding: 30px;
+  margin-top: 200px;
+  width: 350px;
+  background-color: #10ADED;
+  border-radius: 10px;
+  
+}
+.kosen-nav{
+  /*height: 70px;*/
+  
+}
+.kosen-nav {
+  background-color: #385381;
+  border-color: #e7e7e7;
+}
+.kosen-nav .navbar-brand {
+  color: #eee;
+}
+.kosen-nav .navbar-brand:hover,
+.kosen-nav .navbar-brand:focus {
+  color: #eee;
+  background-color: #243D6F;
+}
+.kosen-nav .navbar-text {
+  color: #eee;
+}
+.kosen-nav .navbar-nav > li > a {
+  color: #eee;
+}
+.kosen-nav .navbar-nav > li > a:hover,
+.kosen-nav .navbar-nav > li > a:focus {
+  color: #eee;
+  background-color: #243D6F;
+}
+.kosen-nav .navbar-nav > .active > a,
+.kosen-nav .navbar-nav > .active > a:hover,
+.kosen-nav .navbar-nav > .active > a:focus {
+  color: #eee;
+  background-color: #243D6F;
+}
+.kosen-nav .navbar-nav > .disabled > a,
+.kosen-nav .navbar-nav > .disabled > a:hover,
+.kosen-nav .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.kosen-nav .navbar-toggle {
+  border-color: #ddd;
+  background-color: #385381;
+}
+.kosen-nav .navbar-toggle:hover,
+.kosen-nav .navbar-toggle:focus {
+  background-color: #2d3d6f;
+}
+.kosen-nav .navbar-toggle .icon-bar {
+  background-color: #ddd;
+}
+.kosen-nav .navbar-collapse,
+.kosen-nav .navbar-form {
+  border-color: #ddd;
+}
+.kosen-nav .navbar-nav > .open > a,
+.kosen-nav .navbar-nav > .open > a:hover,
+.kosen-nav .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.kosen-dropdown:active{
+  background-color: #2d3d6f;
+}
+
+.footer {
+  z-index: 2000;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #333;
+  color: #eee;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.footer .container {
+  width: auto;
+  /*max-width: 680px;*/
+  /*padding: 0 15px;*/
+}
+.footer .container .text-muted {
+  margin: 20px 0;
+}
