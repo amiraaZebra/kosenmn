@@ -233,14 +233,12 @@ body{
 .question-btn:hover,
 .question-btn:focus,
 .question-btn:active,
-.question-btn.active,
 .open > .dropdown-toggle.question-btn {
   color: #fff;
   background-color: #B000B5;
   border-color: #912A7E;
 }
 .question-btn:active,
-.question-btn.active,
 .open > .dropdown-toggle.question-btn {
   background-image: none;
 }
@@ -259,7 +257,7 @@ body{
 }
 .spacer-small{
   width: 100%;
-  height: 80px;
+  height: 80,apx;
 }
 .sura-right{
   float: right;
