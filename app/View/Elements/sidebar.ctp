@@ -1,14 +1,17 @@
 <!-- Sidebar -->
+<ul class="sidebar-body">
+	<li class="kosen-separator-1"></li>
+</ul>
 <ul class="sidebar-header">
 	<li class="kosen-collapse">
-		<?php echo $this->Html->link(__('Нүүр'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard')); ?>
+		<?php echo $this->Html->link(__(' Нүүр'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('class'=> 'glyphicon glyphicon-home')); ?>
 	</li>
 </ul>
 <ul class="sidebar-body">
 	<li class="kosen-collapse">
 		<?php
 		echo $this->Html->link($this->Html->image("profile/".$this->Session->read('Auth.User.profile_image'),
-		array("alt" => "ResetPassword", "class" => "prof-pic")) . $this->Session->read('Auth.User.username'), array(
+		array("class" => "prof-pic")) . $this->Session->read('Auth.User.username'), array(
 		'plugin'=>'users',
 		'controller'=>'users',
 		'action' => 'view',
@@ -40,4 +43,7 @@
 	<li class="kosen-collapse">
 		<?php echo $this->Html->link(__('Гарах'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'logout')); ?>
 	</li>
+</ul>
+<ul class="sidebar-body">
+	<li class="kosen-separator-2"></li>
 </ul>
