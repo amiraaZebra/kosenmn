@@ -1,7 +1,7 @@
 <li>
 <?php 
 	echo $this->Html->link($this->Html->image("profile/".$this->Session->read('Auth.User.profile_image'),
-array("alt" => "ResetPassword", "class" => "prof-pic")) . $this->Session->read('Auth.User.username'), array(
+array("class" => "prof-pic")) . $this->Session->read('Auth.User.username'), array(
 			'plugin'=>'users', 
 			'controller'=>'users', 
 			'action' => 'view', 

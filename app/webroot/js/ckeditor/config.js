@@ -10,7 +10,8 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		//{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		{ name: 'undo',   groups: [ 'undo' ] },
 		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		{ name: 'links' },
 		{ name: 'insert' },
@@ -23,7 +24,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 		{ name: 'styles' },
 		{ name: 'colors' },
-		{ name: 'about' }
+		//{ name: 'about' }
 	];
 
 	// Remove some buttons, provided by the standard plugins, which we don't
@@ -35,7 +36,9 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Make dialogs simpler.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
-	
+	//SuRa
+    config.language = 'mn';
+    config.uiColor = '#eeeeee';
 	// KCFinder tohirgoo
    
    config.filebrowserBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=files';

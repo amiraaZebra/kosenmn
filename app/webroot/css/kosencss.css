@@ -3,11 +3,20 @@ html{
   min-height: 100%;
 }
 body{
+  margin: 0;
+  padding: 0;
   background-color: #eee;
   width: 100%;
-  min-height: 100%;
-  margin-bottom: 300px;
   font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
+}
+.kosen-footer {
+  z-index: 2000;
+  background:#385381;
+  width:100%;
+  height:70px;
+  position:absolute;
+  bottom:0;
+  left:0;
 }
 .login{
   text-align: center;
@@ -17,6 +26,18 @@ body{
   background-color: #10ADED;
   border-radius: 10px;
   
+}
+.home{
+  margin: 0;
+  padding: 15px 2px 0px 10px;
+  font-size: 20px;
+  color: #eee;
+  height: 49px;
+}
+.home:hover,
+.home:focus{
+  color: #eee;
+  background-color: #243D6F;
 }
 .kosen-nav{
   /*height: 70px;*/
@@ -82,27 +103,22 @@ body{
   background-color: #2d3d6f;
 }
 
-.footer {
-  z-index: 2000;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 30px;
-  background-color: #333;
-  color: #eee;
+/*Shine*/
+.kosen-btn {
+  color: #fff;
+  margin: auto;
+  background-color: #385381;
+  border-color: #2d3d6f;
 }
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-.footer .container {
-  width: auto;
-  /*max-width: 680px;*/
-  /*padding: 0 15px;*/
+.kosen-btn:hover,
+.kosen-btn:focus,
+.kosen-btn:active,
+.open > .dropdown-toggle.kosen-btn {
+  color: #fff;
+  background-color: #2d3d6f;
+  border-color: #385381;
 }
-.footer .container .text-muted {
-  margin: 20px 0;
+.kosen-btn:active,
+.open > .dropdown-toggle.kosen-btn {
+  background-image: none;
 }

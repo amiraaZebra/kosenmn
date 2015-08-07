@@ -3,15 +3,18 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
 /* Toggle Styles */
-#wrapper{
+.kosen-wrapper{
+    position: relative;
+    margin: 0;
+    padding: 0;
     margin-top: 50px;
     width: 100%;
     height: 100%;
 }
-#sidebar-wrapper {
-    z-index: 1000;
+
+#sidebar-kosen-wrapper {
+    z-index: 500;
     position: fixed;
     left: 180px;
     width: 0;
@@ -25,13 +28,13 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled #sidebar-wrapper {
+.kosen-wrapper.toggled #sidebar-kosen-wrapper {
     width: 180px;
 }
 
-#page-content-wrapper {
+#content-kosen-wrapper {
     width: 100%;
-    position: absolute;
+    position: relative;
     padding: 15px;
     margin-right: 0px;
     -webkit-transition: all 0.5s ease;
@@ -40,9 +43,9 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled #page-content-wrapper {
+.kosen-wrapper.toggled #content-kosen-wrapper {
     margin-left: 180px;
-    position: absolute;
+    position: relative;
     margin-right: -180px;
     opacity: 0.5;
 }
@@ -71,9 +74,9 @@
 
 .sidebar-header li{
     text-indent: 20px;
-    height: 50px;
-    font-size: 20px;
-    line-height: 45px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 40px;
 }
 .sidebar-body li,
 .sidebar-footer{
@@ -109,13 +112,26 @@
     text-decoration: none;
 }
 .kosen-separator{
-    width: 150;
+    width: 150px;
     height: 1px;
-    margin: 5px 15px;
+    margin: 0px 15px 0px 15px;
     overflow: hidden;
-    background-color: #888;
+    background-color: #555;
 }
-
+.kosen-separator-1{
+    width: 150px;
+    height: 1px;
+    margin: 50px 0px -20px 0px;
+    overflow: hidden;
+    background-color: #eee;
+}
+.kosen-separator-2{
+    width: 150px;
+    height: 1px;
+    margin: 0px 0px 0px 0px;
+    overflow: hidden;
+    background-color: #eee;
+}
 .prof-pic{
     margin-top: -6px;
     margin-bottom: -6px;
@@ -133,31 +149,48 @@
     text-indent: 30px;
 }
 
+.kosen-container{
+    position: relative;
+    margin: 0;
+    padding:15px;
+    margin-bottom: 200px;
+    width: 100%;  
+}
+.content-contaner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+        margin:auto;
+        padding: 10px 10px 100px 10px;
+    }
 @media(min-width:768px) {
     .kosen-collapse{
         display: none;
     }
-    #wrapper{
-        max-width: 800px;
-    }
 
-    #sidebar-wrapper {
+    #sidebar-kosen-wrapper {
+        left: 15%;
+        margin-left: -13%;
         width: 180px;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
+    .kosen-wrapper.toggled #sidebar-kosen-wrapper {
         width: 180px;
     }
-
-    #page-content-wrapper {
+    #content-kosen-wrapper {
         position: relative;
-        margin-left: 0px;
-        position: absolute;
+        width: 100%;
+        height: 100%;
         padding-left: 200px;
+        margin-right: 0px;
     }
 
-    #wrapper.toggled #page-content-wrapper {
+    .kosen-wrapper.toggled #content-kosen-wrapper {
         position: relative;
+        width: 100%;
+        height: 100%;
+        margin-left: 0px;
         margin-right: 0px;
          opacity: 1;
     }
