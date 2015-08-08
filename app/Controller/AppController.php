@@ -73,10 +73,10 @@ class AppController extends Controller {
 	    $this->Auth->userModel = 'Users.User';  
 	    $this->Auth->userScope = array('User.active' => 1);  
 	    $this->restoreLoginFromCookie();   
-	  
+	    $this->Security->blackHoleCallback = 'blackhole';		
 	//  $this->layout="default_login_after"; //レイアウトの指定  
 	    //The request has been black-holed 対策  
-	    $this->Security->validatePost = false;  
+	    //$this->Security->validatePost = false;  
 	  
 	    //ログイン状態によりレイアウト変更  
 	    if ($this->Auth->user()) {  
@@ -84,6 +84,9 @@ class AppController extends Controller {
         } else {  
             $this->layout = 'default';  
         }  
+	}
+	public function blackhole($type) {
+		
 	}	
 
 	public function isAuthorized($user) {
