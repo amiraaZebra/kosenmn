@@ -46,20 +46,28 @@ class QuestionsController extends AppController {
  * @return void
  */
 	public function add() {
-		$sent=false;
-		if ($this->request->is('post')) {
-//			$this->request->data['Question']['ip_address']=$this->request->clientIp();
-			$this->Question->create();
-			if ($this->Question->save($this->request->data)) {
-				$sent=true;
-				$this->Session->setFlash(__('Таны санал хүсэлт илгээгдлээ. Таньд баярлалаа.'));
-				//return $this->redirect(array('action' => 'index'));
-			} else {
-				$sent=false;
-				$this->Session->setFlash(__('Уучлаарай илгээхэд алдаа үүсэв. Дахин оролдоно уу.'));
+		if($this->Session->read('Auth.User')){
+    	$this->redirect(array(
+    	    		'plugin'=>'users', 
+    	    		'controller'=>'users', 
+    	    		'action' => 'dashboard'
+    	    		));
+    	}else{
+			$sent=false;
+			if ($this->request->is('post')) {
+	//			$this->request->data['Question']['ip_address']=$this->request->clientIp();
+				$this->Question->create();
+				if ($this->Question->save($this->request->data)) {
+					$sent=true;
+					$this->Session->setFlash(__('Таны санал хүсэлт илгээгдлээ. Таньд баярлалаа.'));
+					//return $this->redirect(array('action' => 'index'));
+				} else {
+					$sent=false;
+					$this->Session->setFlash(__('Уучлаарай илгээхэд алдаа үүсэв. Дахин оролдоно уу.'));
+				}
 			}
+			$this->set('sent', $sent);
 		}
-		$this->set('sent', $sent);
 	}
 
 /**
