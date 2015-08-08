@@ -57,21 +57,52 @@
 				<span class="post-date"><?php #echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?></span>
 			-->
 				
-				<span class="until today"><?php $post_date=h($this->Time->format('Y.m.d',$post['Post']['created']));
-					$today=date('Y.m.d');
-					$day=$today-$post_date;
-					#echo $day;
-					if($day==0){
+				<span class="until today"><?php 
+					#$post_date_year=h($this->Time->format('Y',$post['Post']['created']));
+					#$post_date_mouth=h($this->Time->format('m',$post['Post']['created']));
+					#$post_date_year=h($this->Time->format('d',$post['Post']['created']));
+					#$today_year=date('Y');
+					#$today_mouth=date('m');
+					#$today_day=date('d');
+					
+					#if(post_date_year==today_year)
+					
+					$today_date1=new DateTime();
+
+					#$today_date = date_create_from_format('Y-m-d', $s);
+					#$today_date->getTimestamp();
+
+					$post_date=h($this->Time->format("Y-m-d",$post['Post']['created']));
+					$today_date=date("Y-m-d");
+
+					$post_date1=new DateTime($post_date);
+					$today_date1=new DateTime($today_date);
+
+					$diff = $post_date1->diff($today_date1)->format("%a");
+					#echo $diff;
+					#echo $today_date;
+					#echo $post_date;
+
+
+					#$date1 = new DateTime("2010-01-06");
+					#$date2 = new DateTime("2010-01-06");
+
+					#$diff = $date2->diff($date1)->format("%a");
+					#echo $diff;
+
+					if($diff==0){
 						echo "өнөөдөр";
 					}
-					else if($day<14){
-						echo $day,"өдрийн өмнө"; 
-					}
-					else{
+					else if($diff<=14){
 
-						echo $post_date;
+						echo $diff,"өдрийн өмнө";
+					}
+					else {
+						echo $post_date1;
 					}
 
+					#echo $post_date;
+					#echo $today_date;
 				?>
 				</span>
 				
