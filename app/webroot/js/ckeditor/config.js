@@ -41,10 +41,10 @@ CKEDITOR.editorConfig = function( config ) {
     config.uiColor = '#eeeeee';
 	// KCFinder tohirgoo
    
-   config.filebrowserBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=files';
-   config.filebrowserImageBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=images';
-   config.filebrowserFlashBrowseUrl = '/myDocs/aptana/kosenmn/js/kcfinder/browse.php?type=flash';
-   config.filebrowserUploadUrl = '/myDocs/aptana/kosenmn/js/kcfinder/upload.php?type=files';
-   config.filebrowserImageUploadUrl = '/myDocs/aptana/kosenmn/js/kcfinder/upload.php?type=images';
-   config.filebrowserFlashUploadUrl = '/myDocs/aptana/kosenmn/js/kcfinder/upload.php?type=flash';
+   config.filebrowserBrowseUrl = '/kosenmn/app/webroot/js/kcfinder/browse.php?type=files';
+   config.filebrowserImageBrowseUrl = '/kosenmn/app/webroot/js/kcfinder/browse.php?type=images';
+   config.filebrowserFlashBrowseUrl = '/kosenmn/app/webroot/js/kcfinder/browse.php?type=flash';
+   config.filebrowserUploadUrl = '/kosenmn/app/webroot/js/kcfinder/upload.php?type=files';
+   config.filebrowserImageUploadUrl = '/kosenmn/app/webroot/js/kcfinder/upload.php?type=images';
+   config.filebrowserFlashUploadUrl = '/kosenmn/app/webroot/js/kcfinder/upload.php?type=flash';
 };

@@ -45,7 +45,8 @@ body{
 }
 .kosen-nav {
   background-color: #385381;
-  border-color: #e7e7e7;
+  border-color: #385381;
+  /*border-color: #e7e7e7;*/
 }
 .kosen-nav .navbar-brand {
   color: #eee;
