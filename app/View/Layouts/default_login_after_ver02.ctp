@@ -2,6 +2,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<?php echo $scripts_for_layout; ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
 	<?php
 		$title_for_layout="KosenClub/".$this->params['controller'];
@@ -13,7 +14,6 @@
 		echo $this->Html->css('kosencss');
 		echo $this->Html->css('kosenposts');
 		echo $this->Html->css('sura-slider');
-		echo $this->Html->css('simple-sidebar');
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->meta('icon');
@@ -93,7 +93,9 @@
 		}
 	});
 	$( ".post-content" ).children("p").children("img").css(styles);
-	$( ".post-content" ).children("p").children("img").wrap("<div class='post-image'></div>");
+	$( ".post-content p" ).addClass('post-content-p');
+	$(".post-content img").unwrap();
+	$( ".post-content img" ).wrap("<div class='post-image'></div>");
 	$( ".post-content" ).children("img").wrap("<div class='post-image'></div>");
 	
 	</script>
