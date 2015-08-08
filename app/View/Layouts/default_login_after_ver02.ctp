@@ -12,11 +12,12 @@
 		echo $this->Html->css('bootstrap');
 		echo $this->Html->css('kosencss');
 		echo $this->Html->css('kosenposts');
+		echo $this->Html->css('sura-slider');
 		echo $this->Html->css('simple-sidebar');
+		echo $this->Html->script('jquery');
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->meta('icon');
 		
-		echo $this->Html->script('jquery');
 		
 		// echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');
@@ -72,7 +73,9 @@
 		</div>
 	</footer>
 
-
+	<?php
+		echo $this->Html->script('sura-slider');
+	?>
 	<!-- Menu Toggle Script -->
 	<script>
 	var styles = {
