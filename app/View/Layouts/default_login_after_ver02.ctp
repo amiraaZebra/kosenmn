@@ -14,7 +14,6 @@
 		echo $this->Html->css('kosencss');
 		echo $this->Html->css('kosenposts');
 		echo $this->Html->css('sura-slider');
-		echo $this->Html->css('simple-sidebar');
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->meta('icon');
