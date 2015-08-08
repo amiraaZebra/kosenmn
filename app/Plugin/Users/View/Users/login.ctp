@@ -86,6 +86,33 @@
 			</div>
 		</div>
 		<script>
+				var slideWidth;
+				var slideHeight;
+				var ratioFrame;
+				function ScaleSlider() {
+
+				slideWidth = $(document).width();
+				slideHeight = $(document).height();
+				ratioFrame = slideWidth/slideHeight;
+
+				$(".s-slide-inner img").each(function(index, el) {
+					var ratioImage = $(this).width()/$(this).height();
+					if(ratioFrame>ratioImage){
+						$(this).width(slideWidth);
+						$(this).css({
+							'height': 'auto'
+						});
+					}
+					else{
+						$(this).height(slideHeight);
+						$(this).css({
+							'width': 'auto'
+						});
+					}
+				});
+				window.setTimeout(ScaleSlider, 30);
+				}
+				ScaleSlider();
 				$(".s-slider > div:gt(0)").hide();
 				setInterval(function() {
 					$('.s-slider > div:first').fadeOut(1000).next().fadeIn(2000).end().appendTo('.s-slider');
