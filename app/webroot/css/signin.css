@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
+  font-family: Tahoma, Geneva, "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",sans-serif;
 }
 
 /* Slider Design */
@@ -24,7 +24,7 @@ body{
 .s-slider h2,
 .s-slider blockquote{
   padding: 100px 30px 10px 30px;
-  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
+  font-family: Tahoma, Geneva, "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",sans-serif;
   width: 80%;
   max-width: 960px;
   color: #fff;
