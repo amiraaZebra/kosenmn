@@ -7,7 +7,6 @@ body{
   padding: 0;
   background-color: #eee;
   width: 100%;
-  font-family: Tahoma, Geneva, "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",sans-serif;
 }
 .kosen-footer {
   z-index: 2000;
