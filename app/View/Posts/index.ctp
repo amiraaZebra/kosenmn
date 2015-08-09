@@ -53,8 +53,34 @@
 				=>'', 'escape' => false));
 				echo " ";
 				?>
-				<span class="post-date"><?php echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?></span>
+				<!--
+				<span class="post-date"><?php #echo h($this->Time->format('Y.m.d',$post['Post']['created'])); ?></span>
+			-->
+				
+				<span class="until today"><?php $post_date=h($this->Time->format('Y.m.d',$post['Post']['created']));
+					$today=date('Y.m.d');
+					$day=$today-$post_date;
+					#echo $day;
+					if($day==0){
+						echo "өнөөдөр";
+					}
+					else if($day<14){
+						echo $day,"өдрийн өмнө"; 
+					}
+					else{
+
+						echo $post_date;
+					}
+
+				?>
+				</span>
+				
+
 				<span>-д нийтэлсэн.</span>
+				<!--
+				<span class="today"><?php #echo date('Y.m.d'); ?> </span>
+			-->
+
 			</div>
 			<div class="post-separator"></div>
 			<div class="post-content">
