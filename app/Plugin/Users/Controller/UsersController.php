@@ -154,10 +154,14 @@ class UsersController extends UsersAppController {
 		parent::beforeFilter();
         
 		$this->_setupAuth();
-        $this->Auth->Allow('admin_add');		
+        //$this->Auth->Allow('admin_add');		
 		$this->_setupPagination();
 
 		$this->set('model', $this->modelClass);
+		
+		// 2015_8_8 dummy muugii@muugii.com, kosentest
+		// $this->Auth->Allow('admin_add');
+		// $this->Auth->Allow('add');
 
 		if (!Configure::read('App.defaultEmail')) {
 			Configure::write('App.defaultEmail', 'noreply@' . env('HTTP_HOST'));
@@ -295,7 +299,10 @@ class UsersController extends UsersAppController {
 		$user = $this->{$this->modelClass}->read(null, $this->Auth->user('id'));
 		$this->set('user', $user);
 		
-		
+	}
+
+	// by Muugii
+	public function advanced_search(){
 		
 	}
 
