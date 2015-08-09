@@ -1,3 +1,7 @@
+<?php
+echo $this->Html->script('advanced_search.js', array('inline' => false));
+?>
+
 <h1>Нарийвчилсан хайлт</h1>
 
 <form class="form-inline">
