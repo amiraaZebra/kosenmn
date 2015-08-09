@@ -3,6 +3,7 @@
 	max-width: 700px;
 }
 .kosen-post{
+	position: relative;
 	padding: 1px 10px 10px 10px;
 	margin-bottom: 30px;
 	background-color: #fff;
@@ -24,7 +25,7 @@
 }
 .post-info{
 	padding: 0px 30px 10px 40px;
-	font-size: 10.5px;
+	font-size: 12px;
 }
 .post-info .prof-pic{
 	margin: 0px 6px 0px 0px;
@@ -43,14 +44,13 @@
 	padding: 10px 40px 10px 40px;
 	text-align: justify;
 }
+.post-content-p{
+	padding: 0px 20px 0px 20px;
+}
 .post-image{
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	min-width: 200px;
-	min-height: 300px; 
-	max-width: 500px;
-	max-height: 500px;
 	margin: auto;
 	margin-bottom: 20px;
 	border: 6px solid #eee;
@@ -105,4 +105,37 @@
 .paging{
 	margin: auto;
 	text-align: center;
+}
+@media screen and (max-width: 767px){
+	.post-title{
+		padding-left: 20px;
+	}
+	.post-info{
+	padding: 0px 10px 10px 20px;
+	font-size: 11px;
+	}
+	.post-container{
+	max-width: 90%;
+	}
+	.post-content{
+	padding: 10px 0px 10px 0px;
+	text-align: justify;
+	}
+	.kosen-post{
+		padding: 1px 0px 10px 0px;
+	}
+	.post-image{
+		height: 300px;
+		background-color: red;
+	}
+	.post-image img{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top:50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
 }

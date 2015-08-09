@@ -7,7 +7,6 @@ body{
   padding: 0;
   background-color: #eee;
   width: 100%;
-  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
 }
 .kosen-footer {
   z-index: 2000;
