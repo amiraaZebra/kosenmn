@@ -18,7 +18,7 @@ class RequestsController extends AppController {
 		if(count($vars)>=1){
 			switch($vars[0]){
 				case 'user':
-					$Requests=$this->User->find('all',array('conditions'=>array('User.active'=>'amiraa'), 'fields' => array('username', 'email', 'role', 'first_name', 'last_name', 'gender', 'status', 'major', 'kosen_kanji', 'kosen_roman', 'kosen_year', 'fb_acc', 'high_school', 'university1', 'university2', 'university3', 'country', 'city', 'profile_image', 'work1', 'work2', 'work3')));	
+					$Requests=$this->User->find('all',array('conditions'=>array('User.active'=>true), 'fields' => array('username', 'email', 'role', 'first_name', 'last_name', 'gender', 'status', 'major', 'kosen_kanji', 'kosen_roman', 'kosen_year', 'fb_acc', 'high_school', 'university1', 'university2', 'university3', 'country', 'city', 'profile_image', 'work1', 'work2', 'work3')));	
 					
 					break;
 				case 'post':
