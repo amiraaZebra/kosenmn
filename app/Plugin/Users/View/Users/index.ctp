@@ -21,11 +21,12 @@
 	
 <div class="col-xs-offset-6 col-xs-10">		      
 <?php
-	echo $this->Form->submit('Search User',array('class' => 'btn btn-default'));
+	echo $this->Form->submit('Хэрэглэгч хайх', array('class' => 'btn btn-default'));
 	echo $this->Form->end();
+	echo $this->Html->link('Нарийвчилж хайх', array('controller' => 'users', 'action' => 'advanced_search'), array('class' => 'btn btn-primary'));
+	// echo "<a href='users/users/advanced_search' class='btn btn-primary'>Нарийвчилж хайх</a>";
 ?>		      
-</div>
-	
+</div>	
 	
 	<p><?php
 	echo $this->Paginator->counter(array(
