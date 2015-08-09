@@ -38,7 +38,7 @@
 		<div class="kosen-login-container">
 			<div class="row kosen-login-form">
 				<div class="col-xs-12 col-sm-6 col-md-7 login-menu">
-					<h1 id="kosenName">Kosen.mn</h1>
+					<h1 class="kosenName">Kosen.mn</h1>
 					<?php
 						$currentAction = $this->params['action'];
 						if($currentAction == 'add'){}

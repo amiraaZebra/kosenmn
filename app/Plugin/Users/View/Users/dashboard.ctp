@@ -33,7 +33,25 @@
 	<div class="arrow-right">
 	</div>
 </div>
-<div class="post-container" style="margin-top:20px;">
-	<p><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></p>
-	<p><?php echo __d('users', 'Recent broadcasts'); ?></p>
+<div class="content-container-dashboard">
+	<div class="post-container" style="margin-top:20px;">
+		<p><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></p>
+		<p><?php echo __d('users', 'Recent broadcasts'); ?></p>
+	</div>
 </div>
+<script>
+	function SideBarTop(){
+		$(".content-container").contents().unwrap();
+		if($(document).width()>=768){
+			$("#sidebar-kosen-wrapper").css({
+				top: '200px'
+			});
+		}else{
+			$("#sidebar-kosen-wrapper").css({
+				top: '0'
+			});
+		}
+		window.setTimeout(SideBarTop, 30);
+	}
+	SideBarTop();
+</script>

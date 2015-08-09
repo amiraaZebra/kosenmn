@@ -8,15 +8,6 @@ body{
   background-color: #eee;
   width: 100%;
 }
-.kosen-footer {
-  z-index: 2000;
-  background:#385381;
-  width:100%;
-  height:70px;
-  position:absolute;
-  bottom:0;
-  left:0;
-}
 .login{
   text-align: center;
   padding: 30px;
@@ -26,6 +17,7 @@ body{
   border-radius: 10px;
   
 }
+/* Home Button */
 .home{
   margin: 0;
   padding: 15px 2px 0px 10px;
@@ -38,6 +30,8 @@ body{
   color: #eee;
   background-color: #243D6F;
 }
+/* Navigation bar */
+
 .kosen-nav{
   /*height: 70px;*/
   
@@ -103,7 +97,8 @@ body{
   background-color: #2d3d6f;
 }
 
-/*Shine*/
+/*Kosen Button */
+
 .kosen-btn {
   color: #fff;
   margin: auto;
@@ -125,23 +120,19 @@ body{
 
 /*Simple Side bar*/
 
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
 /* Toggle Styles */
 .kosen-wrapper{
     position: relative;
     margin: 0;
     padding: 0;
-    margin-top: 25px;
+    margin-top: 0px;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 #sidebar-kosen-wrapper {
-    z-index: 500;
+    z-index: 2000;
     position: fixed;
     left: 180px;
     width: 0;
@@ -162,8 +153,6 @@ body{
 #content-kosen-wrapper {
     width: 100%;
     position: relative;
-    padding: 0;
-    margin-right: 0px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -173,7 +162,7 @@ body{
 .kosen-wrapper.toggled #content-kosen-wrapper {
     margin-left: 180px;
     position: relative;
-    margin-right: -180px;
+    /*margin-right: -180px;*/
     opacity: 0.5;
 }
 
@@ -200,8 +189,8 @@ body{
 }
 
 .sidebar-header li{
-    text-indent: 20px;
-    height: 35px;
+    text-indent: 10px;
+    height: 45px;
     font-size: 18px;
     line-height: 40px;
 }
@@ -283,23 +272,29 @@ body{
     margin-bottom: 200px;
     width: 100%;  
 }
-.content-contaner{
+.content-container{
         position: relative;
         width: 100%;
-        height: 100%;
+        /*height: 100%;*/
         /*max-width: 300px;*/
         margin:auto;
         padding: 10px 0 100px 0;
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -142px;
     }
-@media screen and (max-width: 767px){
-    
-}
 @media(min-width:768px) {
+    .kosen-wrapper{
+    margin-top: 25px;
+}
     .kosen-collapse{
         display: none;
     }
 
     #sidebar-kosen-wrapper {
+      position: absolute;
+        z-index: 200;
         left: 15%;
         margin-left: -13%;
         width: 180px;
@@ -312,9 +307,14 @@ body{
         position: relative;
         width: 100%;
         height: 100%;
-        padding-left: 200px;
-        padding-right: 15px;
+        padding-right: 0px;
         margin-right: 0px;
+    }
+    .content-container{
+      padding-left: 200px;
+    }
+    .content-container-dashboard{
+      padding-left: 200px;
     }
 
     .kosen-wrapper.toggled #content-kosen-wrapper {

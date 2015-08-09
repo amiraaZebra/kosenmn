@@ -20,7 +20,6 @@ body{
   margin: auto;
   float: right;
 }
-
 .s-slider h2,
 .s-slider blockquote{
   padding: 100px 30px 10px 30px;
@@ -53,6 +52,7 @@ body{
 
 .s-bg-img{
   position: absolute;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   left: 50%;
@@ -61,42 +61,10 @@ body{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/*.s-bg-img {
- 
-  min-height: 100%;
-  min-width: 1024px;
-  
- 
-  width: 100%;
-  height: auto;
-  
- 
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-@media screen and (max-width: 1024px) {
-  .s-bg-img {
-    left: 50%;
-    margin-left: -512px;
-  }
-} */
-/*.s-bg-img{
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 500px;
-  background-position: center center; 
-} */
 
 /* Login Menu */
 .login-menu{
+  position: relative;
   padding-bottom: 100px;
 }
 .contact-link{
@@ -118,17 +86,21 @@ body{
 /* login-form */
 .kosen-login-container{
   position: absolute;
+  overflow: hidden;
   width: 100%;
   max-width: 1000px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  height: 100%
+  height: 100%;
+  margin: auto;
 }
 .kosen-login-form{
   position: relative;
   top: 50%;
+  margin: auto;
+  width: 100%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -136,19 +108,33 @@ body{
   
 }
 .kosen-login-box{
-  z-index: 101;
   margin: auto;
-  padding: 20px;
-  width: 350px;
+  z-index: 101;
+  padding: 10px;
+  width: 100%;
+  max-width: 350px;
   opacity: 0.8;
-  border-radius: 20px;
+  border-radius: 10px;
 }
-#kosenName{
+.kosenName{
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+}
+@media(min-width:768px) {
+  .kosenName{
     font-size: 80px;
     font-weight: bolder;
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
   }
+  .kosen-login-box{
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+  }
+}
 .login-message{
   color: #a94442;
 }

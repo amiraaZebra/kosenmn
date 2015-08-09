@@ -7,7 +7,7 @@
 			echo $login_page_title; 
 			?>
 	</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 	<?php
 		echo $this->Html->meta('icon');		
 		echo $this->Html->css('bootstrap');
