@@ -94,3 +94,8 @@
 		<?php
 		}
 		?>
+<?php $this->Html->scriptStart(array('inline' => false)); ?>
+	if (!navigator.cookieEnabled){
+		alert('Таны browser-д cookie бичиж чадахгүй байна та "cookie block" хийсэн тохиргоогоо өөрчилнө үү.');
+	}
+<?php $this->Html->scriptEnd(); ?>
