@@ -4,7 +4,7 @@
 </ul>
 <ul class="sidebar-header">
 	<li class="kosen-collapse">
-		<?php echo $this->Html->link(__(' Нүүр'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('class'=> 'glyphicon glyphicon-home')); ?>
+		<?php echo $this->Html->link(__($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')).' Нүүр'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('escape'=> false)); ?>
 	</li>
 </ul>
 <ul class="sidebar-body">
@@ -20,7 +20,7 @@
 		?>
 	</li>
 	<li class="kosen-collapse">
-		<a id="prof-settings" href="#">Тохиргоо<span class="glyphicon glyphicon-edit"></span></a>
+		<?php echo $this->Html->link(("Тохиргоо". $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-edit'))), array('plugin'=>'users', 'controller'=>'users', 'action' => 'edit', $this->Session->read('Auth.User.id')), array('id' => 'prof-settings', 'escape' => false)); ?>
 	</li>
 	<li>
 		<?php echo $this->Html->link(__('Мэдээлэл'), array('plugin'=>NULL, 'controller'=>'posts', 'action' => 'index')); ?>

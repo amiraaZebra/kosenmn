@@ -1,0 +1,17 @@
+.kosen-footer
+{
+	position: absolute;
+	background-color: #385381;
+	z-index: 1000;
+	height:70px;
+	bottom: 0;
+	width: 100%;
+}
+.kosen-footer.toggled{
+	opacity: 0.5;
+}
+@media(min-width:768px) {
+	.kosen-footer.toggled{
+	opacity: 1.0;
+}	
+}

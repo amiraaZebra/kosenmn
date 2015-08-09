@@ -2,7 +2,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<?php echo $scripts_for_layout; ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 	<title>
 	<?php
 		$title_for_layout="KosenClub/".$this->params['controller'];
@@ -17,14 +17,20 @@
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->meta('icon');
+		echo $this->Html->css('stickyfooter');
+		echo $this->Html->script('stickyfooter');
 		
 		
 		// echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->fetch('script');
-				
+					echo $this->fetch('script');
 	?>
+	<script>
+		$(window).load(function() {
+			$(".kosen-footer").stickyFooter();
+		});
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top kosen-nav">
@@ -58,7 +64,7 @@
 		<!-- content Content -->
 		<div class="kosen-container">
 			<div id="content-kosen-wrapper">
-				<div class="content-contaner">
+				<div class="content-container">
 					<?php echo $this->Session->flash('auth'); ?>
 					<?php echo $this->fetch('content'); ?>
 				</div>
@@ -67,29 +73,30 @@
 		<!-- /.kosen-container -->
 	</div>
 	<!-- /.kosen-wrapper -->
-	<footer class="kosen-footer">
+	<div class="kosen-footer">
 		<div class="container">
 			<h6 class="text-center">&copyKosenClub 2014.</h6>
 		</div>
-	</footer>
-
+	</div>
 	<?php
 		echo $this->Html->script('sura-slider');
 	?>
 	<!-- Menu Toggle Script -->
 	<script>
 	var styles = {
-      width : "100%",
-      height: "auto"
-    };
+	width : "100%",
+	height: "auto"
+	};
 	$("#menu-toggle").click(function(e) {
 	e.preventDefault();
 	$(".kosen-wrapper").toggleClass("toggled");
+	$(".kosen-footer").toggleClass("toggled");
 	});
 	$("#content-kosen-wrapper").click(function(e){
 		if($(".kosen-wrapper").hasClass("toggled")){
 			e.preventDefault();
 			$(".kosen-wrapper").removeClass("toggled");
+			$(".kosen-footer").removeClass("toggled");
 		}
 	});
 	$( ".post-content" ).children("p").children("img").css(styles);
@@ -97,7 +104,6 @@
 	$(".post-content img").unwrap();
 	$( ".post-content img" ).wrap("<div class='post-image'></div>");
 	$( ".post-content" ).children("img").wrap("<div class='post-image'></div>");
-	
 	</script>
 </body>
 </html>
