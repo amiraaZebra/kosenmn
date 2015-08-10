@@ -58,56 +58,47 @@
 			-->
 				
 				<span class="until today"><?php 
-					#$post_date_year=h($this->Time->format('Y',$post['Post']['created']));
-					#$post_date_mouth=h($this->Time->format('m',$post['Post']['created']));
-					#$post_date_year=h($this->Time->format('d',$post['Post']['created']));
-					#$today_year=date('Y');
-					#$today_mouth=date('m');
-					#$today_day=date('d');
-					
-					#if(post_date_year==today_year)
-					
-					$today_date1=new DateTime();
 
-					#$today_date = date_create_from_format('Y-m-d', $s);
-					#$today_date->getTimestamp();
-
-					$post_date=h($this->Time->format("Y-m-d",$post['Post']['created']));
-					$today_date=date("Y-m-d");
-
+					// Нийтлэлийн өдөр болон өнөөдөр
+					$post_date=h($this->Time->format("Y-m-d H:i:s",$post['Post']['created']));
+					$today_date=date("Y-m-d H:i:s");
+					// Өдөр хувиргалт
 					$post_date1=new DateTime($post_date);
 					$today_date1=new DateTime($today_date);
 
+					// Өдөр хоног цагийн зөрүү
 					$diff = $post_date1->diff($today_date1)->format("%a");
-					#echo $diff;
-					#echo $today_date;
-					#echo $post_date;
+					$min=$post_date1->diff($today_date1)->format('%i');
+					$sec=$post_date1->diff($today_date1)->format('%s');
+					$hour=$post_date1->diff($today_date1)->format('%h');
 
+					// Хэвлэлт
+					if($diff==0 && $hour==0 && $min==0){
+						echo $sec.' секундын өмнө';
+					}
+					else if($diff==0 && $hour==0){
+						echo $min.' минутын өмнө';
+					}
+					else if($diff==0){
+						echo $hour.' цагийн өмнө';
+					}
+					else if($diff==1){
 
-					#$date1 = new DateTime("2010-01-06");
-					#$date2 = new DateTime("2010-01-06");
+						echo "өчигдөр";
+					}
+					else if($diff==2){
 
-					#$diff = $date2->diff($date1)->format("%a");
-					#echo $diff;
-
-					if($diff==0){
-						echo "өнөөдөр";
+						echo "уржигдар";
 					}
 					else if($diff<=14){
 
-						echo $diff,"өдрийн өмнө";
+						echo $diff." хоногийн өмнө";
 					}
 					else {
-						echo $post_date1;
+						echo $post_date;
 					}
-
-					#echo $post_date;
-					#echo $today_date;
 				?>
 				</span>
-				
-
-				<span>-д нийтэлсэн.</span>
 				<!--
 				<span class="today"><?php #echo date('Y.m.d'); ?> </span>
 			-->
