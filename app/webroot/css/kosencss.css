@@ -118,6 +118,40 @@ body{
 .open > .dropdown-toggle.kosen-btn {
   background-image: none;
 }
+/* SuRa navbar */
+
+  .sura-navbar-container{
+    width: 100%;
+    max-width: 1000px;
+    z-index: 3000;
+    position: absolute;
+    top: 20px;
+    left:50%;
+    display: none;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 130%;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.8);
+  }
+  .sura-navbar-container ul{
+    text-decoration: none;
+    padding: 0;
+    list-style: none;
+  }
+  .sura-navbar-container ul>li{
+    padding: 0 20px 0 20px;
+    display: inline-block;
+  }
+  .sura-navbar-container ul > li a{
+    color:#eee;
+  }
+  .sura-navbar-container ul > li a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color:#ddd;
+  }
 
 /*Simple Side bar*/
 
@@ -135,6 +169,7 @@ body{
     left: 180px;
     width: 0;
     height: 100%;
+    margin-top: -50px;
     margin-left: -180px;
     overflow-y: auto;
     background: #ddd;
@@ -278,13 +313,13 @@ body{
     }
 @media(min-width:768px) {
     .kosen-wrapper{
-      padding-top: 25px;
     }
     .kosen-collapse{
         display: none;
     }
 
     #sidebar-kosen-wrapper {
+        display: none;
         position: absolute;
         z-index: 200;
         left: 15%;
@@ -318,4 +353,94 @@ body{
         margin-right: 0px;
          opacity: 1;
     }
+}
+
+/* User search */
+
+
+ul.search-box{
+  padding-top: 10px;
+  text-decoration: none;
+  list-style: none;
+  padding-left: 15px;
+  width: 100%;
+  /*margin: auto;*/
+}
+ul.search-box li{
+  display: inline-block;
+}
+.search-input{
+  padding-top: 10px;
+  width: 65%;
+  max-width: 350px;
+}
+li.search-button{
+  width: 30%;
+  max-width: 85px;
+}
+/* More Button */
+#btn-more:focus{
+  outline: none;
+}
+#btn-more.search-toggled{
+  background-color: #888;
+}
+/* Options */
+td.prefecture{
+  border: 1px solid #fff;
+  font-size: 10px;
+  padding: 1px 1.5px 1px 1.5px;
+  cursor: pointer;
+}
+td.prefecture:hover{
+  background-color: #888;
+  font-size: 11px;
+  font-weight: bold;
+}
+.prefecture.active{
+  background-color: #888;
+  font-size: 12px;
+  font-weight: bold;
+}
+td a{
+  text-decoration: none;
+  color: #000;
+}
+td a:hover{
+  text-decoration: none;
+  color: #000;
+}
+#search-more-menu{
+  font-size: 12px;
+  display: none;
+}
+#search-more-menu label{
+  text-indent: 5px;
+}
+#search-more-menu .form-control{
+  width: 100%;
+  font-size: 12px;
+  max-width: 350px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+#search-more-menu .btn{
+  font-size: 12px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+#search-more-menu .btn-group{
+  display: block;
+}
+.japan-map,
+#sel3{
+  display: none;
+}
+@media(min-width:768){
+  td.prefecture{
+    border: 1px solid #fff;
+    font-size: 90%;
+    padding: 3px;
+    cursor: pointer;
+  }
 }

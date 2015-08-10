@@ -49,8 +49,14 @@
 			</div>
 		</div>
 	</nav>
+	<div style="height:50px">
+		
+	</div>
 	<div class="kosen-wrapper">
 		<!-- Sidebar -->
+		<div id="sura-navbar">
+			<?php echo $this->element('navbar');?>
+		</div>
 		<div id="sidebar-kosen-wrapper">
 			<?php echo $this->element('sidebar');?>
 		</div>
@@ -65,17 +71,19 @@
 			</div>
 		</div>
 		<!-- /.kosen-container -->
-	</div>
-	<!-- /.kosen-wrapper -->
-	<div class="kosen-footer">
+		<div class="kosen-footer">
 		<div class="container">
 			<h6 class="text-center">&copyKosenClub 2014.</h6>
 		</div>
-							<p class="test"></p>
+		<p id="test"></p>
 	</div>
+	</div>
+	<!-- /.kosen-wrapper -->
+	
 	<?php
 		echo $this->Html->script('sura-slider');
 		echo $this->Html->script('stickyfooter');
+		echo $this->Html->script('sura-search')
 	?>
 	<!-- Menu Toggle Script -->
 	<script>
@@ -103,19 +111,21 @@
 	function containerHeight(){
 		var wrapperHeight = $("#content-kosen-wrapper").height();
 		// $(".test").html(wrapperHeight);
-		var docHeight = $(document).height();
+		var docHeight = $(window).height();
 		if(wrapperHeight<=docHeight){
 			$(".kosen-wrapper").css({
-				position: 'absolute'
+				'position': 'absolute',
+				'min-height': '700px',
+				'height': '100%'
 			});
 		}
 		else{
 			$(".kosen-wrapper").css({
-				position: 'relative'
+				'position': 'relative'
 			});
 		}
-
 		window.setTimeout(containerHeight, 30);
+		$("#test").html($(".kosen-wrapper").height());
 	}
 	containerHeight();
 	</script>
