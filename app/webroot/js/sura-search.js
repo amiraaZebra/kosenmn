@@ -4,10 +4,16 @@ $("#btn-more").click(function(event) {
 	/* Act on the event */
 	$(this).toggleClass('search-toggled');
 	if($(this).hasClass('search-toggled')){
-		$("#search-more-menu").show();
+		$("#search-toggle").show();
+		$("#search-toggle1").show();
 	}
 	else{
-		$("#search-more-menu").hide();
+		$("#search-toggle").hide();
+		$("#search-toggle1").hide();
+		$("#sel1").val("0");
+		$("#sel2").val("0");
+		$("#sel3").val("0");
+
 	}
 });
 
@@ -21,7 +27,7 @@ $(".location-select button").click(function(event) {
 	else{
 		$(".japan-map").hide();
 		$("#sel3").hide();
-		$("#sel3").val("1");
+		$("#sel3").val("0");
 	}
 });
 

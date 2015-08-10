@@ -70,6 +70,9 @@
 				</div>
 			</div>
 		</div>
+		<div style="height:150px">
+		
+		</div>
 		<!-- /.kosen-container -->
 		<div class="kosen-footer">
 		<div class="container">

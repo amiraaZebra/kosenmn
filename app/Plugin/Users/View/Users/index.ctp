@@ -9,13 +9,13 @@
 				<button id="btn-more" class="btn btn-default"><span class="glyphicon glyphicon-option-vertical"></span></button>
 			</li>
 		</ul>
-		<div id="search-more-menu">
+		<div class="more-menu" id="search-toggle">
 			<div class="col-xs-12 col-sm-12" style="width:100%; height:1px; background-color:#eee; margin:15px"></div>
 			<div class="col-xs-12 col-sm-6">
 				<label for="sel1">Косэн он:</label>
 				<select class="form-control" id="sel1">
 					<?php
-						echo "<option selected disabled>";
+						echo "<option value='0' selected disabled>";
 							echo "-Косэн он-";
 						echo "</option>";
 						for($i=idate("Y"); $i>=1990; $i-- ){
@@ -31,7 +31,7 @@
 				<select class="form-control" id="sel2">
 					<?php
 						$majors = array("Цахим IT", "Электрик/Электроник", "Барилга/Архитектур", "Хими/Биологи", "Механик");
-						echo "<option selected disabled>";
+						echo "<option value='0' selected disabled>";
 						echo "-Мэргэжил-";
 						echo "</option>";
 						foreach ($majors as $key => $value){
@@ -55,7 +55,7 @@
 				<select class="form-control" id="sel3">
 					<?php
 						$majors = array("北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "千葉", "東京", "神奈川", "新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜", "静岡", "愛知", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄");
-						echo "<option value='1' selected disabled>";
+						echo "<option value='0' selected disabled>";
 						echo "-都道府県-";
 						echo "</option>";
 						foreach ($majors as $key => $value){
@@ -158,6 +158,9 @@
 				</table>
 			</div>
 			<p class="test"></p>
+		</div>
+		<div class="col-sm-12 col-xs-12" id="search-toggle1" style="text-align:center">
+				<button id="search-button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Хайх</button>
 		</div>
 	</div>
 	<?php

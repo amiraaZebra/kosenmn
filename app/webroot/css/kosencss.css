@@ -125,7 +125,7 @@ body{
     max-width: 1000px;
     z-index: 3000;
     position: absolute;
-    top: 20px;
+    top: 80px;
     left:50%;
     display: none;
     -webkit-transform: translateX(-50%);
@@ -160,7 +160,6 @@ body{
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 150px;
 }
 
 #sidebar-kosen-wrapper {
@@ -410,30 +409,33 @@ td a:hover{
   text-decoration: none;
   color: #000;
 }
-#search-more-menu{
+.more-menu{
   font-size: 12px;
   display: none;
 }
-#search-more-menu label{
+.more-menu label{
   text-indent: 5px;
 }
-#search-more-menu .form-control{
+.more-menu .form-control{
   width: 100%;
   font-size: 12px;
   max-width: 350px;
   height: 30px;
   margin-bottom: 10px;
 }
-#search-more-menu .btn{
+.more-menu .btn{
   font-size: 12px;
   height: 30px;
   margin-bottom: 5px;
 }
-#search-more-menu .btn-group{
+.more-menu .btn-group{
   display: block;
 }
 .japan-map,
 #sel3{
+  display: none;
+}
+#search-toggle1{
   display: none;
 }
 @media(min-width:768){
