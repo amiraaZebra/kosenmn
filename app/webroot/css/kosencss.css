@@ -124,11 +124,8 @@ body{
 /* Toggle Styles */
 .kosen-wrapper{
     position: relative;
-    margin: 0;
-    padding: 0;
-    margin-top: 0px;
     width: 100%;
-    height: 100%;
+    padding-top: 50px;
     overflow: hidden;
 }
 
@@ -283,22 +280,23 @@ body{
         min-height: 100%;
         height: auto !important;
         height: 100%;
-        margin: 0 auto -142px;
+        margin: 0 auto -70px;
     }
 @media(min-width:768px) {
     .kosen-wrapper{
-    margin-top: 25px;
-}
+      padding-top: 25px;
+    }
     .kosen-collapse{
         display: none;
     }
 
     #sidebar-kosen-wrapper {
-      position: absolute;
+        position: absolute;
         z-index: 200;
         left: 15%;
         margin-left: -13%;
         width: 180px;
+        min-height: 100%;
     }
 
     .kosen-wrapper.toggled #sidebar-kosen-wrapper {

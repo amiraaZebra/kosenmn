@@ -18,19 +18,13 @@
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('stickyfooter');
-		echo $this->Html->script('stickyfooter');
 		
 		
 		// echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-					echo $this->fetch('script');
+		echo $this->fetch('script');
 	?>
-	<script>
-		$(window).load(function() {
-			$(".kosen-footer").stickyFooter();
-		});
-	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top kosen-nav">
@@ -77,9 +71,11 @@
 		<div class="container">
 			<h6 class="text-center">&copyKosenClub 2014.</h6>
 		</div>
+							<p class="test"></p>
 	</div>
 	<?php
 		echo $this->Html->script('sura-slider');
+		echo $this->Html->script('stickyfooter');
 	?>
 	<!-- Menu Toggle Script -->
 	<script>
@@ -104,6 +100,24 @@
 	$(".post-content img").unwrap();
 	$( ".post-content img" ).wrap("<div class='post-image'></div>");
 	$( ".post-content" ).children("img").wrap("<div class='post-image'></div>");
+	function containerHeight(){
+		var wrapperHeight = $("#content-kosen-wrapper").height();
+		// $(".test").html(wrapperHeight);
+		var docHeight = $(document).height();
+		if(wrapperHeight<=docHeight){
+			$(".kosen-wrapper").css({
+				position: 'absolute'
+			});
+		}
+		else{
+			$(".kosen-wrapper").css({
+				position: 'relative'
+			});
+		}
+
+		window.setTimeout(containerHeight, 30);
+	}
+	containerHeight();
 	</script>
 </body>
 </html>

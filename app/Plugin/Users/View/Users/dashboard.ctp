@@ -44,7 +44,7 @@
 		$(".content-container").contents().unwrap();
 		if($(document).width()>=768){
 			$("#sidebar-kosen-wrapper").css({
-				top: '200px'
+				top: '225px'
 			});
 		}else{
 			$("#sidebar-kosen-wrapper").css({
