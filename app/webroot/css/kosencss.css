@@ -125,8 +125,8 @@ body{
 .kosen-wrapper{
     position: relative;
     width: 100%;
-    padding-top: 50px;
     overflow: hidden;
+    padding-bottom: 150px;
 }
 
 #sidebar-kosen-wrapper {
@@ -176,7 +176,7 @@ body{
     list-style: none;
 }
 .sidebar-body{
-    margin-bottom: 30px;
+    padding-bottom: 20px;
 }
 .sidebar-footer {
     position: relative;
@@ -267,7 +267,6 @@ body{
     position: relative;
     margin: 0;
     padding: 0;
-    margin-bottom: 200px;
     width: 100%;  
 }
 .content-container{
@@ -276,11 +275,6 @@ body{
         /*height: 100%;*/
         /*max-width: 300px;*/
         margin:auto;
-        padding: 10px 0 100px 0;
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        margin: 0 auto -70px;
     }
 @media(min-width:768px) {
     .kosen-wrapper{

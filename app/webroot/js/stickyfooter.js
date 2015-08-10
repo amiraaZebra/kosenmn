@@ -1,20 +1,21 @@
 function footerPosition(){
-	var docHeight = $(document).height();
+	// var docHeight = $(document).height();
+	var wrapperHeight = $(".kosen-wrapper").height();
 	var winHeight = $(window).height();
-	if(docHeight<winHeight){
+	if(wrapperHeight<winHeight){
 		$(".kosen-footer").css({
 				position: 'absolute',
-				bottom: '0px'
+				top: winHeight-70
 			});
 	}else{
 		$(".kosen-footer").css({
 				position: 'absolute',
-				top: docHeight-70
+				top: wrapperHeight+150
 			});
 		
 		
 	}
-	// $("p").html(docHeight);
-	// window.setTimeout(footerPosition, 30);
+	$(".test").html(wrapperHeight);
+	window.setTimeout(footerPosition, 30);
 }
 footerPosition();
