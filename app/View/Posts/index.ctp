@@ -166,3 +166,6 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$("#sidebar-kosen-wrapper").show('fast');
+</script>

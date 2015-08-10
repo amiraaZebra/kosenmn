@@ -33,25 +33,40 @@
 	<div class="arrow-right">
 	</div>
 </div>
-<div class="content-container-dashboard">
-	<div class="post-container" style="margin-top:20px;">
+<!-- <div class="content-container-dashboard"> -->
+	<div class="post-container" style="padding-top:270px;">
 		<p><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></p>
 		<p><?php echo __d('users', 'Recent broadcasts'); ?></p>
 	</div>
-</div>
+<!-- </div> -->
 <script>
-	function SideBarTop(){
-		$(".content-container").contents().unwrap();
-		if($(document).width()>=768){
-			$("#sidebar-kosen-wrapper").css({
-				top: '225px'
-			});
+	$(".sura-navbar-container").show('fast');
+	$(".content-container").css({
+		'padding-left': '0'
+	});
+	function SideBar(){
+		if($(window).width()<768){
+			$(".sura-navbar-container").hide('fast');
+			$("#sidebar-kosen-wrapper").show('fast');
 		}else{
-			$("#sidebar-kosen-wrapper").css({
-				top: '0'
-			});
+			$(".sura-navbar-container").show('fast');
+			$("#sidebar-kosen-wrapper").hide('fast');
 		}
-		window.setTimeout(SideBarTop, 30);
+		window.setTimeout(SideBar, 30);
 	}
-	SideBarTop();
+	SideBar();
+	// function SideBarTop(){
+	// 	$(".content-container").contents().unwrap();
+	// 	if($(document).width()>=768){
+	// 		$("#sidebar-kosen-wrapper").css({
+	// 			top: '225px'
+	// 		});
+	// 	}else{
+	// 		$("#sidebar-kosen-wrapper").css({
+	// 			top: '0'
+	// 		});
+	// 	}
+	// 	window.setTimeout(SideBarTop, 30);
+	// }
+	// SideBarTop();
 </script>

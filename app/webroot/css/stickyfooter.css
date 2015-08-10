@@ -1,6 +1,7 @@
 .kosen-footer
 {
 	position: absolute;
+	bottom: 0;
 	background-color: #385381;
 	z-index: 1000;
 	height:70px;
