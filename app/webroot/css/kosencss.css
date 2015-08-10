@@ -446,3 +446,27 @@ td a:hover{
     cursor: pointer;
   }
 }
+
+/* Users List , Search */
+.user-list-container{
+  margin: 20px 0 20px 0;
+  padding: 15px;
+  background-color: #fff;
+}
+.user-container{
+  margin: 20px 0 20px 0;
+}
+.kosen-media{
+  display: inline-block;
+}
+img.kosen-thumb{
+  position: absolute;
+}
+.kosen-media{
+  padding-left: 75px;
+
+}
+.kosen-media span{
+  color: #888;
+  font-size: 90%;
+}
