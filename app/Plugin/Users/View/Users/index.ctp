@@ -1,3 +1,6 @@
+<script type="text/javascript">
+	$("#sidebar-kosen-wrapper").show('fast');
+</script>
 <div class="post-container">
 	<div class="row kosen-post">
 		<ul class="search-box">
@@ -43,7 +46,7 @@
 				</select>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<label for="sel3">Байршил:</label>
+				<label for="sel3">Сурдаг/төгссөн коллежын байршил:</label>
 				<div class="btn-group location-select" role="group" aria-label="...">
 					<button type="button" id="mn" class="btn btn-default">Монгол</button>
 					<button type="button" id="jp" class="btn btn-default">Япон</button>
@@ -228,6 +231,3 @@
 	<?php echo $this->element('Users.pagination'); ?>
 </div>
 <div class="post-container"ß>
-<script type="text/javascript">
-	$("#sidebar-kosen-wrapper").show('fast');
-</script>

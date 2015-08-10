@@ -1,6 +1,6 @@
 /* Slider css. SuRa Kh 2015*/
 .slide-container{
-	z-index: 1000;
+	z-index: 8;
 	margin-right: 50px;
 	padding: 0;
 	margin: auto;
@@ -42,7 +42,7 @@
 	bottom: 20px;
 	width: 100%;
 	text-align: center;
-	z-index: 10;
+	z-index: 9;
 	opacity: 0.5;
 }
 .navigator div{

@@ -1,3 +1,6 @@
+<script type="text/javascript">
+	$("#sidebar-kosen-wrapper").show('fast');
+</script>
 <div class="post-container">
 	<div class="row">
 		<?php
@@ -166,6 +169,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	$("#sidebar-kosen-wrapper").show('fast');
-</script>
