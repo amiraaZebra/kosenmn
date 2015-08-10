@@ -18,12 +18,12 @@
 				<label for="sel1">Косэн он:</label>
 				<select class="form-control" id="sel1">
 					<?php
-						echo "<option value='0' selected disabled>";
-							echo "-Косэн он-";
+						echo "<option value='0'>";
+											echo "-Косэн он-";
 						echo "</option>";
 						for($i=idate("Y"); $i>=1990; $i-- ){
 						echo "<option>";
-							echo $i;
+											echo $i;
 						echo "</option>";
 						}
 					?>
@@ -34,19 +34,19 @@
 				<select class="form-control" id="sel2">
 					<?php
 						$majors = array("Цахим IT", "Электрик/Электроник", "Барилга/Архитектур", "Хими/Биологи", "Механик");
-						echo "<option value='0' selected disabled>";
+						echo "<option value='0'>";
 						echo "-Мэргэжил-";
 						echo "</option>";
 						foreach ($majors as $key => $value){
 							echo "<option>";
-							echo $value;
+											echo $value;
 							echo "</option>";
 						}
 					?>
 				</select>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<label for="sel3">Сурдаг/төгссөн коллежын байршил:</label>
+				<label for="sel3">Байршил/Коллеж:</label>
 				<div class="btn-group location-select" role="group" aria-label="...">
 					<button type="button" id="mn" class="btn btn-default">Монгол</button>
 					<button type="button" id="jp" class="btn btn-default">Япон</button>
@@ -58,12 +58,12 @@
 				<select class="form-control" id="sel3">
 					<?php
 						$majors = array("北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "千葉", "東京", "神奈川", "新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜", "静岡", "愛知", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄");
-						echo "<option value='0' selected disabled>";
-						echo "-都道府県-";
+						echo "<option value='0'>";
+										echo "-都道府県-";
 						echo "</option>";
 						foreach ($majors as $key => $value){
 							echo "<option>";
-							echo $value;
+											echo $value;
 							echo "</option>";
 						}
 					?>
@@ -163,71 +163,96 @@
 			<p class="test"></p>
 		</div>
 		<div class="col-sm-12 col-xs-12" id="search-toggle1" style="text-align:center">
-				<button id="search-button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Хайх</button>
+			<button id="search-button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Хайх</button>
 		</div>
 	</div>
-	<?php
-		echo $this->Form->create($model,
-			array(
-				'action' => 'index',
-				'class' => 'form-horizontal',
-				'role' => 'form',
-				'id' => 'LoginForm'));
-	?>
-	
-	<div class="form-group">
-		<label for="inputEmail3" class="control-label">Username</label>
-		<div>
+	<div class="user-list-container">
+		<div class="row">
 			<?php
-				echo $this->Form->input('username', array(
-					'label' => false,
-					'class' => 'form-control',
-					'id'=>'username'));
+			foreach ($users as $user):
 			?>
+			<div class="col-xs-12 col-sm-6 col-md-6 user-container">
+				<?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?>
+				<div class="kosen-media">
+					<strong><?php echo $user[$model]['first_name']; ?></strong><br>
+					<span><?php echo $user[$model]['kosen_year']; ?></span><br>
+					<span><?php echo $user[$model]['kosen_roman'];  ?></span><br>
+				</div>
+			</div>
+			
+			<?php
+			// echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100'));
+			// echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id']));
+			// echo $user[$model]['last_name'];
+			?>
+			<?php endforeach; ?>
+			<div class="col-xs-12 col-sm-12 col-md-12 user-container">
+			<p>
+			<?php
+				echo $this->Paginator->counter(array(
+					'format' => __d('users', 'Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
+				));
+			?>
+			</p>
+			</div>
 		</div>
-	</div>
-	
-	<div class="col-xs-offset-6 col-xs-10">
+
+		<!-- SuRa gar hureegui heseg -->
+<?php
+	echo $this->Form->create($model,
+		array(
+			'action' => 'index',
+			'class' => 'form-horizontal',
+			'role' => 'form',
+			'id' => 'LoginForm'));
+?>
+<div class="form-group">
+	<label for="inputEmail3" class="control-label">Username</label>
+	<div>
 		<?php
-			echo $this->Form->submit('Хэрэглэгч хайх', array('class' => 'btn btn-default'));
-			echo $this->Form->end();
-			echo $this->Html->link('Нарийвчилж хайх', array('controller' => 'users', 'action' => 'advanced_search'), array('class' => 'btn btn-primary'));
-			// echo "<a href='users/users/advanced_search' class='btn btn-primary'>Нарийвчилж хайх</a>";
+			echo $this->Form->input('username', array(
+				'label' => false,
+				'class' => 'form-control',
+				'id'=>'username'));
 		?>
 	</div>
-	
-	<p><?php
-			echo $this->Paginator->counter(array(
-				'format' => __d('users', 'Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
-			));
-	?></p>
-	<table class="table table-striped table-bordered">
-		<tr>
-			<th><?php echo "profilePhoto"; ?></th>
-			<th><?php echo $this->Paginator->sort('username'); ?></th>
-			<th><?php echo $this->Paginator->sort('first_name'); ?></th>
-			<th><?php echo $this->Paginator->sort('last_name'); ?></th>
-			<th><?php echo $this->Paginator->sort('kosen_year'); ?></th>
-			<th><?php echo $this->Paginator->sort('kosen_roman'); ?></th>
-		</tr>
-		<?php
-		$i = 0;
-		foreach ($users as $user):
-			$class = null;
-			if ($i++ % 2 == 0) {
-				$class = ' class="altrow"';
-			}
-		?>
-		<tr<?php echo $class; ?>>
-			<td><?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?></td>
-			<td><?php echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id'])); ?></td>
-			<td><?php echo $user[$model]['first_name']; ?></td>
-			<td><?php echo $user[$model]['last_name']; ?></td>
-			<td><?php echo $user[$model]['kosen_year']; ?></td>
-			<td><?php echo $user[$model]['kosen_roman']; ?></td>
-		</tr>
-		<?php endforeach; ?>
-	</table>
-	<?php echo $this->element('Users.pagination'); ?>
 </div>
-<div class="post-container"ß>
+<div class="col-xs-offset-6 col-xs-10">
+	<?php
+		echo $this->Form->submit('Хэрэглэгч хайх', array('class' => 'btn btn-default'));
+		echo $this->Form->end();
+		echo $this->Html->link('Нарийвчилж хайх', array('controller' => 'users', 'action' => 'advanced_search'), array('class' => 'btn btn-primary'));
+		// echo "<a href='users/users/advanced_search' class='btn btn-primary'>Нарийвчилж хайх</a>";
+	?>
+</div>
+<table class="table table-striped table-bordered">
+	<tr>
+		<th><?php echo "profilePhoto"; ?></th>
+		<th><?php echo $this->Paginator->sort('username'); ?></th>
+		<th><?php echo $this->Paginator->sort('first_name'); ?></th>
+		<th><?php echo $this->Paginator->sort('last_name'); ?></th>
+		<th><?php echo $this->Paginator->sort('kosen_year'); ?></th>
+		<th><?php echo $this->Paginator->sort('kosen_roman'); ?></th>
+	</tr>
+	<?php
+	$i = 0;
+	foreach ($users as $user):
+		$class = null;
+		if ($i++ % 2 == 0) {
+			$class = ' class="altrow"';
+		}
+	?>
+	<tr <?php echo $class; ?> >
+		<td><?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?></td>
+		<td><?php echo $this->Html->link($user[$model]['username'], array('action' => 'view', $user[$model]['id'])); ?></td>
+		<td><?php echo $user[$model]['first_name']; ?></td>
+		<td><?php echo $user[$model]['last_name']; ?></td>
+		<td><?php echo $user[$model]['kosen_year']; ?></td>
+		<td><?php echo $user[$model]['kosen_roman']; ?></td>
+	</tr>
+	<?php endforeach; ?>
+</table>
+<?php echo $this->element('Users.pagination'); ?>
+	</div>
+</div>
+
