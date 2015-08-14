@@ -67,8 +67,10 @@ class AppController extends Controller {
 	    $this->Auth->loginAction = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login', 'admin' => false);  
 	    $this->Auth->loginRedirect = array('plugin' => 'users', 'controller' => 'users', 'action' => 'dashboard');  
 	    $this->Auth->logoutRedirect = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login');  
-	    $this->Auth->authError = __('Sorry, but you need to login to access this location.', true);  
-	    $this->Auth->loginError = __('Invalid e-mail / password combination.  Please try again', true);  
+	    $this->Auth->authError = __('Уучлаарай, таны хандалтанд нэвтрэх эрх шаардлагатай.', true);  
+	    $this->Auth->loginError = __('Имэйл хаяг эсвэл нууц үг буруу байна. Та дахин оролдоно уу', true);  
+	    // $this->Auth->authError = __('Sorry, but you need to login to access this location.', true);  
+	    // $this->Auth->loginError = __('Invalid e-mail / password combination.  Please try again', true);  
 	    $this->Auth->autoRedirect = false;  
 	    $this->Auth->userModel = 'Users.User';  
 	    $this->Auth->userScope = array('User.active' => 1);  
