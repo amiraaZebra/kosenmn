@@ -431,6 +431,33 @@ td a:hover{
 .more-menu .btn-group{
   display: block;
 }
+/* */
+.sort-box{
+  /*font-size: 12px;*/
+}
+.back-btn{
+  display: none;
+}
+.sort-box label{
+  text-indent: 5px;
+}
+.sort-box .form-control{
+  width: 100%;
+  font-size: 12px;
+  max-width: 350px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.sort-box .btn{
+  font-size: 12px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+.sort-box .btn-group{
+  float: right;
+  /*display: block;*/
+}
+/* */
 .japan-map,
 #sel3{
   display: none;
@@ -454,7 +481,11 @@ td a:hover{
   background-color: #fff;
 }
 .user-container{
-  margin: 20px 0 20px 0;
+  margin: 20px 0px 20px 0px;
+  border: 1px solid #eee;
+}
+.cursor{
+  cursor: pointer;
 }
 .kosen-media{
   display: inline-block;
@@ -463,10 +494,14 @@ img.kosen-thumb{
   position: absolute;
 }
 .kosen-media{
-  padding-left: 75px;
+  padding-left: 15px;
+  vertical-align: middle;
 
 }
 .kosen-media span{
   color: #888;
   font-size: 90%;
+}
+.media-notshow{
+  display: none;
 }
