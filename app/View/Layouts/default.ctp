@@ -7,11 +7,12 @@
 			echo $login_page_title; 
 			?>
 	</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 		echo $this->Html->meta('icon');		
 		echo $this->Html->css('bootstrap');
 		echo $this->Html->css('signin');
+		echo $this->Html->script('jquery');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -19,8 +20,10 @@
 </head>
 <body>
 	<div class="container">			
-		 	<?php 
-				$currentAction = $this->params['action'];
+		 	<?php
+		 		
+		 		
+				/*$currentAction = $this->params['action'];
 				if($currentAction == 'add'){
 					echo $this->Html->link(
 					$this->Html->image('logo3.png', array('alt'=>'KosenClub logo','width'=>'120px', 'height'=>'60px' )),
@@ -31,10 +34,14 @@
 					$this->Html->image('logo3.png', array('alt' => 'KosenClub logo','width'=>'120px', 'height'=>'60px' )),
 						array('plugin'=>null, 'controller'=>'questions', 'action'=>'add'),
 						array('escape' => false));						
-				}		
-				echo $this->fetch('content');			
+				}*/		
+				
 			?>
-	</div> <!-- /container -->
+	</div><!-- /container -->
+			<?php
+				echo $this->fetch('content');			 
+			?>
+	 
 </body>
 
 

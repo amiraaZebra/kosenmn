@@ -1,47 +1,54 @@
 <?php
 /**
- * Copyright 2010 - 2013, Cake Development Corporation (http://cakedc.com)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright 2010 - 2013, Cake Development Corporation (http://cakedc.com)
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
+* Copyright 2010 - 2013, Cake Development Corporation (http://cakedc.com)
+*
+* Licensed under The MIT License
+* Redistributions of files must retain the above copyright notice.
+*
+* @copyright Copyright 2010 - 2013, Cake Development Corporation (http://cakedc.com)
+* @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+*/
 ?>
-<div class="row row-centered">
-<h2><?php echo __d('users', 'Forgot your password?'); ?></h2>
-<br>
-<p><?php echo __d('users', 'Please enter the email you used for registration and you\'ll get an email with further instructions.'); ?></p>
-<br>
-
-
-
-<?php
-	echo $this->Form->create($model, array(
-		'url' => array(
-			'admin' => false,
-			'action' => 'reset_password')));
-?>
-	<div class="form-group">
-		<label for="inputEmail3" class="col-sm-2 control-label">Your Email</label>
-		<div class="col-sm-10">
-		  <?php
-			  echo $this->Form->input('email', array(
-//				'label' => __d('users', 'Email'),
-				'label' => false,
-				'class' => 'form-control',
-				'id'=>'inputEmail3'));
-		  ?>
+<div class="row">
+	<div class="question-container">
+		<div class="question-form">
+			<?php
+				echo $this->Html->link(
+							$this->Html->image('logo3.png',
+								array(
+									'alt'=>'KosenClub logo',
+									'class' => 'login-logo'
+									)
+							),
+							array(
+								'controller'=>'users',
+								'action'=>'login'
+							),
+							array('escape' => false)
+												);
+			?>
+			<legend></legend><div class="spacer-small"></div>
+			<div class="text-center">
+			<h2><?php echo __d('users', 'Нууц үгээ мартсан уу?'); ?></h2>
+			<p><?php echo __d('users', 'Та бүртгүүлсэн имэйл хаяг уруугаа орж нэвтрэх зааварчилгааг хүлээн аваарай'); ?></p>
+			</div>
+			<?php
+				echo $this->Form->create($model, array(
+					'url' => array(
+						'admin' => false,
+						'action' => 'reset_password')));
+			?>
+			<div class="form-group">
+				<label for="inputEmail3" class="control-label">Таны имэйл</label><br>
+					<?php
+						echo $this->Form->input('email', array(
+							'label' => false,
+							'class' => 'form-control',
+							'id'=>'inputEmail3'));
+						echo $this->Form->submit('Илгээх', array('class' => 'btn btn-block question-btn'));
+						echo $this->Form->end();
+					?>
+			</div>
 		</div>
 	</div>
-	<div class="form-group">
-	    <div class="col-sm-offset-2 col-sm-10">
-	    	<br>				      
-			<?php
-				echo $this->Form->submit('Submit',array('class' => 'btn btn-default'));
-				echo $this->Form->end();
-			?>		    
-		</div>
-	</div>		
 </div>

@@ -1,51 +1,212 @@
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/* Slider Design */
+
+.s-slider-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.caption{
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  float: right;
+}
+
+.s-slider h2,
+.s-slider blockquote{
+  padding: 100px 30px 10px 30px;
+  width: 80%;
+  max-width: 960px;
+  color: #fff;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+}
+.s-slider h2{
+  font-size: 100px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+}
+.s-slider blockquote{
+  font-size: 28px;
+  padding-top: 10px;
+  font-weight: 300;
+  text-shadow:0 -1px 0 rgba(0,0,0,0, 2);
+}
+.s-slider blockquote cite {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding-top: 30px;
+  display: inline-block;
+}
+.s-bg-img {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  .s-bg-img {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+/*.s-bg-img{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 500px;
+  background-position: center center; 
+} */
+
+/* Login Menu */
+.login-menu{
+  padding-bottom: 100px;
+}
+.contact-link{
+  text-align: right;
+  padding-right: 10px;
+}
+.contact-link > a{
+  text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+  text-decoration: none;
+  font-size: 120%;
+  color: #fff;
+}
+.contact-link > a:hover,
+.contact-link > a:active,
+.contact-link > a:focus{
+  color: #ddd;
+
+}
+/* login-form */
+.kosen-login-container{
+  position: absolute;
+  width: 100%;
+  max-width: 1000px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 100%
+}
+.kosen-login-form{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  
+}
+.kosen-login-box{
+  z-index: 101;
+  margin: auto;
+  padding: 20px;
+  width: 350px;
+  opacity: 0.8;
+  border-radius: 20px;
+}
+#kosenName{
+    font-size: 80px;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+  }
+.login-message{
+  color: #a94442;
+}
+
+/* Q&A form */
+.question-container{
+  width: 100%;
+  min-height: 100%;
+  height: auto;
   background-color: #eee;
 }
-
-.contactus{
-  max-width: 600px;
-  padding: 15px;
-  margin: 0 auto;
-  text-align: center;
+.question-form{
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 700px;
+  min-height: 100%;
+  margin: auto;
+  background-color: #fff;
 }
-
-.form-signin {
-  max-width: 350px;
-  padding: 15px;
-  margin: 0 auto;
+.question-form label{
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
-.form-signin .form-signin-heading,
-.form-signin #UserRememberMe {
-  margin-bottom: 10px;
-}
-.form-signin #UserRememberMe {
-  font-weight: normal;
-}
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
+/*.question-btn{
+  margin: auto;
+  font-size: 130%;
+  max-width: 150px;
   margin-top: 20px;
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  background-color: #5A64BE;
+}*/
+.question-btn {
+  color: #fff;
+  margin: auto;
+  font-size: 130%;
+  max-width: 150px;
+  margin-top: 20px;
+  background-color: #663399;
+  border-color: #617;
 }
-.form-signin input[type="password"] {
+.question-btn:hover,
+.question-btn:focus,
+.question-btn:active,
+.open > .dropdown-toggle.question-btn {
+  color: #fff;
+  background-color: #B000B5;
+  border-color: #912A7E;
+}
+.question-btn:active,
+.open > .dropdown-toggle.question-btn {
+  background-image: none;
+}
+
+.login-logo{
+  margin-left: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  width: 100px;
+  height: 60px;
 }
-.form-signin input[type="checkbox"]{
-  margin-left: 0;
+
+.spacer{
+  width: 100%;
+  height: 200px;
 }
+.spacer-small{
+  width: 100%;
+  height: 80,apx;
+}
+.sura-right{
+  float: right;
+  margin-bottom: 10px;
+}
+

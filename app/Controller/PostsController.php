@@ -46,6 +46,7 @@ class PostsController extends AppController {
 	public function index() {
 		$this->Prg->commonProcess();
         $this->Paginator->settings['conditions'] = $this->Post->parseCriteria($this->Prg->parsedParams());
+		$this->Paginator->settings['order'] = array('Post.id'=>'desc');
         $this->set('posts', $this->Paginator->paginate());
 	}
 

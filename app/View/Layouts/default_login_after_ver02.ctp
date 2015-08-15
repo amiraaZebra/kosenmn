@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<?php echo $scripts_for_layout; ?>	
-
+	<?php echo $scripts_for_layout; ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
-		<?php
-			$title_for_layout="KosenClub/".$this->params['controller']; 
-			echo $title_for_layout; 
-		?>
-	</title>
-
 	<?php
-		echo $this->Html->meta('icon');
+		$title_for_layout="KosenClub/".$this->params['controller'];
+		echo $title_for_layout;
+	?>
+	</title>
+	<?php
 		echo $this->Html->css('bootstrap');
-		echo $this->Html->css('zoloo');
-		echo $this->Html->css('dashboard');
+		echo $this->Html->css('kosencss');
+		echo $this->Html->css('kosenposts');
+		echo $this->Html->css('sura-slider');
+		echo $this->Html->css('simple-sidebar');
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('bootstrap');
-		echo $this->Html->script('dashboard');
+		echo $this->Html->meta('icon');
+		
+		
+		// echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -25,62 +28,77 @@
 	?>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-top kosen-nav">
+		<div class="container-fluid" style="margin-right:10px; margin-left:20px;">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-         	 	</button>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#kosen-navbar-1" aria-expanded="false" id="menu-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
 				<?php echo $this->Html->link(__('Kosen Club'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<?php echo $this->element('navbar');?>
-				</ul>
+			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
+					<?php echo $this->element('admintool');?>
+					<li>
+						<?php echo $this->Html->link(__(''), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('class'=> 'glyphicon glyphicon-home home')); ?>
+					</li>
 					<?php echo $this->element('profile');?>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div id="container" class="container-fluid">
-		<div class="row">
-			<div class="page-header" >
-				<?php
-					//echo "Kosen Club"
-					//echo $this->Html->link($this->Html->image('tempHeaderPic.jpg',array('height'=>'150px','width'=>'100%')),
-					//array('controller' => 'users', 'action' => 'index'),array('escape'=>false)); 
-				?>
-			</div>
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<?php echo $this->Session->flash();?>
-				</div>
-				<div class="panel-body homePanel">
-
-				<div class="row">
-				<div class="col-sm-3 col-md-2 sidebar">
-					<?php echo $this->element('sidebar');?>
-					<div class="text-center" style="padding-top:50px;padding-bottom:50px;">
-					<?php echo $this->Html->image('colleges.jpg',array('width'=>'150px'));?>
-					</div>
-				</div>
-				<div class="col-sm-9 col-md-10 main">
+	<div class="kosen-wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-kosen-wrapper">
+			<?php echo $this->element('sidebar');?>
+		</div>
+		<!-- /#sidebar-kosen-wrapper -->
+		<!-- content Content -->
+		<div class="kosen-container">
+			<div id="content-kosen-wrapper">
+				<div class="content-contaner">
 					<?php echo $this->Session->flash('auth'); ?>
-
-  					<?php echo $this->fetch('content'); ?>
-  				</div>
-				</div>
-  				<div class="panel-footer">						
-					<h6 class="text-center">&copyKosenClub 2014.</h6>  							
+					<?php echo $this->fetch('content'); ?>
 				</div>
 			</div>
+		</div>
+		<!-- /.kosen-container -->
+	</div>
+	<!-- /.kosen-wrapper -->
+	<footer class="kosen-footer">
+		<div class="container">
+			<h6 class="text-center">&copyKosenClub 2014.</h6>
+		</div>
+	</footer>
 
-    	</div>
-			
-	</div>	
+	<?php
+		echo $this->Html->script('sura-slider');
+	?>
+	<!-- Menu Toggle Script -->
+	<script>
+	var styles = {
+      width : "100%",
+      height: "auto"
+    };
+	$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$(".kosen-wrapper").toggleClass("toggled");
+	});
+	$("#content-kosen-wrapper").click(function(e){
+		if($(".kosen-wrapper").hasClass("toggled")){
+			e.preventDefault();
+			$(".kosen-wrapper").removeClass("toggled");
+		}
+	});
+	$( ".post-content" ).children("p").children("img").css(styles);
+	$( ".post-content p" ).addClass('post-content-p');
+	$(".post-content img").unwrap();
+	$( ".post-content img" ).wrap("<div class='post-image'></div>");
+	$( ".post-content" ).children("img").wrap("<div class='post-image'></div>");
+	
+	</script>
 </body>
 </html>
-
