@@ -9,7 +9,7 @@
 /app/webroot/img/post_img
 /app/tmp/*
 /app/webroot/files/uploads/*
-*.clpprj
+/*.clpprj
 # OS generated files #
 ######################
 .DS_Store
