@@ -41,10 +41,10 @@ CKEDITOR.editorConfig = function( config ) {
     config.uiColor = '#eeeeee';
 	// KCFinder tohirgoo
    
-   config.filebrowserBrowseUrl = '/kosenmn/app/webroot/js/kcfinder/browse.php?type=files';
-   config.filebrowserImageBrowseUrl = '/kosenmn/app/webroot/js/kcfinder/browse.php?type=images';
-   config.filebrowserFlashBrowseUrl = '/kosenmn/app/webroot/js/kcfinder/browse.php?type=flash';
-   config.filebrowserUploadUrl = '/kosenmn/app/webroot/js/kcfinder/upload.php?type=files';
-   config.filebrowserImageUploadUrl = '/kosenmn/app/webroot/js/kcfinder/upload.php?type=images';
-   config.filebrowserFlashUploadUrl = '/kosenmn/app/webroot/js/kcfinder/upload.php?type=flash';
+   config.filebrowserBrowseUrl = '/kosenmn-master/app/webroot/js/kcfinder/browse.php?type=files';
+   config.filebrowserImageBrowseUrl = '/kosenmn-master/app/webroot/js/kcfinder/browse.php?type=images';
+   config.filebrowserFlashBrowseUrl = '/kosenmn-master/app/webroot/js/kcfinder/browse.php?type=flash';
+   config.filebrowserUploadUrl = '/kosenmn/app-master/webroot/js/kcfinder/upload.php?type=files';
+   config.filebrowserImageUploadUrl = '/kosenmn-master/app/webroot/js/kcfinder/upload.php?type=images';
+   config.filebrowserFlashUploadUrl = '/kosenmn-master/app/webroot/js/kcfinder/upload.php?type=flash';
 };
