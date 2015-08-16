@@ -9,7 +9,8 @@ class RequestsController extends AppController {
         'Post',
         'Kakomon',
         'Photo',
-        'Question'
+        'Question',
+        'GraphData'
     );
 	
 	public function index($model=null) {
@@ -32,6 +33,9 @@ class RequestsController extends AppController {
 					break;
 				case 'question':
 					$Requests=$this->Question->find('all',array('fields'=>array('Question.*')));
+					break;
+				case 'graphdata':
+					$Requests=$this->GraphData->find('all',array('fields'=>array('GraphData.*')));
 					break;
 				default:
 					$Requests='modeliin ner aldaatai bn';

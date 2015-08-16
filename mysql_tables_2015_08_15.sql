@@ -144,3 +144,21 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `ip_address` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `graph_datas` (
+  `id` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT '1',
+  `location` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `major` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `kosen_kanji` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `kosen_roman` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `kosen_year` year(4) DEFAULT '2000',
+  `phone_number` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mail` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `uni` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `extra1` text COLLATE utf8_unicode_ci,
+  `extra2` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `BY_NAME` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
