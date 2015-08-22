@@ -34,6 +34,9 @@ class RequestsController extends AppController {
 				case 'question':
 					$Requests=$this->Question->find('all',array('fields'=>array('Question.*')));
 					break;
+				case 'graphdata':
+					$Requests=$this->Graphdata->find('all',array('fields'=>array('GraphData.*')));
+					break;
 				default:
 					$Requests='modeliin ner aldaatai bn';
 			}	
