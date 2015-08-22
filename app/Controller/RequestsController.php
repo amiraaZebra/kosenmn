@@ -9,7 +9,8 @@ class RequestsController extends AppController {
         'Post',
         'Kakomon',
         'Photo',
-        'Question'
+        'Question',
+        'Graphdata'
     );
 	
 	public function index($model=null) {
