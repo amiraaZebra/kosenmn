@@ -86,6 +86,23 @@
 			</div>
 		</div>
 		<script>
+				$(document).ready(function () {
+				    var intputElements = document.getElementsByTagName("INPUT");
+				    for (var i = 0; i < intputElements.length; i++) {
+				        intputElements[i].oninvalid = function (e) {
+				            e.target.setCustomValidity("");
+				            if (!e.target.validity.valid) {
+				            	$field = "Мэдээлэл";
+				                if (e.target.name == "data[User][email]") {
+				                    e.target.setCustomValidity("Имейл хаяг буруу байна.");
+				                }
+				                if (e.target.name == "data[User][password]") {
+				                    e.target.setCustomValidity("Нууц үг ээ оруулна уу.");
+				                }
+				            }
+				        };
+				    }
+				})
 				var slideWidth;
 				var slideHeight;
 				var ratioFrame;
