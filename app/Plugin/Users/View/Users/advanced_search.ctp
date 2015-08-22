@@ -1,47 +1,59 @@
-
-
+<?php
+  echo $this->Html->script('advanced_search');  
+  echo $this->Html->script('jquery');
+  echo $this->Html->script('bootstrap');
+?>
 <h1>Нарийвчилсан хайлт</h1>
 
 <form class="form-inline">
 	<div class="form-group">
-    	<p class="form-control-static"> Овог нэр </p>
-    </div>
-    <div class="form-group">	
-    	<input type="password" class="form-control" id="name" placeholder="Овог нэр">
-  	</div>
-  	<div class="form-group">
-    	<p class="form-control-static"> Косэн </p>
-    </div>
-    	<div class="form-group">
-    	<input type="text" class="form-control" id="kosen" placeholder="Косэн">
-  	</div>
-  	  	<div class="form-group">
-    	<p class="form-control-static"> Их сургууль </p>
-    </div>
-        <div class="form-group">
-    	<input type="text" class="form-control" id="university" placeholder="Их сургууль">
-  	</div>
+    <p class="form-control-static"> Hэр </p>
+  </div>
+  <div class="form-group">	
+    <input type="text" class="form-control" id="name" placeholder="Hэр">
+  </div>
+  <div class="form-group">
+    <p class="form-control-static"> Косэн </p>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="kosen" placeholder="Косэн">
+  </div>
+  <div class="form-group">
+    <p class="form-control-static"> Их сургууль </p>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="university" placeholder="Их сургууль">
+  </div>
   	<br>
   	<br>
 	<div class="form-group">
     	<p class="form-control-static"> Японд ирсэн он </p>
-    </div>
-        <div class="form-group">	
-    	<!-- <input type="password" class="form-control" id="year" placeholder="Японд ирсэн он"> -->
-    	<select class="form-control">
- 			<option>2015</option>
- 			<option>2014</option>
- 			<option>2013</option>
- 			<option>2012</option>
- 			<option>2011</option>
+  </div>
+  <div class="form-group">	
+    <select id="kosen-year">
+ 			<option value="2015">2015</option>
+ 			<option value="2014">2014</option>
+ 			<option value="2013">2013</option>
+ 			<option value="2012">2012</option>
+ 			<option value="2011">2011</option>
+      <option value="2010">2010</option>
+      <option value="2009">2009</option>
+      <option value="2008">2008</option>
+      <option value="2007">2007</option>
+      <option value="2006">2006</option>
+      <option value="2005">2005</option>
+      <option value="2004">2004</option>
+      <option value="2003">2003</option>
+      <option value="2002">2002</option>
+      <option value="2001">2001</option>
+      <option value="2000">before 2000</option>     
 		</select>
   	</div>
 	<div class="form-group">
     	<p class="form-control-static"> Мэрэгжил </p>
     </div>
     <div class="form-group">	
-    	<!-- <input type="password" class="form-control" id="profession" placeholder="Мэрэгжил"> -->
-    	<select class="form-control">
+    	<select id="prof-select">
  			<option>情報通信</option>
  			<option>電気電子</option>
  			<option>土木建築</option>
@@ -53,8 +65,7 @@
     	<p class="form-control-static"> Байршил </p>
     </div>
     	<div class="form-group">
-    	<!-- <input type="text" class="form-control" id="location" placeholder="Байршил"> -->
-    	<select class="form-control">
+    	<select class="loc-select">
  			<option>北海道</option>
  			<option>東北</option>
  			<option>関東</option>
@@ -62,10 +73,23 @@
  			<option>九州</option>
 		</select>
   	</div>  	  	
-  <button type="submit" class="btn btn-primary"> Хайх </button>
+  <a href="javascript:void(0)" id="search-btn" class="btn btn-primary" role="button"> Хайх </a>
 </form>
 
-<!-- <div>
+<div>
+  <table id="search-result" style="border-collapse: separate; border-spacing: 20px;">
+    <tr>
+      <th> Hэр </th>
+      <th> Косэн </th>
+      <th> Косэнд ирсэн он </th>
+      <th> Их сургууль </th>
+      <th> Мэргэжил </th>
+      <th> Байршил </th>
+    </tr>
+  </table>
+</div>  
+
+<!-- 
 	<p>
 	<?php
 		echo $this->Paginator->counter(
@@ -77,26 +101,3 @@
 		);
 	?>
     </p> -->
-
-<!-- 	<table class="table table-striped table-bordered">
-		<tr>
-			<div id="advanced_search">
-				<th><label><input type="checkbox" value="1"> Овог нэр</label></th>
-				<th><label><input type="checkbox" value="1"> Косэн</label></th>
-				<th><label><input type="checkbox" value="1"> Японд ирсэн он</label></th>
-				<th><label><input type="checkbox" value="1"> Их сургууль</label></th>
-				<th><label><input type="checkbox" value="1"> Мэрэгжил</label></th>
-				<th><label><input type="checkbox" value="1"> Байршил</label></th>
-			</div>
-		</tr>
-		<tr>
-			<th>Овог нэр</th>
-			<th>Косэн</th>
-			<th>Японд ирсэн он</th>
-			<th>Их сургууль</th>
-			<th>Мэргэжил</th>
-			<th>Байршил</th>
-		</tr>
-
-	</table>
-</div>	 -->
