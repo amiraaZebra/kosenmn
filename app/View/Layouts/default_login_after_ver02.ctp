@@ -90,6 +90,9 @@
 	?>
 	<!-- Menu Toggle Script -->
 	<script>
+	
+	var baseDir = "<?php echo $this->Html->url('/');?>";
+	
 	var styles = {
 	width : "100%",
 	height: "auto"
