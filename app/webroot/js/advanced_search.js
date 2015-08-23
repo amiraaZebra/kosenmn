@@ -4,10 +4,11 @@ $(function()
 	
 	function getData()
 	{
+		var baseURL = location.protocol + "//" + location.hostname + (location.port && ":" + location.port) + "/";
 		$.ajax(
 		{
-			type: 'POST',
-      		url: '/kosenmn/requests/index/graphdata.json',
+			type: 'GET',
+      		url: baseURL + 'kosenmn-master/requests/index/graphdata.json',
       		dataType: 'json',
       		cache: false
     	}).done(function(data){
