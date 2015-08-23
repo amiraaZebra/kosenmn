@@ -188,7 +188,7 @@
 				<label for="sel3">Жагсаалт:</label>
 				<div class="btn-group sort-btns" role="group" aria-label="...">
 					<?php // echo $this->Paginator->sort('username', array(), array('class' => 'btn btn-default')); ?>
-					<?php echo $this->Paginator->sort('first_name', 'Нэр', array('class' => 'btn btn-default')); ?>
+					<?php echo $this->Paginator->sort('first_name', 'Нэр', array('direction' => 'desc', 'lock' => true,'class' => 'btn btn-default')); ?>
 					<?php // echo $this->Paginator->sort('last_name', array(), array('class' => 'btn btn-default')); ?>
 					<?php echo $this->Paginator->sort('kosen_year', 'Жил', array('class' => 'btn btn-default')); ?>
 					<?php echo $this->Paginator->sort('kosen_roman', 'Косэн', array('class' => 'btn btn-default')); ?>
@@ -209,22 +209,21 @@
 								echo $user[$model]['first_name']; 
 								//=$user[$model]['last_name'];
 								//echo $lName[0];
-
 							?>
-						</strong><br>
-						<span class="kosen-year"><?php echo $user[$model]['kosen_year']; ?></span><br>
-						<span><?php echo $user[$model]['kosen_roman'];  ?></span><br>
+						</strong>
+						<div class="kosen-year"><?php echo $user[$model]['kosen_year']; ?></div>
+						<div><?php echo $user[$model]['kosen_roman'];  ?></div>
 						<div class="media-notshow">
 							<?php
 								$userModels = array("username", "last_login", "is_admin", "gender", "major", "kosen_kanji", "kosen_roman", "kosen_year", "fb_acc", "high_school", "university1", "course1", "university2", "course2", "university3", "course3", "work1", "department1", "work2", "department2", "work3", "department3", "country", "city");
 								foreach ($userModels as $key => $value) {
 									# code...
 									if(isset($value)){
-									echo "<span>";
+									echo "<div>";
 										echo $user[$model][$value];
-									echo "</span>";
+									echo "</div>";
 									if($value=="fb_acc"){
-										echo $this->Html->link("facebook", array('' => 'http://www.facebook.com/'.$user[$model][$value]));
+										echo $this->Html->link($user[$model][$value], 'http://www.facebook.com/'.$user[$model][$value]);
 									}
 									}
 								}

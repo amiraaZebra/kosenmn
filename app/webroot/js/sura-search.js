@@ -31,6 +31,8 @@ $(".location-select button").click(function(event) {
 	}
 });
 
+// Орон нутгийн сонголт
+
 $(".prefecture").click(function(event) {
 	/* Act on the event */
 	var mapText = $(this).text();
@@ -54,11 +56,17 @@ $("#sel3").change(function(event) {
 	});
 });
 
+//Хийгээгүй байгаа
+
 function SearchSort(){
 	// $(".user-container-1 tr").contents().unwrap();
 	// $(".user-container-1").contents().unwrap();
 	//Дараа шалгаж үз
-	$(".sort-btns a:first").attr('active', 'active');
+	// $(".sort-btns a:first-child").attr('selected', 'selected');
+	// $(".sort-btns a").click(function(event) {
+	// 	 Act on the event 
+	// 	event.preventDefault();
+	// });
 }
 SearchSort();
 
@@ -70,10 +78,14 @@ $(".user-container").click(function(event) {
 	$(".back-btn").show();
 	$(".user-container").parent().removeClass('col-sm-6 col-md-6');
 	$(".user-container").removeClass('cursor');
+	window.scrollTo(0, 0);
 	// $(this).parent().removeClass('col-md-6');
 	// $(this).addClass('col-sm-12');
 	// $(this).addClass('col-md-12');
 });
+
+// Буцах кноп
+
 $(".back-btn").click(function(event) {
 	/* Act on the event */
 	$(".media-notshow").hide();
@@ -82,14 +94,53 @@ $(".back-btn").click(function(event) {
 	$(this).hide();
 	$(".user-container").parent().addClass('col-sm-6');
 	$(".user-container").addClass('cursor');
+
+	if($("#sel1 :selected").text()==$("#sel1 option:first-child").text()){
+		$(".test").html("hello");
+		$(".user-container").show();
+	}
+	else{
+		$(".user-container").each(function(index, el) {
+			var kYear = $(this).children(':nth-child(2)').children(':nth-child(2)').text();
+			if($("#sel1 :selected").text()== kYear){
+				 // $(".test").append(index + ", ");
+				 $(this).show();
+				// $(this).parent().show();
+				// $(".kosen-media").not(this).hide();
+				//$(".kosen-year").not(this).parent().parent().hide();
+			}else{
+				$(this).hide()
+			}
+		});
+	}
 });
+
+//Оноор нь ангилах
+
 $("#sel1").change(function(event) {
 	/* Act on the event */
-	//$(".test").html($(this).children(':first').text());
-	$(".kosen-year").each(function(index, el) {
-		if($("#sel1 :selected").text()==$(this).text()){
-			$(".test").html($("#sel1 :selected").text());
-			$(".kosen-year").not(this).parent().parent().hide();
-		}
-	});
+	// $(".test").html($(this).children(':nth-child(2)').text());
+	// $(".test").html($(".kosen-media").children(':nth-child(2)').text());
+	// $(".test").html($(".user-container").children(':nth-child(2)').children(':nth-child(2)').text());
+	// $(".test").html($("#sel1:first").text());
+	if($("#sel1 :selected").text()==$("#sel1 option:first-child").text()){
+		//$(".test").html("hello");
+		$(".user-container").show();
+	}
+	else{
+		$(".user-container").each(function(index, el) {
+			var kYear = $(this).children(':nth-child(2)').children(':nth-child(2)').text();
+			if($("#sel1 :selected").text()== kYear){
+				 // $(".test").append(index + ", ");
+				 $(this).show();
+				// $(this).parent().show();
+				// $(".kosen-media").not(this).hide();
+				//$(".kosen-year").not(this).parent().parent().hide();
+			}else{
+				$(this).hide()
+			}
+		});
+	}
 });
+
+
