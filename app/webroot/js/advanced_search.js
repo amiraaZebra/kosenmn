@@ -4,11 +4,11 @@ $(function()
 	
 	function getData()
 	{
-		var baseURL = location.protocol + "//" + location.hostname + (location.port && ":" + location.port) + "/";
+		console.log(testBase);
 		$.ajax(
 		{
 			type: 'GET',
-      		url: baseURL + 'kosenmn-master/requests/index/graphdata.json',
+      		url: baseDir + '/requests/index/graphdata.json',
       		dataType: 'json',
       		cache: false
     	}).done(function(data){
@@ -29,10 +29,10 @@ $(function()
 		var html = "<tr><th> Hэр </th><th> Косэн </th><th> Косэнд ирсэн он </th><th> Их сургууль </th><th> Мэргэжил </th><th> Байршил </th></tr>";
 		for (var i = userData.length - 1; i >= 0; i--) {
 			var row = '';
-			if(userData[i].Graphdata.kosen_year == kosen_year){
+			if(userData[i].GraphData.kosen_year == kosen_year){
 				row = pushRow(row, i);
 			} 
-			if(kosen_year == '2000' && userData[i].Graphdata.kosen_year <= 2000){
+			if(kosen_year == '2000' && userData[i].GraphData.kosen_year <= 2000){
 				row = pushRow(row, i);		
 			}
 			html += row;
@@ -44,12 +44,12 @@ $(function()
 	function pushRow(row, i)
 	{
 		row += '<tr>' 
-			+ '<td>' + userData[i].Graphdata.name + '</td>' 
-			+ '<td>' + userData[i].Graphdata.kosen_roman + '</td>' 
-			+ '<td>' + userData[i].Graphdata.kosen_year + '</td>'
-			+ '<td>' + userData[i].Graphdata.uni + '</td>'
-			+ '<td>' + userData[i].Graphdata.major + '</td>'
-			+ '<td>' + userData[i].Graphdata.location + '</td>'
+			+ '<td>' + userData[i].GraphData.name + '</td>' 
+			+ '<td>' + userData[i].GraphData.kosen_roman + '</td>' 
+			+ '<td>' + userData[i].GraphData.kosen_year + '</td>'
+			+ '<td>' + userData[i].GraphData.uni + '</td>'
+			+ '<td>' + userData[i].GraphData.major + '</td>'
+			+ '<td>' + userData[i].GraphData.location + '</td>'
 			+ '</tr>';
 		return row;
 	}
