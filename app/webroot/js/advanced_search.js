@@ -4,7 +4,6 @@ $(function()
 	
 	function getData()
 	{
-		console.log(testBase);
 		$.ajax(
 		{
 			type: 'GET',
