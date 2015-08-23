@@ -18,7 +18,6 @@
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('stickyfooter');
-		echo $this->Html->script('advanced_search');		
 		
 		// echo $this->Html->script('dashboard');
 		echo $this->fetch('meta');

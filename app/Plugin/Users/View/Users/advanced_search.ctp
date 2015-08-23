@@ -1,7 +1,5 @@
 <?php
-  echo $this->Html->script('advanced_search');  
-  echo $this->Html->script('jquery');
-  echo $this->Html->script('bootstrap');
+  echo $this->Html->script('advanced_search');
 ?>
 <h1>Нарийвчилсан хайлт</h1>
 

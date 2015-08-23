@@ -1,7 +1,6 @@
 $(function()
 {
 	var userData = [];
-	
 	function getData()
 	{
 		$.ajax(
