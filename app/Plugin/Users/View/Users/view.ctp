@@ -1,3 +1,26 @@
+<div class="post-container">
+	<div class="row kosen-post">
+		<style type="text/css">
+			.user-view{
+				width: 200px;
+				padding: 10px;
+				text-align: center;
+			}
+		</style>
+		<div class="user-view">
+			<?php 
+				echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'150'));
+			?><br>
+			<a href="">
+			<?php 
+				$last_name = $user[$model]['last_name'];
+				echo substr($last_name, 0, 2).".".$user[$model]['first_name']; 
+			?>
+		</a>
+		</div>
+		
+	</div>
+</div>
 <div class="users view">
 <legend><?php echo __d('users', 'User Profile'); ?></legend>
 	<dl class="dl-horizontal"><?php $i = 0; $class = ' class="altrow"';?>

@@ -47,6 +47,7 @@ class PostsController extends AppController {
 		$this->Prg->commonProcess();
         $this->Paginator->settings['conditions'] = $this->Post->parseCriteria($this->Prg->parsedParams());
 		$this->Paginator->settings['order'] = array('Post.id'=>'desc');
+        $this->Paginator->settings['limit'] = 15;
         $this->set('posts', $this->Paginator->paginate());
 	}
 
