@@ -70,25 +70,28 @@ function SearchSort(){
 }
 SearchSort();
 
-$(".user-container").click(function(event) {
+//$(".user-container").click(function(event) {
 	/* Act on the event */
-	$(this).children().contents().show();
+	/*$(this).children().contents().show();
 	$(".user-container").not(this).hide();
 	$(".sort-box").hide();
 	$(".back-btn").show();
 	$(".user-container").parent().removeClass('col-sm-6 col-md-6');
 	$(".user-container").removeClass('cursor');
-	window.scrollTo(0, 0);
+	$("#search-toggle").hide();
+	$("#search-toggle1").hide();
+	$("#btn-more").removeClass('search-toggled')
+	window.scrollTo(0, 0);*/
 	// $(this).parent().removeClass('col-md-6');
 	// $(this).addClass('col-sm-12');
 	// $(this).addClass('col-md-12');
-});
+//});
 
 // Буцах кноп
 
-$(".back-btn").click(function(event) {
+//$(".back-btn").click(function(event) {
 	/* Act on the event */
-	$(".media-notshow").hide();
+	/*$(".media-notshow").hide();
 	$(".user-container").show();
 	$(".sort-box").show();
 	$(this).hide();
@@ -113,7 +116,7 @@ $(".back-btn").click(function(event) {
 			}
 		});
 	}
-});
+});*/
 
 //Оноор нь ангилах
 

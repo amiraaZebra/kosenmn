@@ -263,9 +263,11 @@ class UsersController extends UsersAppController {
 
 		$this->Paginator->settings = array(
 			'search',
-			'limit' => 12,
+			// 'limit' => 12,
 			'by' => $by,
 			'search' => $searchTerm,
+			'order' => array(
+            'first_name' => 'desc'),
 			'conditions' => array(
 					'AND' => array(
 						$this->modelClass . '.active' => 1,

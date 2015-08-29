@@ -201,7 +201,7 @@
 			foreach ($users as $user):
 			?>
 			<div class="col-xs-12 col-sm-6 col-md-6">
-				<div class="user-container cursor">
+				<div class="user-container cursor" onclick="location.href='<?php echo $this->html->url('/users/view/' . $user[$model]['id']);?>';">
 					<?php echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'100')); ?>
 					<div class="kosen-media">
 						<strong>
