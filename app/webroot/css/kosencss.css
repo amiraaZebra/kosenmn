@@ -512,3 +512,79 @@ img.kosen-thumb{
   top: 0;
   left: 0;
 }
+
+/* User View */
+.user-view{
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .01);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .01);
+  height: 170px;
+  margin-bottom: 10px;
+}
+.prof-img-container{
+  height: 100%;
+  overflow: hidden;
+}
+img.prof-img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  top:50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.user-name-container{
+  height: 100%;
+}
+.user-name{
+  position: absolute;
+  top:50%;
+  margin-left: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.user-name a{
+  text-decoration: none;
+  font-size: 120%;
+  color: #555;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  display: inline-block;
+  line-height: 100%;
+}
+.user-name a:hover,
+.user-name a:focus
+{
+  color: #333;
+}
+.user-contact span{
+  padding-right: 10px;
+  color: #888;
+  font-size: 80%;
+  font-style: italic;
+}
+.user-contact img{
+  /*padding-right: 5px;*/
+  width: 30px;
+  height: auto;
+}
+.user-detail{
+  position: relative;
+  padding: 10px 25px 10px 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+  margin-bottom: 10px;
+}
+.user-table-1{
+  font-size: 90%;
+  color: #888;
+  font-style: italic;
+}
