@@ -1,226 +1,348 @@
-<div class="post-container">
-	<div class="row kosen-post">
-		<style type="text/css">
-			.user-view{
-				width: 200px;
-				padding: 10px;
-				text-align: center;
+<style type="text/css">
+	.user-view{
+		position: relative;
+		padding: 10px 10px 10px 10px;
+		background-color: #fff;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .01);
+box-shadow: 0 3px 6px rgba(0, 0, 0, .01);
+		height: 170px;
+		margin-bottom: 10px;
+	}
+	.prof-img-container{
+		height: 100%;
+		overflow: hidden;
+	}
+	img.prof-img{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 50%;
+		top:50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	.user-name-container{
+		height: 100%;
+	}
+	.user-name{
+		position: absolute;
+		top:50%;
+		margin-left: 10px;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	.user-name a{
+		text-decoration: none;
+		font-size: 120%;
+		color: #555;
+		margin-bottom: 10px;
+		padding-right: 5px;
+		display: inline-block;
+		line-height: 100%;
+	}
+	.user-name a:hover,
+	.user-name a:focus
+	{
+		color: #333;
+	}
+	.user-contact span{
+		padding-right: 10px;
+		color: #888;
+		font-size: 80%;
+		font-style: italic;
+	}
+	.user-contact img{
+		/*padding-right: 5px;*/
+		width: 30px;
+		height: auto;
+	}
+	.user-detail{
+		position: relative;
+		padding: 10px 25px 10px 25px;
+		background-color: #fff;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+		margin-bottom: 10px;
+	}
+	.user-table-1{
+		font-size: 90%;
+		color: #888;
+		font-style: italic;
+	}
+</style>
+<script>
+	$("#sidebar-kosen-wrapper").show('fast');
+	function ScaleProfImg(){
+		slideWidth = $(".prof-img-container").width();
+		slideHeight = $(".prof-img-container").height();
+		ratioFrame = slideWidth/slideHeight;
+		$("img.prof-img").each(function(index, el) {
+			var ratioImage = $(this).width()/$(this).height();
+			if(ratioFrame>ratioImage){
+				$(this).width(slideWidth);
+				$(this).css({
+					'height': 'auto'
+				});
 			}
-		</style>
-		<div class="user-view">
-			<?php 
-				echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'150'));
-			?><br>
-			<a href="">
-			<?php 
-				$last_name = $user[$model]['last_name'];
-				echo substr($last_name, 0, 2).".".$user[$model]['first_name']; 
+			else{
+				$(this).height(slideHeight);
+				$(this).css({
+					'width': 'auto'
+				});
+			}
+		});
+		window.setTimeout(ScaleProfImg, 30);
+	}
+	ScaleProfImg();
+</script>
+<div class="post-container">
+	<div class="row user-view">
+		<div class="col-xs-5 col-sm-4 col-md-3 prof-img-container">
+			<?php
+				echo $this->Html->image("profile/".$user[$model]['profile_image'], array('class'=>'prof-img'));
 			?>
-		</a>
 		</div>
-		
-	</div>
-</div>
-<div class="users view">
-<legend><?php echo __d('users', 'User Profile'); ?></legend>
-	<dl class="dl-horizontal"><?php $i = 0; $class = ' class="altrow"';?>
-		<table class="table table-striped table-bordered">
-			<tr>
-				<td>		
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Profile Photo'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php 
-							echo $this->Html->image("profile/".$user[$model]['profile_image'], array('width'=>'250'));
-							
-							//echo $this->Html->image("profile/".$profilePic, array('width'=>'250'));
-						?>
-						&nbsp;						
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>		
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['username']; ?>
-						&nbsp;						
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'First name'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['first_name']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Last name'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['last_name']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>							
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Email'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['email']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Role'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['role']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Gender'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php 
-							if($user[$model]['gender']){
-								echo 'male';
-							}else{
-								echo 'female';
-							}; 
-						?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Birthday'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['birthday']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Working Or Studying'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['status']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Major'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['major']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Kosen name'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['kosen_kanji'].'('.$user[$model]['kosen_roman'].')'; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Kosen year'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['kosen_year']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Facebook account'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['fb_acc']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'High school'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['high_school']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'University(in Mongolia)'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['university1'].' '.$user[$model]['course1']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'University(in Japan)'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['university2'].' '.$user[$model]['course2']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Work'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['work1'].' '.$user[$model]['department1']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Address'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['city'].' '.$user[$model]['country']; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
-					<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Phone number'); ?></dt>
-					<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-						<?php echo $user[$model]['phone_number_mon'].'(Mongolia) '.$user[$model]['phone_number_jap'].'(Japan)'; ?>
-						&nbsp;
-					</dd>
-				</td>
-			</tr>
-			<tr>
-				<td>					
+		<div class="col-xs-7 col-sm-8 col-md-9 user-name-container">
+			<div class="user-name">
+				<?php
+					$last_name = $user[$model]['last_name'];
+					$first_name = $user[$model]['first_name'];
+					if($last_name!="" && $first_name!=""){
+						echo $this->Html->link(substr($last_name, 0, 2).".".$user[$model]['first_name'], array('plugin'=>'users', 'controller'=>'users', 'action' => 'view/' . $user[$model]['id']));
+						// echo substr($last_name, 0, 2).".".$user[$model]['first_name'];
+					}
+					else if($first_name!=""){
+						echo $this->Html->link($user[$model]['first_name'], array('plugin'=>'users', 'controller'=>'users', 'action' => 'view/' . $user[$model]['id']));
+					}
+					else{
+						echo $this->Html->link($user[$model]['username'], array('plugin'=>'users', 'controller'=>'users', 'action' => 'view/' . $user[$model]['id']));
+					}
+					echo $this->Html->link("/Косэн ".$user[$model]['kosen_year']."/", "");
+				?>
+				<div class="user-contact">
 					<?php
-					if (!empty($user['UserDetail'])) {
-						foreach ($user['UserDetail'] as $section => $details) {
-							foreach ($details as $field => $value) {
-								echo '<dt>' . $section . ' - ' . $field . '</dt>';
-								echo '<dd>' . $value . '</dd>';
-							}
+						if($user[$model]['email']!='' || $user[$model]['fb_acc']!=''){
+							echo "<span>холбогдох:</span>";
 						}
+					?>
+					<?php
+						if($user[$model]['email']!=''){
+							echo $this->Html->link($this->Html->image('snicons/email.png'), 'mailto:'.$user[$model]['email'],array('escape'=>false));
+						}
+						if($user[$model]['fb_acc']!=''){
+							echo $this->Html->link($this->Html->image('snicons/facebook.png'), 'http://www.facebook.com/'.$user[$model]['fb_acc'],array('escape'=>false));
+						}
+					?>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="row user-detail">
+		<label>Танилцуулга</label>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<td class="user-table-1">Нэр</td>
+					<td>
+						<?php
+							if($user[$model]['last_name']!='' && $user[$model]['first_name']!=''){
+								echo $user[$model]['last_name'].' '.$user[$model]['first_name'];
+							}
+							else if($user[$model]['first_name']!=''){echo $user[$model]['first_name'];}
+							else{echo "<span>Мэдээлэл байхгүй байна.<span>";}
+							?>
+						</td>
+					</tr>
+					<tr>
+						<td class="user-table-1">Хүйс</td>
+						<td>
+							<?php
+								if($user[$model]['gender']){
+									echo 'эрэгтэй';
+								}else{
+									echo 'эмэгтэй';
+								};
+							?>
+						</td>
+					</tr>
+					<?php
+						if($user[$model]['birthday']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Төрсөн өдөр</td>
+						<td><?php echo $this->Time->format('Y.m.d', $user[$model]['birthday']); ?></td>
+					</tr>
+					<?php
+						}
+					?>
+					<tr>
+						<td class="user-table-1">Имэйл</td>
+						<td><?php echo $user[$model]['email']; ?></td>
+					</tr>
+					<?php
+					if($user[$model]['phone_number_mon']!='' || $user[$model]['phone_number_jap']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Утас</td>
+						<td>
+							<?php
+							if($user[$model]['phone_number_mon']!=''){
+							echo "<span  class='user-table-1'>[ Монгол ]: </span>".$user[$model]['phone_number_mon'];
+							}
+							if($user[$model]['phone_number_mon']!='' && $user[$model]['phone_number_jap']!=''){
+								echo '<br>';
+							}
+							if($user[$model]['phone_number_jap']!=''){
+							echo "<span class='user-table-1'>[ Япон ]: </span>".$user[$model]['phone_number_jap'];
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+						}
+					?>
+					<?php
+						if($user[$model]['country']!='' || $user[$model]['city']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Амьдарч буй хот</td>
+						<td>
+							<?php
+							if($user[$model]['country']!=''){
+							echo $user[$model]['country'].' улс';
+							}
+							if($user[$model]['country']!='' && $user[$model]['city']!=''){echo ', ';}
+							if($user[$model]['city']!=''){
+							echo $user[$model]['city'].' хот';
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+						}
+					?>
+					
+				</tbody>
+			</table>
+		</div>
+		<div class="row user-detail">
+			<label>Товч намтар</label>
+			<table class="table table-hover">
+				<tbody>
+					<?php
+							if($user[$model]['high_school']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Ахлах сургууль</td>
+						<td><?php echo $user[$model]['high_school']; ?></td>
+					</tr>
+					<?php
+						}
+					?>
+					<?php
+						if($user[$model]['university1']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Өмнөх Их Сургууль</td>
+						<td>
+							<?php
+							echo $user[$model]['university1'];
+							if($user[$model]['course1']!=''){
+								echo ' ('.$user[$model]['course1'].')';
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+						}
+					?>
+					<?php
+						if($user[$model]['kosen_year']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Ирсэн он</td>
+						<td><?php echo $user[$model]['kosen_year']; ?></td>
+					</tr>
+					<?php
+						}
+					?>
+					<tr>
+						<td class="user-table-1">Косэн</td>
+						<!-- мэргэжил -->
+						<td>
+							<?php
+							if($user[$model]['kosen_roman']!='' || $user[$model]['kosen_kanji']!=''){
+								if($user[$model]['kosen_roman']!=''){
+									echo $user[$model]['kosen_roman'];
+								}
+								if($user[$model]['kosen_roman']!='' && $user[$model]['kosen_kanji']!=''){
+									echo " (";
+								}
+								if($user[$model]['kosen_kanji']){
+									echo $user[$model]['kosen_kanji'];
+								}
+								if($user[$model]['kosen_roman']!='' && $user[$model]['kosen_kanji']!=''){
+									echo ")";
+								}
+							}
+							else{
+								echo "<span class='user-table-1'>Мэдээлэл алга</span>";
+							}
+							if($user[$model]['major']!=''){
+							echo '<br>'.$user[$model]['major'];
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+						if($user[$model]['university2']!=''){
+					?>
+					<tr>
+						<td class="user-table-1">Дараах Их Сургууль</td>
+						<td>
+							<?php
+							echo $user[$model]['university2'];
+							if($user[$model]['course2']!=''){
+								echo ' ('.$user[$model]['course2'].')';
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+						}
+					?>
+					<?php
+						if($user[$model]['status']!=''){
+					?>
+					<tr>
+						<td class="user-table-1"><b>Одоогийн статус<b></td>
+						<td><b><?php echo $user[$model]['status']; ?><b></td>
+					</tr>
+					<?php
+						if($user[$model]['work1']!=''){
+					?>
+					<tr>
+						<td class="user-table-1" style="padding-left:30px">Ажлын нэр</td>
+						<td>
+							<?php
+							echo $user[$model]['work1'];
+							if($user[$model]['department1']!=''){
+							echo ' ('.$user[$model]['department1'].')';
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+					}
 					}
 					?>
-				</td>
-			</tr>
-		</table>					
-	</dl>	
-</div>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
