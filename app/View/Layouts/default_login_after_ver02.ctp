@@ -35,7 +35,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<?php echo $this->Html->link(__('Kosen Club'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
+				<?php echo $this->Html->link(__('Косэн клуб'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -51,6 +51,41 @@
 	<div style="height:50px">
 		
 	</div>
+	<div class="slide-container">
+	<div class="slides">
+		<div>
+			<?php
+				echo $this->Html->image("test/1.jpg");
+			?>
+		</div>
+		<div>
+			<?php
+				echo $this->Html->image("test/2.jpg");
+			?>
+		</div>
+		<div>
+			<?php
+				echo $this->Html->image("test/3.jpg");
+			?>
+		</div>
+		<div>
+			<?php
+				echo $this->Html->image("test/4.jpg");
+			?>
+		</div>
+	</div>
+	<div class="navigator">
+		
+		<div class="current-nav"></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="arrow-left">
+	</div>
+	<div class="arrow-right">
+	</div>
+</div>
 	<div class="kosen-wrapper">
 		<!-- Sidebar -->
 		<div id="sura-navbar">
@@ -73,15 +108,15 @@
 		
 		</div>
 		<!-- /.kosen-container -->
-		<div class="kosen-footer">
+		
+	</div>
+	<!-- /.kosen-wrapper -->
+	<div class="kosen-footer">
 		<div class="container">
 			<h6 class="text-center">&copyKosenClub 2014.</h6>
 		</div>
 		<p id="test"></p>
 	</div>
-	</div>
-	<!-- /.kosen-wrapper -->
-	
 	<?php
 		echo $this->Html->script('sura-slider');
 		echo $this->Html->script('stickyfooter');

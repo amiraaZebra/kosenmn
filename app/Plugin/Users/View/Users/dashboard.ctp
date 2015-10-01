@@ -1,5 +1,6 @@
 <script>
 	$(".sura-navbar-container").show('fast');
+	$(".slide-container").show();
 	$(".content-container").css({
 		'padding-left': '0'
 	});
@@ -15,44 +16,21 @@
 	}
 	SideBar();
 </script>
-<div class="slide-container">
-	<div class="slides">
-		<div>
-			<?php
-				echo $this->Html->image("test/1.jpg");
-			?>
-		</div>
-		<div>
-			<?php
-				echo $this->Html->image("test/2.jpg");
-			?>
-		</div>
-		<div>
-			<?php
-				echo $this->Html->image("test/3.jpg");
-			?>
-		</div>
-		<div>
-			<?php
-				echo $this->Html->image("test/4.jpg");
-			?>
-		</div>
-	</div>
-	<div class="navigator">
-		
-		<div class="current-nav"></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="arrow-left">
-	</div>
-	<div class="arrow-right">
-	</div>
-</div>
+
 <!-- <div class="content-container-dashboard"> -->
 	<div class="post-container" style="padding-top:270px;">
 		<p><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></p>
-		<p><?php echo __d('users', 'Recent broadcasts'); ?></p>
+		<!-- <p><?php //echo __d('users', 'Recent broadcasts'); ?></p> -->
+		<div class="row">
+			<div class="user-view">
+				<label>Шинэ мэдээлэл</label>
+			</div>
+			<div class="user-view">
+				<label>Косэн клуб</label><br>
+				<span>Клубын гишүүддээ энэ өдрийн мэндийг хүргэе.</span><br>
+				<span>өбыоөрйдлыөо бдлоөрйыб лөрыйбо лөрйдыбөр быйдолрө дрө ыдйлөрйыдолөр йыбол рлдой рй өбыролө рйолд өролйы өрйлыдобө рдйл</span>
+			</div>
+		</div>
 	</div>
+	<div class="spacer"></div>
 <!-- </div> -->

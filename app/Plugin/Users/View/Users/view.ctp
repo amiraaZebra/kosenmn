@@ -244,8 +244,8 @@
 						if($user[$model]['status']!=''){
 					?>
 					<tr>
-						<td class="user-table-1"><b>Одоогийн статус<b></td>
-						<td><b><?php echo $user[$model]['status']; ?><b></td>
+						<td class="user-table-1"><b>Одоогийн статус</b></td>
+						<td><b><?php echo $user[$model]['status']; ?></b></td>
 					</tr>
 					<?php
 						if($user[$model]['work1']!=''){
@@ -269,4 +269,6 @@
 			</table>
 		</div>
 	</div>
-
+	<div class="spacer">
+		
+	</div>
