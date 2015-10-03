@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   `first_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `gender` tinyint(1) DEFAULT '1',
+  `gender` tinyint(1) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `major` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,

@@ -86,11 +86,15 @@
 						<td class="user-table-1">Хүйс</td>
 						<td>
 							<?php
-								if($user[$model]['gender']){
-									echo 'эрэгтэй';
-								}else{
-									echo 'эмэгтэй';
-								};
+								if(!empty($user[$model]['gender'])){
+									if($user[$model]['gender']){
+										echo 'эрэгтэй';
+									}else{
+										echo 'эмэгтэй';
+									};	
+								}else {
+									echo "<span>Мэдээлэл байхгүй байна.<span>";
+								}
 							?>
 						</td>
 					</tr>
