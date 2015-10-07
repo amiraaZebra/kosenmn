@@ -120,30 +120,118 @@ SearchSort();
 
 //Оноор нь ангилах
 
-$("#sel1").change(function(event) {
-	/* Act on the event */
+/*$("#sel1").change(function(event) {
+	// Act on the event
 	// $(".test").html($(this).children(':nth-child(2)').text());
 	// $(".test").html($(".kosen-media").children(':nth-child(2)').text());
 	// $(".test").html($(".user-container").children(':nth-child(2)').children(':nth-child(2)').text());
 	// $(".test").html($("#sel1:first").text());
 	if($("#sel1 :selected").text()==$("#sel1 option:first-child").text()){
 		//$(".test").html("hello");
-		$(".user-container").show();
+		$(".user-container").parent().show();
 	}
 	else{
 		$(".user-container").each(function(index, el) {
 			var kYear = $(this).children(':nth-child(2)').children(':nth-child(2)').text();
 			if($("#sel1 :selected").text()== kYear){
 				 // $(".test").append(index + ", ");
-				 $(this).show();
+				 $(this).parent().show();
 				// $(this).parent().show();
 				// $(".kosen-media").not(this).hide();
 				//$(".kosen-year").not(this).parent().parent().hide();
 			}else{
-				$(this).hide()
+				$(this).parent().hide();
 			}
 		});
 	}
 });
+*/
+function SearchFunction(){
+	/*if($("#sel3 :selected").text()==$("#sel3 option:first-child").text()){
+		//$(".test").html("hello");
+		$(".user-container").parent().show();
+	}
+	else{*/
+		$(".user-container").each(function(index, el) {
+			var kYear = $(this).children(':nth-child(2)').children(':nth-child(2)').text();
+			var place = $(this).children(':nth-child(2)').children(':nth-child(3)').text();
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸")place="青森";
+			if($("#sel1 :selected").text()== kYear && $("#sel3 :selected").text()== place){
+				 // $(".test").append(index + ", ");
+				 $(this).parent().show();
+				// $(this).parent().show();
+				// $(".kosen-media").not(this).hide();
+				//$(".kosen-year").not(this).parent().parent().hide();
+			}
+			else if($("#sel1 :selected").text()== $("#sel1 option:first-child").text() && $("#sel3 :selected").text()== place){
+				$(this).parent().show();
+			}
+			else if($("#sel1 :selected").text()== kYear && $("#sel3 :selected").text()== $("#sel3 option:first-child").text()){
+				$(this).parent().show();
+			}
+			else if($("#sel1 :selected").text()== $("#sel1 option:first-child").text() && $("#sel3 :selected").text()== $("#sel3 option:first-child").text()){
+				$(this).parent().show();
+			}
+			else{
+				$(this).parent().hide();
+			}
+		});
+	// }
+	window.setTimeout(SearchFunction, 30);
+}
+SearchFunction();
+/*$("#sel3").change(function(event) {
+	// Act on the event
+	// $(".test").html($(this).children(':nth-child(2)').text());
+	// $(".test").html($(".kosen-media").children(':nth-child(2)').text());
+	// $(".test").html($(".user-container").children(':nth-child(2)').children(':nth-child(2)').text());
+	// $(".test").html($("#sel1:first").text());
+	if($("#sel3 :selected").text()==$("#sel3 option:first-child").text()){
+		//$(".test").html("hello");
+		$(".user-container").parent().show();
+	}
+	else{
+		$(".user-container").each(function(index, el) {
+			var place = $(this).children(':nth-child(2)').children(':nth-child(3)').text();
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸")place="青森";
+			if($("#sel3 :selected").text()== place){
+				 // $(".test").append(index + ", ");
+				 $(this).parent().show();
+				// $(this).parent().show();
+				// $(".kosen-media").not(this).hide();
+				//$(".kosen-year").not(this).parent().parent().hide();
+			}else{
+				$(this).parent().hide();
+			}
+		});
+	}
+});
+*/
+/*$(".prefecture").click(function(event){
+	//Act on the event
+	// $(".test").html($(this).children(':nth-child(2)').text());
+	// $(".test").html($(".kosen-media").children(':nth-child(2)').text());
+	// $(".test").html($(".user-container").children(':nth-child(2)').children(':nth-child(2)').text());
+	// $(".test").html($("#sel1:first").text());
+	if($("#sel3 :selected").text()==$("#sel3 option:first-child").text()){
+		//$(".test").html("hello");
+		$(".user-container").parent().show();
+	}
+	else{
+		$(".user-container").each(function(index, el) {
+			var place = $(this).children(':nth-child(2)').children(':nth-child(3)').text();
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸")place="青森";
+			if($("#sel3 :selected").text()== place){
+				 // $(".test").append(index + ", ");
+				 $(this).parent().show();
+				// $(this).parent().show();
+				// $(".kosen-media").not(this).hide();
+				//$(".kosen-year").not(this).parent().parent().hide();
+			}else{
+				$(this).parent().hide();
+			}
+		});
+	}
+});*/
 
 
