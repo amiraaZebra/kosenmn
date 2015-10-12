@@ -53,10 +53,10 @@ class QuestionsController extends AppController {
 	public function add() {
 		if($this->Session->read('Auth.User')){
     	$this->redirect(array(
-    	    		'plugin'=>'users', 
-    	    		'controller'=>'users', 
-    	    		'action' => 'dashboard'
-    	    		));
+    		'plugin'=>'users', 
+    		'controller'=>'users', 
+    		'action' => 'dashboard'
+    		));
     	}else{
 			$sent=false;
 			if ($this->request->is('post')) {
@@ -81,8 +81,8 @@ class QuestionsController extends AppController {
 							"message : ".$this->request->data['Question']['text']."\n".
 							"holboor barih mail hayag : ".$this->request->data['Question']['email'];
 						$Email->send($message);
-*/
 					}
+*/
 				} else {
 					$sent=false;
 					$this->Session->setFlash(__('Уучлаарай илгээхэд алдаа үүсэв. Дахин оролдоно уу.'));
