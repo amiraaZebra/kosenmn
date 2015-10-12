@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 /**
  * Questions Controller
  *
@@ -14,6 +15,10 @@ class QuestionsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
+	public $uses = array(
+        'Question',
+		'User',
+    );
 
 /**
  * index method
@@ -60,7 +65,24 @@ class QuestionsController extends AppController {
 				if ($this->Question->save($this->request->data)) {
 					$sent=true;
 					$this->Session->setFlash(__('Таны санал хүсэлт илгээгдлээ. Таньд баярлалаа.'));
-					//return $this->redirect(array('action' => 'index'));
+					/*end admin account ruu mail yavuulna
+					** local host deer aldaa garah bolhoor tur comment bolgov
+					** server tavihdaa uncomment bolgono
+					*/
+/*					$Email = new CakeEmail('info');
+					$Email->from(array('info@kosenclub.sakura.ne.jp' => 'KosenClub Info'));
+					$admins = $this->User->find('all', array(
+						'conditions' => array('User.role' => 'admin')
+					));
+					foreach ($admins as $admin){
+						$Email->to($admin['User']['email']);
+						$Email->subject("KosenClub-d " . $this->request->data['Question']['name'] . "-s asuult irlee");
+						$message="\tAguulga:\nner : ".$this->request->data['Question']['name']."\n".
+							"message : ".$this->request->data['Question']['text']."\n".
+							"holboor barih mail hayag : ".$this->request->data['Question']['email'];
+						$Email->send($message);
+*/
+					}
 				} else {
 					$sent=false;
 					$this->Session->setFlash(__('Уучлаарай илгээхэд алдаа үүсэв. Дахин оролдоно уу.'));
