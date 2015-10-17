@@ -56,19 +56,58 @@ $("#sel3").change(function(event) {
 	});
 });
 
-//Хийгээгүй байгаа
-
-function SearchSort(){
-	// $(".user-container-1 tr").contents().unwrap();
-	// $(".user-container-1").contents().unwrap();
-	//Дараа шалгаж үз
-	// $(".sort-btns a:first-child").attr('selected', 'selected');
-	// $(".sort-btns a").click(function(event) {
-	// 	 Act on the event 
-	// 	event.preventDefault();
-	// });
+//Ангилгаа
+var places = ["北海道", "青森", "岩手", "宮城", "秋田", 
+				"山形", "福島", "茨城", "栃木", "群馬", 
+				"埼玉", "千葉", "東京", "神奈川", "新潟", 
+				"富山", "石川", "福井", "山梨", "長野", 
+				"岐阜", "静岡", "愛知", "三重", "滋賀", 
+				"京都", "大阪", "兵庫", "奈良", "和歌山", 
+				"鳥取", "島根", "岡山", "広島", "山口", 
+				"徳島", "香川", "愛媛", "高知", "福岡", 
+				"佐賀", "長崎", "熊本", "大分", "宮崎", 
+				"鹿児島", "沖縄"];
+var kosen_jap = [
+				
+];
+function SearchFunction(){
+		$(".user-container").each(function(index, el) {
+			var kYear = $(this).children(':nth-child(2)').children(':nth-child(2)').text();
+			var place = $(this).children(':nth-child(2)').children(':nth-child(3)').text();
+			
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸") place="青森";
+			if(place=="Асахикава" || place=="Asahikawa" || place=="旭川") place="北海道";
+			/*if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸" || place="青森") place="青森";
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸" || place="青森") place="青森";
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸" || place="青森") place="青森";
+			if(place=="Хачинохэ" || place=="Hachinohe" || place=="八戸" || place="青森") place="青森";*/
+			
+			if($("#sel1 :selected").text()== kYear && $("#sel3 :selected").text()== place){
+				 // $(".test").append(index + ", ");
+				 $(this).parent().show();
+				// $(this).parent().show();
+				// $(".kosen-media").not(this).hide();
+				//$(".kosen-year").not(this).parent().parent().hide();
+			}
+			else if($("#sel1 :selected").text()== $("#sel1 option:first-child").text() && $("#sel3 :selected").text()== place){
+				$(this).parent().show();
+			}
+			else if($("#sel1 :selected").text()== kYear && $("#sel3 :selected").text()== $("#sel3 option:first-child").text()){
+				$(this).parent().show();
+			}
+			else if($("#sel1 :selected").text()== $("#sel1 option:first-child").text() && $("#sel3 :selected").text()== $("#sel3 option:first-child").text()){
+				$(this).parent().show();
+			}
+			else{
+				$(this).parent().hide();
+			}
+		});
+	// }
+	window.setTimeout(SearchFunction, 30);
 }
-SearchSort();
+SearchFunction();
+
+//Хийгээгүй байгаа
 
 //$(".user-container").click(function(event) {
 	/* Act on the event */
@@ -117,33 +156,3 @@ SearchSort();
 		});
 	}
 });*/
-
-//Оноор нь ангилах
-
-$("#sel1").change(function(event) {
-	/* Act on the event */
-	// $(".test").html($(this).children(':nth-child(2)').text());
-	// $(".test").html($(".kosen-media").children(':nth-child(2)').text());
-	// $(".test").html($(".user-container").children(':nth-child(2)').children(':nth-child(2)').text());
-	// $(".test").html($("#sel1:first").text());
-	if($("#sel1 :selected").text()==$("#sel1 option:first-child").text()){
-		//$(".test").html("hello");
-		$(".user-container").show();
-	}
-	else{
-		$(".user-container").each(function(index, el) {
-			var kYear = $(this).children(':nth-child(2)').children(':nth-child(2)').text();
-			if($("#sel1 :selected").text()== kYear){
-				 // $(".test").append(index + ", ");
-				 $(this).show();
-				// $(this).parent().show();
-				// $(".kosen-media").not(this).hide();
-				//$(".kosen-year").not(this).parent().parent().hide();
-			}else{
-				$(this).hide()
-			}
-		});
-	}
-});
-
-

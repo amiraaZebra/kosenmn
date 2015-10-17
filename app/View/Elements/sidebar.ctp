@@ -1,10 +1,10 @@
 <!-- Sidebar -->
-<ul class="sidebar-body">
+<ul class="sidebar-body sidebar-collapse">
 	<li class="kosen-separator-1"></li>
 </ul>
 <ul class="sidebar-header">
 	<li class="kosen-collapse">
-		<?php echo $this->Html->link(__($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')).' Нүүр'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('escape'=> false)); ?>
+		<?php echo $this->Html->link(__($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')).' Косэн клуб'), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('escape'=> false)); ?>
 	</li>
 </ul>
 <ul class="sidebar-body">

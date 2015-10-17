@@ -73,11 +73,11 @@
 				<br>
 				<select class="form-control" id="sel3">
 					<?php
-						$majors = array("北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "千葉", "東京", "神奈川", "新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜", "静岡", "愛知", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄");
+						$places = array("北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "千葉", "東京", "神奈川", "新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜", "静岡", "愛知", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄");
 						echo "<option value='0'>";
 											echo "-都道府県-";
 						echo "</option>";
-						foreach ($majors as $key => $value){
+						foreach ($places as $key => $value){
 							echo "<option>";
 												echo $value;
 							echo "</option>";
@@ -212,7 +212,7 @@
 							?>
 						</strong>
 						<div class="kosen-year"><?php echo $user[$model]['kosen_year']; ?></div>
-						<div><?php echo $user[$model]['kosen_roman'];  ?></div>
+						<div class="kosen-roman"><?php echo $user[$model]['kosen_roman'];  ?></div>
 						<div class="media-notshow">
 							<?php
 								$userModels = array("username", "last_login", "is_admin", "gender", "major", "kosen_kanji", "kosen_roman", "kosen_year", "fb_acc", "high_school", "university1", "course1", "university2", "course2", "university3", "course3", "work1", "department1", "work2", "department2", "work3", "department3", "country", "city");
