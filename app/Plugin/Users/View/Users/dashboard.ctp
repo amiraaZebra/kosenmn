@@ -1,16 +1,16 @@
 <script>
-	$(".sura-navbar-container").show('fast');
+	$(".sura-navbar-container").show();
 	$(".slide-container").show();
 	$(".content-container").css({
 		'padding-left': '0'
 	});
 	function SideBar(){
 		if($(window).width()<768){
-			$(".sura-navbar-container").hide('fast');
-			$("#sidebar-kosen-wrapper").show('fast');
+			$(".sura-navbar-container").hide();
+			$("#sidebar-kosen-wrapper").show();
 		}else{
-			$(".sura-navbar-container").show('fast');
-			$("#sidebar-kosen-wrapper").hide('fast');
+			$(".sura-navbar-container").show();
+			$("#sidebar-kosen-wrapper").hide();
 		}
 		window.setTimeout(SideBar, 30);
 	}

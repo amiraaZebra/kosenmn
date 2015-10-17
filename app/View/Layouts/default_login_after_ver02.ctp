@@ -26,8 +26,9 @@
 	?>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top kosen-nav">
-		<div class="container-fluid" style="margin-right:10px; margin-left:20px;">
+	<nav class="navbar navbar-default navbar-fixed-top kosen-nav-container">
+		<div class="kosen-nav">
+		<div class="container-fluid" style="margin-right:10px; margin-left:10px;">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#kosen-navbar-1" aria-expanded="false" id="menu-toggle">
 				<span class="sr-only">Toggle navigation</span>
@@ -46,6 +47,7 @@
 					<?php echo $this->element('profile');?>
 				</ul>
 			</div>
+		</div>
 		</div>
 	</nav>
 	<div style="height:50px">

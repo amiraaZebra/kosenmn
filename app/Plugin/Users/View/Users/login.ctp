@@ -77,9 +77,9 @@
 							echo $this->Form->hidden('User.return_to', array(
 							'value' => $return_to));
 							echo $this->Form->end();
-							echo "<div class='login-message'>";
-							echo $this->Session->flash('auth');
-							echo "</div>";
+							// echo "<div class='login-message'>";
+							// echo $this->Session->flash('auth');
+							// echo "</div>";
 						?>
 					</div>
 				</div>
