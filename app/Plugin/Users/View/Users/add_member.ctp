@@ -1,3 +1,6 @@
+<div class="question-container">
+	<div class="container">
+		<div class="question-form">
 <?php
 	if ($this->Session->read('Auth.User')){
 		echo 'you already logged in.';
@@ -9,19 +12,24 @@
 		<?php
 			echo $this->Form->create($model);
 			echo $this->Form->input('username', array(
-				'label' => __d('users', 'Username')));
+				'label' => __d('users', 'Username'),
+				'class' => 'form-control'));
 			echo $this->Form->input('email', array(
 				'label' => __d('users', 'E-mail (used as login)'),
+				'class' => 'form-control',
 				'error' => array('isValid' => __d('users', 'Must be a valid email address'),
 				'isUnique' => __d('users', 'An account with that email already exists'))));
 			echo $this->Form->input('password', array(
 				'label' => __d('users', 'Password'),
+				'class' => 'form-control',
 				'type' => 'password'));
 			echo $this->Form->input('temppassword', array(
 				'label' => __d('users', 'Password (confirm)'),
+				'class' => 'form-control',
 				'type' => 'password'));
 			echo $this->Form->input('passwordold', array(
 				'type' => 'hidden',
+				'class' => 'form-control',
 				'default' => $secret));
 			$tosLink = $this->Html->link(__d('users', 'Terms of Service'), array('controller' => 'pages', 'action' => 'tos', 'plugin' => null));
 			echo $this->Form->input('tos', array(
@@ -165,3 +173,6 @@
 		alert('Таны browser-д cookie бичиж чадахгүй байна та "cookie block" хийсэн тохиргоогоо өөрчилнө үү.');
 	}
 <?php $this->Html->scriptEnd(); ?>
+		</div>
+	</div>
+</div>
