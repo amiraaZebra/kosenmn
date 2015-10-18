@@ -79,7 +79,7 @@
 							'value' => $return_to));
 							echo $this->Form->end();
 							// echo "<div class='login-message'>";
-							// echo $this->Session->flash('auth');
+							echo "<br>".$this->Session->flash('auth');
 							// echo "</div>";
 						?>
 					</div>

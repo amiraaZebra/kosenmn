@@ -107,7 +107,7 @@
 							'class' => 'form-signin',
 							'role' => 'form',
 							'id' => 'LoginForm'));
-							echo '<h4>'.'Хэрвээ та Косэнд сурч байсан бол нэвтрэх эрхтэй. Нууц үгээ оруулаад kosen.mn-д нэгдэнэ үү.'.'</h4><br>';
+							echo '<h5>'.'Хэрвээ та Косэнд сурч байсан бол нэвтрэх эрхтэй. Нууц үгээ оруулаад kosen.mn-д нэгдэнэ үү.'.'</h5>';
 							echo $this->Form->input('passwordold', array(
 							'type' => 'password',
 							'label' => false,
@@ -115,7 +115,7 @@
 							'class' => 'form-control',
 							'id'=>'inputPassword3'));
 							echo $this->Form->submit('Бүртгүүлж эхлэх',array('class' => 'btn btn-lg btn-primary btn-block'));
-							echo '<h4>'.'Нууц үгээ мэдэхгүй байгаа бол kosenclub-н Facebook group ээс хараарай.'.'</h4>';
+							echo '<h5>'.'Нууц үгээ мэдэхгүй байгаа бол kosenclub-н Facebook group ээс хараарай.'.'</h5>';
 							echo $this->Form->end();
 							echo "<div class='login-message'>";
 							echo $this->Session->flash('auth');
