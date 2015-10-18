@@ -74,6 +74,7 @@
 							//echo '<p>' . $this->Form->input('remember_me', array('type' => 'checkbox', 'label' =>  __d('users', 'Намайг сана'))) . '</p>';
 							echo '<cite class="sura-right">' . $this->Html->link(__d('users', 'Нууц үгээ мартсан'), array('action' => 'reset_password')) . '</cite>';
 							echo $this->Form->submit('Нэвтрэх',array('class' => 'btn btn-lg btn-primary btn-block'));
+							echo '<cite class="sura-right">' . $this->Html->link(__d('users', 'Гишүүнээр элсэх'), array('action' => 'add_member')) . '</cite>';
 							echo $this->Form->hidden('User.return_to', array(
 							'value' => $return_to));
 							echo $this->Form->end();
