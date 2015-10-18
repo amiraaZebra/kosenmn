@@ -8,7 +8,7 @@
 ?>
 <div class="users form">
 	<br><h2><?php echo "Kosen.mn-д нэгдэж байгаад таатай байна."; ?></h2>
-	<br><h4><?php echo "Бүртгүүлсэн имэйл хаяг руу бүртгэлийг баталгаажуулах мэйл явуулах болно. Мэйл доторх линкийг дараад бүртгэлээ баталгаажуулаарай."; ?></h4>
+	<br><h4><?php echo "Таны бичсэн имэйл хаяг руу имэйл явуулах болно. Эмэйл доторх линкийг дараад бүртгэлээ баталгаажуулаарай."; ?></h4>
 	<fieldset>
 		<?php
 			echo $this->Form->create($model);
@@ -16,7 +16,7 @@
 				'label' => __d('users', 'Username'),
 				'class' => 'form-control'));
 			echo $this->Form->input('email', array(
-				'label' => __d('users', 'E-mail (used as login)'),
+				'label' => __d('users', 'E-mail (Login хийх үеэд хэрэглэнэ)'),
 				'class' => 'form-control',
 				'error' => array('isValid' => __d('users', 'Must be a valid email address'),
 				'isUnique' => __d('users', 'An account with that email already exists'))));
@@ -40,7 +40,7 @@
 				?>
 			</div>
 			<?php
-			echo $this->Form->end(__d('users', 'Submit'));
+			echo $this->Form->end("Илгээх");
 		?>
 	</fieldset>
 </div>
