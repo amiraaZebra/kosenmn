@@ -1,6 +1,44 @@
+<div class="question-container">
+	<div class="container">
+		<div class="question-form">
 <?php
 	if ($this->Session->read('Auth.User')){
 		echo 'you already logged in.';
+	}elseif($is_valid){
+?>
+<div class="users form">
+	<h2><?php echo __d('users', 'Add User'); ?></h2>
+	<fieldset>
+		<?php
+			echo $this->Form->create($model);
+			echo $this->Form->input('username', array(
+				'label' => __d('users', 'Username'),
+				'class' => 'form-control'));
+			echo $this->Form->input('email', array(
+				'label' => __d('users', 'E-mail (used as login)'),
+				'class' => 'form-control',
+				'error' => array('isValid' => __d('users', 'Must be a valid email address'),
+				'isUnique' => __d('users', 'An account with that email already exists'))));
+			echo $this->Form->input('password', array(
+				'label' => __d('users', 'Password'),
+				'class' => 'form-control',
+				'type' => 'password'));
+			echo $this->Form->input('temppassword', array(
+				'label' => __d('users', 'Password (confirm)'),
+				'class' => 'form-control',
+				'type' => 'password'));
+			echo $this->Form->input('passwordold', array(
+				'type' => 'hidden',
+				'class' => 'form-control',
+				'default' => $secret));
+			$tosLink = $this->Html->link(__d('users', 'Terms of Service'), array('controller' => 'pages', 'action' => 'tos', 'plugin' => null));
+			echo $this->Form->input('tos', array(
+				'label' => __d('users', 'I have read and agreed to ') . $tosLink));
+			echo $this->Form->end(__d('users', 'Submit'));
+		?>
+	</fieldset>
+</div>
+<?php
 	}else{
 ?>
 
@@ -38,15 +76,15 @@
 		<div class="kosen-login-container">
 			<div class="row kosen-login-form">
 				<div class="col-xs-12 col-sm-6 col-md-7 login-menu">
-					<h1 class="kosenName">Kosen.mn</h1>
+					<h1 class="plsJoin">Kosen.mn-д нэгдэж байгаад тань таатай байна.</h1>
 					<?php
 						$currentAction = $this->params['action'];
 						if($currentAction == 'add'){}
 							else{
 								echo "<div class='contact-link'>";
 								echo $this->Html->link(
-								__d('contact','бидэнтэй холбогдъё...'),
-								array('plugin'=>null, 'controller'=>'questions', 'action'=>'add'),
+								__d('contact','login хуудас руу ...'),
+								array('action'=>'login'),
 								array('escape' => false));	
 								echo "</div>";				
 							}	
@@ -56,31 +94,23 @@
 					<div class="kosen-login-box jumbotron">
 						<?php
 							echo $this->Form->create($model, array(
-							'action' => 'login',
+							'action' => 'add_member',
 							'class' => 'form-signin',
 							'role' => 'form',
 							'id' => 'LoginForm'));
-							echo '<h4>'.'Косэн клубын гишүүд нэвтрэх эрхтэй.'.'</h4><br>';
-							echo $this->Form->input('email', array(
-							'label' => false,
-							'placeholder' => 'имэйл хаяг',
-							'class' => 'form-control',
-							'id'=>'inputEmail3'));
-							echo $this->Form->input('password', array(
+							echo '<h4>'.'Хэрвээ та Косэнд сурч байсан бол нэвтрэх эрхтэй. Нууц үгээ оруулаад kosen.mn-д нэгдэнэ үү.'.'</h4><br>';
+							echo $this->Form->input('passwordold', array(
+							'type' => 'password',
 							'label' => false,
 							'placeholder' => 'нууц үг',
 							'class' => 'form-control',
 							'id'=>'inputPassword3'));
-							//echo '<p>' . $this->Form->input('remember_me', array('type' => 'checkbox', 'label' =>  __d('users', 'Намайг сана'))) . '</p>';
-							echo '<cite class="sura-right">' . $this->Html->link(__d('users', 'Нууц үгээ мартсан'), array('action' => 'reset_password')) . '</cite>';
-							echo $this->Form->submit('Нэвтрэх',array('class' => 'btn btn-lg btn-primary btn-block'));
-							echo '<cite class="sura-right">' . $this->Html->link(__d('users', 'Гишүүнээр элсэх'), array('action' => 'add_member')) . '</cite>';
-							echo $this->Form->hidden('User.return_to', array(
-							'value' => $return_to));
+							echo $this->Form->submit('Бүртгүүлж эхлэх',array('class' => 'btn btn-lg btn-primary btn-block'));
+							echo '<h4>'.'Нууц үгээ мэдэхгүй байгаа бол kosenclub-н Facebook group ээс хараарай.'.'</h4>';
 							echo $this->Form->end();
-							// echo "<div class='login-message'>";
-							// echo $this->Session->flash('auth');
-							// echo "</div>";
+							echo "<div class='login-message'>";
+							echo $this->Session->flash('auth');
+							echo "</div>";
 						?>
 					</div>
 				</div>
@@ -144,3 +174,6 @@
 		alert('Таны browser-д cookie бичиж чадахгүй байна та "cookie block" хийсэн тохиргоогоо өөрчилнө үү.');
 	}
 <?php $this->Html->scriptEnd(); ?>
+		</div>
+	</div>
+</div>

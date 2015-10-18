@@ -161,8 +161,9 @@ class UsersController extends UsersAppController {
 		
 		// 2015_8_8 dummy muugii@muugii.com, kosentest
 		// $this->Auth->Allow('admin_add');
-		// $this->Auth->Allow('add');
-
+		//$this->Auth->Allow('add');
+		$this->Auth->Allow('add_member');
+		$this->Auth->Allow('verify');
 		if (!Configure::read('App.defaultEmail')) {
 			Configure::write('App.defaultEmail', 'noreply@' . env('HTTP_HOST'));
 		}
@@ -938,7 +939,51 @@ class UsersController extends UsersAppController {
 		}
 		$this->set("user_id",$this->Auth->User('id'));
 		//$this->set("user_data",$this->User->find('all'));
-	} 
+	}
+	
+	public function add_member (){
+		$secret_word = 'changeit';
+		if($this->request->is('post')){
+			if($this->request->data['User']['passwordold'] === $secret_word){
+				$this->set('is_valid', true);
+				$this->set('secret', $secret_word);
+				if(empty($this->request->data['User']['tos'])){
+					$this->request->data['User']['emailold'] = NULL;
+					$this->request->data['User']['passwordold'] = NULL;
+				}else{
+					if ($this->Auth->user()) {
+						$this->Session->setFlash(__d('users', 'You are already registered and logged in!'));
+						$this->redirect('/');
+					}
+					if (!empty($this->request->data)) {
+						$user = $this->{$this->modelClass}->register($this->request->data);
+						if ($user !== false) {
+							$Event = new CakeEvent(
+								'Users.Controller.Users.afterRegistration',
+								$this,
+								array(
+									'data' => $this->request->data,
+								)
+							);
+							$this->getEventManager()->dispatch($Event);
+							if ($Event->isStopped()) {
+								$this->redirect(array('action' => 'login'));
+							}
+
+							$this->_sendVerificationEmail($this->{$this->modelClass}->data);
+							$this->Session->setFlash(__d('users', 'Your account has been created. You should receive an e-mail shortly to authenticate your account. Once validated you will be able to login.'));
+							$this->redirect(array('action' => 'login'));
+						} else {
+							unset($this->request->data[$this->modelClass]['password']);
+							unset($this->request->data[$this->modelClass]['temppassword']);
+							$this->Session->setFlash(__d('users', 'Your account could not be created. Please, try again.'), 'default', array('class' => 'message warning'));
+						}
+					}
+				}
+			}
+		}else
+			$this->set('is_valid', false);
+	}
 	
 	public function isAuthorized($user = null) {
 		

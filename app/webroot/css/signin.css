@@ -129,12 +129,26 @@ body{
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
   }
+  .plsJoin{
+    font-size: 80px;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+  }
   .kosen-login-box{
     padding: 20px;
     width: 100%;
     border-radius: 20px;
   }
 }
+
+.plsJoin{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
+}
+
 .login-message{
   color: #a94442;
 }
