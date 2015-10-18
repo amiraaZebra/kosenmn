@@ -83,8 +83,8 @@
 							else{
 								echo "<div class='contact-link'>";
 								echo $this->Html->link(
-								__d('contact','бидэнтэй холбогдъё...'),
-								array('plugin'=>null, 'controller'=>'questions', 'action'=>'add'),
+								__d('contact','login хуудас руу ...'),
+								array('action'=>'login'),
 								array('escape' => false));	
 								echo "</div>";				
 							}	
