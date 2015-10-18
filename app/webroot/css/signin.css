@@ -142,6 +142,9 @@ body{
   }
 }
 
+.registerCheckbox{
+	margin-left: 25px;
+}
 .plsJoin{
     font-size: 30px;
     font-weight: bolder;

@@ -7,7 +7,8 @@
 	}elseif($is_valid){
 ?>
 <div class="users form">
-	<h2><?php echo __d('users', 'Add User'); ?></h2>
+	<br><h2><?php echo "Kosen.mn-д нэгдэж байгаад таатай байна."; ?></h2>
+	<br><h4><?php echo "Бүртгүүлсэн имэйл хаяг руу бүртгэлийг баталгаажуулах мэйл явуулах болно. Мэйл доторх линкийг дараад бүртгэлээ баталгаажуулаарай."; ?></h4>
 	<fieldset>
 		<?php
 			echo $this->Form->create($model);
@@ -31,9 +32,14 @@
 				'type' => 'hidden',
 				'class' => 'form-control',
 				'default' => $secret));
-			$tosLink = $this->Html->link(__d('users', 'Terms of Service'), array('controller' => 'pages', 'action' => 'tos', 'plugin' => null));
-			echo $this->Form->input('tos', array(
-				'label' => __d('users', 'I have read and agreed to ') . $tosLink));
+			?>
+			<div class="registerCheckbox">
+				<?php
+				echo $this->Form->input('tos', array(
+					'label' => "Kosenclub-т идэвхтэй байж нэг нэгнийгээ дэмжиж ажилна."));
+				?>
+			</div>
+			<?php
 			echo $this->Form->end(__d('users', 'Submit'));
 		?>
 	</fieldset>
