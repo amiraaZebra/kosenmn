@@ -9,6 +9,9 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
+<script type="text/javascript">
+	$("#sidebar-kosen-wrapper").show();
+</script>
 <div class="users form">
 	<?php echo $this->Form->create($model); ?>
 	<legend><?php echo __d('users', 'Edit User'); ?></legend>	

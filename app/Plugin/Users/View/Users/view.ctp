@@ -1,5 +1,5 @@
 <script>
-	$("#sidebar-kosen-wrapper").show('fast');
+	$("#sidebar-kosen-wrapper").show();
 	function ScaleProfImg(){
 		slideWidth = $(".prof-img-container").width();
 		slideHeight = $(".prof-img-container").height();
