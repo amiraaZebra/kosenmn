@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$("#sidebar-kosen-wrapper").show('fast');
+	$("#sidebar-kosen-wrapper").show();
 </script>
 <div class="post-container">
 	<div class="row kosen-post">
