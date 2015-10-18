@@ -32,6 +32,9 @@
 				'type' => 'hidden',
 				'class' => 'form-control',
 				'default' => $secret));
+			echo $this->Form->input('profile_image', array(
+				'type' => 'hidden',
+				'default' => 'kosenUser.jpg'));
 			?>
 			<div class="registerCheckbox">
 				<?php
