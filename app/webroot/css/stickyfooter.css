@@ -15,3 +15,17 @@
 	opacity: 1.0;
 }	
 }
+.kosen-footer1
+{
+	position: absolute;
+	bottom: -70px;
+	background-color: #385381;
+	z-index: 2000;
+	height:70px;
+	width: 100%;
+}
+@media(min-width:768px) {
+	.kosen-footer1{
+	display: none;
+}	
+}

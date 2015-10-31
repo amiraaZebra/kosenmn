@@ -12,6 +12,7 @@
 		echo $this->Html->meta('icon');		
 		echo $this->Html->css('bootstrap');
 		echo $this->Html->css('signin');
+		echo $this->Html->css('stickyfooter');
 		echo $this->Html->script('jquery');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -41,9 +42,20 @@
 			<?php
 				echo $this->fetch('content');			 
 			?>
+			
 	 
 </body>
-
+<script type="text/javascript">
+function container(){
+	var docHeight = $(window).height();
+	var height = $(".s-slider-wrapper").height();
+	$(".kosen-footer1").css({
+		'top': height-70
+		});
+	setTimeout(container, 100);
+}
+container();
+</script>
 
 
 </html>

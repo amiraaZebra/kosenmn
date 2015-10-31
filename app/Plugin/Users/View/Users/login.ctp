@@ -34,6 +34,12 @@
 			</div>
 		</div>
 		</div><!-- /s-slider -->
+		<div class="kosen-footer1">
+				<div class="container">
+					<h6 class="text-center">&copyKosenClub 2014.</h6>
+				</div>
+				<p id="test"></p>
+			</div>
 		</div><!-- /s-slider-wrapper -->
 		<div class="kosen-login-container">
 			<div class="row kosen-login-form">

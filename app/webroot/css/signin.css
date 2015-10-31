@@ -9,7 +9,7 @@ body{
   position: absolute;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 130%;
   top: 0;
   left: 0;
 }
@@ -86,7 +86,6 @@ body{
 /* login-form */
 .kosen-login-container{
   position: absolute;
-  overflow: hidden;
   width: 100%;
   max-width: 1000px;
   left: 50%;
@@ -123,6 +122,17 @@ body{
     text-shadow: 0 -1px 0 rgba(0,0,0,0, 2);
 }
 @media(min-width:768px) {
+  .s-slider-wrapper{
+    height: 100%;
+    overflow: hidden;
+  }
+  .kosen-login-container{
+  overflow: hidden;
+
+}
+  .kosen-footer1{
+    display: none;
+  }
   .kosenName{
     font-size: 80px;
     font-weight: bolder;

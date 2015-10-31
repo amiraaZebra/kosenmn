@@ -162,6 +162,10 @@
 		'min-height': '700px',
 		'height': '100%'
 		});
+		$(".kosen-footer").css({
+		'bottom': '-70px',
+		'height': '70px'
+		});
 		}
 		else{
 		$(".kosen-wrapper").css({
