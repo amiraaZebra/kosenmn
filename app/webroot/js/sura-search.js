@@ -46,7 +46,8 @@ $(".prefecture").click(function(event) {
 		}
 	});
 });
-$("#sel3").change(function(event) {
+$(function($) {
+$("#sel3").change(function() {
 	/* Act on the event */
 	$(".prefecture").each(function(index, el) {
 		if($('#sel3 :selected').text()==$(this).text()){
@@ -54,6 +55,7 @@ $("#sel3").change(function(event) {
 			$(".prefecture").not(this).removeClass('active');
 		}
 	});
+});
 });
 
 //Ангилгаа

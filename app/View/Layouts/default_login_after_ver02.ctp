@@ -1,175 +1,176 @@
 <!DOCTYPE html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<?php echo $scripts_for_layout; ?>
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<title>
-	<?php
-		$title_for_layout="KosenClub/".$this->params['controller'];
-		echo $title_for_layout;
-	?>
-	</title>
-	<?php
-		echo $this->Html->css('bootstrap');
-		echo $this->Html->css('kosencss');
-		echo $this->Html->css('kosenposts');
-		echo $this->Html->css('sura-slider');
-		echo $this->Html->script('jquery');
-		echo $this->Html->script('bootstrap');
-		echo $this->Html->meta('icon');
-		echo $this->Html->css('stickyfooter');
-		
-		// echo $this->Html->script('dashboard');
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-</head>
-<body>
-	<nav class="navbar navbar-default navbar-fixed-top kosen-nav-container">
-		<div class="kosen-nav">
-		<div class="container-fluid" style="margin-right:10px; margin-left:10px;">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#kosen-navbar-1" aria-expanded="false" id="menu-toggle">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<?php echo $this->Html->link(__('Косэн клуб'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<?php echo $this->element('admintool');?>
-					<li>
-						<?php echo $this->Html->link(__(''), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('class'=> 'glyphicon glyphicon-home home')); ?>
-					</li>
-					<?php echo $this->element('profile');?>
-				</ul>
-			</div>
-		</div>
-		</div>
-	</nav>
-	<div style="height:50px">
-		
-	</div>
-	<div class="slide-container">
-	<div class="slides">
-		<div>
-			<?php
-				echo $this->Html->image("test/1.jpg");
-			?>
-		</div>
-		<div>
-			<?php
-				echo $this->Html->image("test/2.jpg");
-			?>
-		</div>
-		<div>
-			<?php
-				echo $this->Html->image("test/3.jpg");
-			?>
-		</div>
-		<div>
-			<?php
-				echo $this->Html->image("test/4.jpg");
-			?>
-		</div>
-	</div>
-	<div class="navigator">
-		
-		<div class="current-nav"></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="arrow-left">
-	</div>
-	<div class="arrow-right">
-	</div>
-</div>
-	<div class="kosen-wrapper">
-		<!-- Sidebar -->
-		<div id="sura-navbar">
-			<?php echo $this->element('navbar');?>
-		</div>
-		<div id="sidebar-kosen-wrapper">
-			<?php echo $this->element('sidebar');?>
-		</div>
-		<!-- /#sidebar-kosen-wrapper -->
-		<!-- content Content -->
-		<div class="kosen-container">
-			<div id="content-kosen-wrapper">
-				<div class="content-container">
-					<?php echo $this->Session->flash('auth'); ?>
-					<?php echo $this->fetch('content'); ?>
+<html ng-app="kosen">
+	<head>
+		<?php echo $this->Html->charset(); ?>
+		<?php echo $scripts_for_layout; ?>
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<title>
+		<?php
+			$title_for_layout="KosenClub/".$this->params['controller'];
+			echo $title_for_layout;
+		?>
+		</title>
+		<?php
+			echo $this->Html->css('bootstrap');
+			echo $this->Html->css('kosencss');
+			echo $this->Html->css('kosenposts');
+			echo $this->Html->css('sura-slider');
+			echo $this->Html->script('jquery');
+			echo $this->Html->script('bootstrap');
+			echo $this->Html->script('angular');
+			echo $this->Html->script('kosen-angular.js');
+			echo $this->Html->meta('icon');
+			echo $this->Html->css('stickyfooter');
+			
+			// echo $this->Html->script('dashboard');
+			echo $this->fetch('meta');
+			echo $this->fetch('css');
+			echo $this->fetch('script');
+		?>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top kosen-nav-container">
+			<div class="kosen-nav">
+				<div class="container-fluid" style="margin-right:10px; margin-left:10px;">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#kosen-navbar-1" aria-expanded="false" id="menu-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<?php echo $this->Html->link(__('Косэн клуб'),array('controller' => 'users', 'action' => 'dashboard'),array('class'=>'navbar-brand','escape'=>false)); ?>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<?php echo $this->element('admintool');?>
+							<li>
+								<?php echo $this->Html->link(__(''), array('plugin'=>'users', 'controller'=>'users', 'action' => 'dashboard'), array('class'=> 'glyphicon glyphicon-home home')); ?>
+							</li>
+							<?php echo $this->element('profile');?>
+						</ul>
+					</div>
 				</div>
 			</div>
+		</nav>
+		<div style="height:50px">
+			
 		</div>
-		<div style="height:150px">
-		
+		<div class="slide-container">
+			<div class="slides">
+				<div>
+					<?php
+						echo $this->Html->image("test/1.jpg");
+					?>
+				</div>
+				<div>
+					<?php
+						echo $this->Html->image("test/2.jpg");
+					?>
+				</div>
+				<div>
+					<?php
+						echo $this->Html->image("test/3.jpg");
+					?>
+				</div>
+				<div>
+					<?php
+						echo $this->Html->image("test/4.jpg");
+					?>
+				</div>
+			</div>
+			<div class="navigator">
+				
+				<div class="current-nav"></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="arrow-left"></div>
+			<div class="arrow-right"></div>
 		</div>
-		<!-- /.kosen-container -->
-		
-	</div>
-	<!-- /.kosen-wrapper -->
-	<div class="kosen-footer">
-		<div class="container">
-			<h6 class="text-center">&copyKosenClub 2014.</h6>
+		<div class="kosen-wrapper">
+			<!-- Sidebar -->
+			<div id="sura-navbar">
+				<?php echo $this->element('navbar');?>
+			</div>
+			<div id="sidebar-kosen-wrapper">
+				<?php echo $this->element('sidebar');?>
+			</div>
+			<!-- /#sidebar-kosen-wrapper -->
+			<!-- content Content -->
+			<div class="kosen-container">
+				<div id="content-kosen-wrapper">
+					<div class="content-container">
+						<?php echo $this->Session->flash('auth'); ?>
+						<?php echo $this->fetch('content'); ?>
+					</div>
+				</div>
+			</div>
+			<div style="height:150px">
+				
+			</div>
+			<!-- /.kosen-container -->
+			
 		</div>
-		<p id="test"></p>
-	</div>
-	<?php
-		echo $this->Html->script('sura-slider');
-		echo $this->Html->script('stickyfooter');
-		echo $this->Html->script('sura-search')
-	?>
+		<!-- /.kosen-wrapper -->
+		<div class="kosen-footer">
+			<div class="container">
+				<h6 class="text-center">&copyKosenClub 2014.</h6>
+			</div>
+			<p id="test"></p>
+		</div>
+		<?php
+			echo $this->Html->script('sura-slider');
+			echo $this->Html->script('stickyfooter');
+			echo $this->Html->script('sura-search')
+		?>
+	</body>
 	<!-- Menu Toggle Script -->
-	<script>
-	
-	var baseDir = "<?php echo $this->Html->url('/');?>";
-	
-	var styles = {
-	width : "100%",
-	height: "auto"
-	};
-	$("#menu-toggle").click(function(e) {
-	e.preventDefault();
-	$(".kosen-wrapper").toggleClass("toggled");
-	$(".kosen-footer").toggleClass("toggled");
-	});
-	$("#content-kosen-wrapper").click(function(e){
+		<script>
+		
+		var baseDir = "<?php echo $this->Html->url('/');?>";
+		
+		var styles = {
+		width : "100%",
+		height: "auto"
+		};
+		$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$(".kosen-wrapper").toggleClass("toggled");
+		$(".kosen-footer").toggleClass("toggled");
+		});
+		$("#content-kosen-wrapper").click(function(e){
 		if($(".kosen-wrapper").hasClass("toggled")){
-			e.preventDefault();
-			$(".kosen-wrapper").removeClass("toggled");
-			$(".kosen-footer").removeClass("toggled");
+		e.preventDefault();
+		$(".kosen-wrapper").removeClass("toggled");
+		$(".kosen-footer").removeClass("toggled");
 		}
-	});
-	$( ".post-content" ).children("p").children("img").css(styles);
-	$( ".post-content p" ).addClass('post-content-p');
-	$(".post-content img").unwrap();
-	$( ".post-content img" ).wrap("<div class='post-image'></div>");
-	$( ".post-content" ).children("img").wrap("<div class='post-image'></div>");
-	function containerHeight(){
+		});
+		$( ".post-content" ).children("p").children("img").css(styles);
+		$( ".post-content p" ).addClass('post-content-p');
+		$(".post-content img").unwrap();
+		$( ".post-content img" ).wrap("<div class='post-image'></div>");
+		$( ".post-content" ).children("img").wrap("<div class='post-image'></div>");
+		function containerHeight(){
 		var wrapperHeight = $("#content-kosen-wrapper").height();
 		// $(".test").html(wrapperHeight);
 		var docHeight = $(window).height();
 		if(wrapperHeight<=docHeight){
-			$(".kosen-wrapper").css({
-				'position': 'absolute',
-				'min-height': '700px',
-				'height': '100%'
-			});
+		$(".kosen-wrapper").css({
+		'position': 'absolute',
+		'min-height': '700px',
+		'height': '100%'
+		});
 		}
 		else{
-			$(".kosen-wrapper").css({
-				'position': 'relative'
-			});
+		$(".kosen-wrapper").css({
+		'position': 'relative'
+		});
 		}
 		window.setTimeout(containerHeight, 30);
 		$("#test").html($(".kosen-wrapper").height());
-	}
-	containerHeight();
-	</script>
-</body>
+		}
+		containerHeight();
+		</script>
 </html>

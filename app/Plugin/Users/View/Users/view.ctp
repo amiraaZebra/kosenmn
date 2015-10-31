@@ -66,213 +66,213 @@
 			
 		</div>
 	</div>
-	<div class="row user-detail">
-		<label>Танилцуулга</label>
-		<table class="table table-hover">
-			<tbody>
-				<tr>
-					<td class="user-table-1">Нэр</td>
-					<td>
-						<?php
-							if($user[$model]['last_name']!='' && $user[$model]['first_name']!=''){
-								echo $user[$model]['last_name'].' '.$user[$model]['first_name'];
-							}
-							else if($user[$model]['first_name']!=''){echo $user[$model]['first_name'];}
-							else{echo "<span>Мэдээлэл байхгүй байна.<span>";}
-							?>
-						</td>
-					</tr>
-					<tr>
-						<td class="user-table-1">Хүйс</td>
-						<td>
-							<?php
-								if(!empty($user[$model]['gender'])){
-									if($user[$model]['gender']){
-										echo 'эрэгтэй';
-									}else{
-										echo 'эмэгтэй';
-									};	
-								}else {
-									echo "<span>Мэдээлэл байхгүй байна.<span>";
-								}
-							?>
-						</td>
-					</tr>
+	<div class="user-detail">
+		<label>Профил</label>
+		<div class="user-detail-container row">
+			<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Нэр</div>
+			<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+				<?php
+					if($user[$model]['last_name']!='' && $user[$model]['first_name']!=''){
+						echo $user[$model]['last_name'].' '.$user[$model]['first_name'];
+					}
+					else if($user[$model]['first_name']!=''){echo $user[$model]['first_name'];}
+					else{echo "<span class='user-table-1'>Мэдээлэл алга<span>";}
+					?>
+				</div>
+			</div>
+			<div class="user-detail-container row">
+				<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Хүйс</div>
+				<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+					<?php
+						if(!empty($user[$model]['gender'])){
+							if($user[$model]['gender']){
+								echo 'эрэгтэй';
+							}else{
+								echo 'эмэгтэй';
+								};
+						}else {
+							echo "<span class='user-table-1'>Мэдээлэл алга<span>";
+										}
+						?>
+					</div>
+				</div>
+				<div class="user-detail-container row">
 					<?php
 						if($user[$model]['birthday']!=''){
 					?>
-					<tr>
-						<td class="user-table-1">Төрсөн өдөр</td>
-						<td><?php echo $this->Time->format('Y.m.d', $user[$model]['birthday']); ?></td>
-					</tr>
+					<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Төрсөн өдөр</div>
+					<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+						<?php echo $this->Time->format('Y.m.d', $user[$model]['birthday']); ?>
+					</div>
 					<?php
 						}
 					?>
-					<tr>
-						<td class="user-table-1">Имэйл</td>
-						<td><?php echo $user[$model]['email']; ?></td>
-					</tr>
+				</div>
+			</div>
+			<div class="user-detail">
+				<label>Холбоо хаяг</label>
+				<div class="user-detail-container row">
+					<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Имэйл</div>
+					<div class="col-xs-12 col-sm-8 col-md-9 user-name-container"><?php echo $user[$model]['email']; ?>
+					</div>
+				</div>
+				<div class="user-detail-container row">
 					<?php
 					if($user[$model]['phone_number_mon']!='' || $user[$model]['phone_number_jap']!=''){
 					?>
-					<tr>
-						<td class="user-table-1">Утас</td>
-						<td>
-							<?php
-							if($user[$model]['phone_number_mon']!=''){
-							echo "<span  class='user-table-1'>[ Монгол ]: </span>".$user[$model]['phone_number_mon'];
-							}
-							if($user[$model]['phone_number_mon']!='' && $user[$model]['phone_number_jap']!=''){
-								echo '<br>';
-							}
-							if($user[$model]['phone_number_jap']!=''){
-							echo "<span class='user-table-1'>[ Япон ]: </span>".$user[$model]['phone_number_jap'];
-							}
-							?>
-						</td>
-					</tr>
-					<?php
+					<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Утас</div>
+					<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+						<?php
+						if($user[$model]['phone_number_mon']!=''){
+						echo "<span  class='user-table-1'>[ Монгол ]: </span>".$user[$model]['phone_number_mon'];
 						}
-					?>
-					<?php
-						if($user[$model]['country']!='' || $user[$model]['city']!=''){
-					?>
-					<tr>
-						<td class="user-table-1">Амьдарч буй хот</td>
-						<td>
-							<?php
-							if($user[$model]['country']!=''){
-							echo $user[$model]['country'].' улс';
-							}
-							if($user[$model]['country']!='' && $user[$model]['city']!=''){echo ', ';}
-							if($user[$model]['city']!=''){
-							echo $user[$model]['city'].' хот';
-							}
-							?>
-						</td>
-					</tr>
-					<?php
+						if($user[$model]['phone_number_mon']!='' && $user[$model]['phone_number_jap']!=''){
+							echo '<br>';
 						}
-					?>
-					
-				</tbody>
-			</table>
-		</div>
-		<div class="row user-detail">
-			<label>Товч намтар</label>
-			<table class="table table-hover">
-				<tbody>
-					<?php
-							if($user[$model]['high_school']!=''){
-					?>
-					<tr>
-						<td class="user-table-1">Ахлах сургууль</td>
-						<td><?php echo $user[$model]['high_school']; ?></td>
-					</tr>
-					<?php
+						if($user[$model]['phone_number_jap']!=''){
+						echo "<span class='user-table-1'>[ Япон ]: </span>".$user[$model]['phone_number_jap'];
 						}
-					?>
-					<?php
-						if($user[$model]['university1']!=''){
-					?>
-					<tr>
-						<td class="user-table-1">Өмнөх Их Сургууль</td>
-						<td>
-							<?php
-							echo $user[$model]['university1'];
-							if($user[$model]['course1']!=''){
-								echo ' ('.$user[$model]['course1'].')';
+						?>
+					</div>
+					</div>
+					<div class="user-detail-container row">
+						<?php
 							}
-							?>
-						</td>
-					</tr>
-					<?php
+						?>
+						<?php
+							if($user[$model]['country']!='' || $user[$model]['city']!=''){
+						?>
+						
+					<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Амьдарч буй хот</div>
+					<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+						<?php
+						if($user[$model]['country']!=''){
+						echo $user[$model]['country'].' улс';
 						}
-					?>
-					<?php
-						if($user[$model]['kosen_year']!=''){
-					?>
-					<tr>
-						<td class="user-table-1">Ирсэн он</td>
-						<td><?php echo $user[$model]['kosen_year']; ?></td>
-					</tr>
-					<?php
+						if($user[$model]['country']!='' && $user[$model]['city']!=''){echo ', ';}
+						if($user[$model]['city']!=''){
+						echo $user[$model]['city'].' хот';
 						}
-					?>
-					<tr>
-						<td class="user-table-1">Косэн</td>
-						<!-- мэргэжил -->
-						<td>
-							<?php
-							if($user[$model]['kosen_roman']!='' || $user[$model]['kosen_kanji']!=''){
-								if($user[$model]['kosen_roman']!=''){
-									echo $user[$model]['kosen_roman'];
-								}
-								if($user[$model]['kosen_roman']!='' && $user[$model]['kosen_kanji']!=''){
-									echo " (";
-								}
-								if($user[$model]['kosen_kanji']){
-									echo $user[$model]['kosen_kanji'];
-								}
-								if($user[$model]['kosen_roman']!='' && $user[$model]['kosen_kanji']!=''){
-									echo ")";
-								}
-							}
-							else{
-								echo "<span class='user-table-1'>Мэдээлэл алга</span>";
-							}
-							if($user[$model]['major']!=''){
-							echo '<br>'.$user[$model]['major'];
-							}
-							?>
-						</td>
-					</tr>
-					<?php
-						if($user[$model]['university2']!=''){
-					?>
-					<tr>
-						<td class="user-table-1">Дараах Их Сургууль</td>
-						<td>
-							<?php
-							echo $user[$model]['university2'];
-							if($user[$model]['course2']!=''){
-								echo ' ('.$user[$model]['course2'].')';
-							}
-							?>
-						</td>
-					</tr>
-					<?php
-						}
-					?>
-					<?php
-						if($user[$model]['status']!=''){
-					?>
-					<tr>
-						<td class="user-table-1"><b>Одоогийн статус</b></td>
-						<td><b><?php echo $user[$model]['status']; ?></b></td>
-					</tr>
-					<?php
-						if($user[$model]['work1']!=''){
-					?>
-					<tr>
-						<td class="user-table-1" style="padding-left:30px">Ажлын нэр</td>
-						<td>
-							<?php
-							echo $user[$model]['work1'];
-							if($user[$model]['department1']!=''){
-							echo ' ('.$user[$model]['department1'].')';
-							}
-							?>
-						</td>
-					</tr>
-					<?php
+						?>
+					</div>
+				</div>
+				<?php
 					}
-					}
-					?>
-				</tbody>
-			</table>
+				?>
+			</div>
+			<div class="user-detail">
+				<label>Товч намтар</label>
+						<?php
+								if($user[$model]['high_school']!=''){
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Ахлах сургууль</div>
+							<div class="col-xs-12 col-sm-8 col-md-9 user-name-container"><?php echo $user[$model]['high_school']; ?></div>
+						</div>
+						<?php
+							}
+						?>
+						<?php
+							if($user[$model]['university1']!=''){
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Өмнөх Их Сургууль</div>
+							<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+								<?php
+								echo $user[$model]['university1'];
+								if($user[$model]['course1']!=''){
+									echo ' ('.$user[$model]['course1'].')';
+								}
+								?>
+							</div>
+						</div>
+						<?php
+							}
+						?>
+						<?php
+							if($user[$model]['kosen_year']!=''){
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Ирсэн он</div>
+							<div class="col-xs-12 col-sm-8 col-md-9 user-name-container"><?php echo $user[$model]['kosen_year']; ?></div>
+						</div>
+						<?php
+							}
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Косэн</div>
+							<!-- мэргэжил -->
+							<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+								<?php
+								if($user[$model]['kosen_roman']!='' || $user[$model]['kosen_kanji']!=''){
+									if($user[$model]['kosen_roman']!=''){
+										echo $user[$model]['kosen_roman'];
+									}
+									if($user[$model]['kosen_roman']!='' && $user[$model]['kosen_kanji']!=''){
+										echo " (";
+									}
+									if($user[$model]['kosen_kanji']){
+										echo $user[$model]['kosen_kanji'];
+									}
+									if($user[$model]['kosen_roman']!='' && $user[$model]['kosen_kanji']!=''){
+										echo ")";
+									}
+								}
+								else{
+									echo "<span class='user-table-1'>Мэдээлэл алга</span>";
+								}
+								if($user[$model]['major']!=''){
+								echo '<br>'.$user[$model]['major'];
+								}
+								?>
+							</div>
+						</div>
+						<?php
+							if($user[$model]['university2']!=''){
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1">Дараах Их Сургууль</div>
+							<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+								<?php
+								echo $user[$model]['university2'];
+								if($user[$model]['course2']!=''){
+									echo ' ('.$user[$model]['course2'].')';
+								}
+								?>
+							</div>
+						</div>
+						<?php
+							}
+						?>
+						<?php
+							if($user[$model]['status']!=''){
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1"><b>Одоогийн статус</b></div>
+							<div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+							<b><?php echo $user[$model]['status']; ?></b>
+							</div>
+						</div>
+						<?php
+							if($user[$model]['work1']!=''){
+						?>
+						<div class="user-detail-container row">
+							<div class="col-xs-12 col-sm-4 col-md-3 user-name-container user-table-1" style="padding-left:30px">Ажлын нэр</div class="col-xs-12 col-sm-8 col-md-9 user-name-container">
+							<div>
+								<?php
+								echo $user[$model]['work1'];
+								if($user[$model]['department1']!=''){
+								echo ' ('.$user[$model]['department1'].')';
+								}
+								?>
+							</div>
+						</div>
+						<?php
+						}
+						}
+						?>
+			</div>
 		</div>
-	</div>
-	<div class="spacer">
-		
-	</div>
+		<div class="spacer">
+			
+		</div>
